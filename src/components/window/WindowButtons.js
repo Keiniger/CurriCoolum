@@ -1,17 +1,17 @@
 import React from "react";
 import styles from "./WindowButtons.module.css";
 
-export default function WindowButtons({ file, toggle, closeWindow, openWindow, minimizeWindow, maximizeWindow }) {
-  function closeHandler(){
-    closeWindow(file.id);
+export default function WindowButtons({ file, toggle, windowAction }) {
+  function minimizeHandler(){
+    windowAction("minimize", file.id);
   }
 
   function maximizeHandler(){
-    maximizeWindow(file.id);
+    windowAction("maximize", file.id);
   }
-  
-  function minimizeHandler(){
-    minimizeWindow(file.id);
+
+  function closeHandler(){
+    windowAction("close", file.id);
   }
   return (
     <div className={styles.windowButtonsContainer}>

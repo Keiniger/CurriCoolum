@@ -6,7 +6,7 @@
   box-shadow: white 0 0 8px;
 }
 
-.Rnd > h2 {
+h2 {
   text-shadow: white 0 0 1px, white 0 0 2px, white 0 0 3px, white 0 0 4px;
   color: white;
 }

@@ -5,7 +5,7 @@ import { Rnd } from "react-rnd";
 import styles from "./Window.module.css";
 import WindowButtons from "./WindowButtons";
 
-export default function Window({ file, toggle, closeWindow, openWindow, minimizeWindow, maximizeWindow }) {
+export default function Window({ file, toggle, windowAction }) {
   const { height, width } = useWindowDimensions();
   const defaultHeight = height*0.3, defaultWidth = width*0.3;
 
@@ -21,13 +21,11 @@ export default function Window({ file, toggle, closeWindow, openWindow, minimize
         height: defaultHeight,
         width: defaultWidth,
       }}
+      style={{visibility:file.isVisible?"visible":"hidden"}}
     >
       <WindowButtons file={file} 
         toggle={toggle}
-        closeWindow={closeWindow} 
-        openWindow={openWindow}
-        minimizeWindow={minimizeWindow}
-        maximizeWindow={maximizeWindow}
+        windowAction={windowAction}
       />
       <h2>{file.text}</h2>
     </Rnd>

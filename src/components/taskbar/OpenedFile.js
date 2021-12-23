@@ -6,7 +6,7 @@ export default function OpenedFile({ file, toggle }) {
     toggle("visible",file.id);
   }
   return (
-    <button className={styles.fileOnTaskbar} onClick={makeVisible}>
+    <button className={styles.fileOnTaskbar} onClick={makeVisible} style={{visibility:file.isOnTaskbar?"visible":"hidden"}}>
     <div className={styles.icon}>{file.icon} </div><div className={styles.title}>{file.title}</div>
     </button>
   );

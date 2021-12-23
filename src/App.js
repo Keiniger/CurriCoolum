@@ -18,6 +18,8 @@ function App() {
       isMaximized: false,
       isVisible: true,
       isOnTaskbar: true,
+      x: 0.2,
+      y: 0.3,
     },
     {
       id: 2,
@@ -51,68 +53,57 @@ function App() {
 
   function toggle(type, id) {
     var element = getElement(id);
+    var listWithoutElement = removeElement(id);
     switch (type) {
-      case "maximize":
-        {
+      case "maximize":{
           const newElement = { ...element, isMaximized: !element.isMaximized };
-          setFilesState((prevState) => [...removeElement(id), newElement]);
-        }
-        break;
-      case "visible":
-        {
+          setFilesState([...listWithoutElement, newElement]);
+        } break;
+      case "visible":{
           const newElement = { ...element, isVisible: !element.isVisible };
-          setFilesState((prevState) => [...removeElement(id), newElement]);
-        }
-        break;
-      case "onTaskbar":
-        {
+          setFilesState([...listWithoutElement, newElement]);
+        } break;
+      case "onTaskbar":{
           const newElement = { ...element, isOnTaskbar: !element.isOnTaskbar };
-          setFilesState((prevState) => [...removeElement(id), newElement]);
-        }
-        break;
-      default:
-        {
-          console.log("Toggle error.");
-        }
-        break;
+          setFilesState([...listWithoutElement, newElement]);
+        } break;
+      default: console.log("Toggle error.");
     }
   }
 
-  function closeWindow(id){
+  function windowAction(type, id){
     var element = getElement(id);
-    const newElement = { ...element, isVisible: false, isOnTaskbar: false };
-    setFilesState((prevState) => [...removeElement(id), newElement]);
-  }
-
-  function openWindow(id){
-    var element = getElement(id);
-    const newElement = { ...element, isVisible: true, isOnTaskbar: true };
-    setFilesState((prevState) => [...removeElement(id), newElement]);
-  }
-
-  function minimizeWindow(id){
-    var element = getElement(id);
-    const newElement = { ...element, isVisible: false, isOnTaskbar: true };
-    setFilesState((prevState) => [...removeElement(id), newElement]);
-  }
-
-  //Sin terminar
-  function maximizeWindow(id){
-    var element = getElement(id);
-    const newElement = { ...element, isMaximized: true};
-    setFilesState((prevState) => [...removeElement(id), newElement]);
+    var listWithoutElement = removeElement(id);
+    switch(type){
+      case "close":{
+        const newElement = { ...element, isVisible: false, isOnTaskbar: false };
+        setFilesState([...listWithoutElement, newElement]);
+      } break;
+      case "open":{
+        const newElement = { ...element, isVisible: true, isOnTaskbar: true };
+        setFilesState([...listWithoutElement, newElement]);
+      } break;
+      case "minimize":{
+        const newElement = { ...element, isVisible: false, isOnTaskbar: true };
+        setFilesState([...listWithoutElement, newElement]);
+      } break;
+      case "maximize":{
+        if(element.isMaximized){
+          listWithoutElement.forEach(file=>toggle("visible", element.id));
+        } else {
+          listWithoutElement.forEach(file=>windowAction("minimize", file.id));  
+        }
+        toggle("maximize", element.id)
+      } break;
+      default: console.log("Action error.");
+    }
   }
 
   let windows = <div />;
   if (Array.isArray(filesState)) {
-    windows = filesState.filter((file) => (
-        file.isVisible === true
-      )).map((file) => (
+    windows = filesState.map((file) => (
         <Window file={file} 
-        closeWindow={closeWindow} 
-        openWindow={openWindow}
-        minimizeWindow={minimizeWindow}
-        maximizeWindow={maximizeWindow}
+        windowAction={windowAction}
         key={file.id} />
       ));
   }
@@ -120,7 +111,7 @@ function App() {
   return (
     <div className="App">
       <video src={background} playsInline autoPlay muted loop id="bgvid" />
-      <FileContainer files={filesState} />
+      <FileContainer files={filesState} windowAction={windowAction}/>
       {windows}
       <Taskbar files={filesState} toggle={toggle}/>
     </div>
