@@ -89,7 +89,7 @@ function App() {
       } break;
       case "maximize":{
         if(element.isMaximized){
-          listWithoutElement.forEach(file=>toggle("visible", element.id));
+          listWithoutElement.forEach(file=>toggle("visible", file.id));
         } else {
           listWithoutElement.forEach(file=>windowAction("minimize", file.id));  
         }
