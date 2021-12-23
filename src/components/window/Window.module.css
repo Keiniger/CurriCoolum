@@ -1,0 +1,12 @@
+.Rnd {
+  cursor: default !important;
+  background-color: rgba(0, 0, 0, 30%);
+  backdrop-filter: blur(6px);
+  border: 1px solid white;
+  box-shadow: white 0 0 8px;
+}
+
+.Rnd > h2 {
+  text-shadow: white 0 0 1px, white 0 0 2px, white 0 0 3px, white 0 0 4px;
+  color: white;
+}
