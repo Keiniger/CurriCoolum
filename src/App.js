@@ -4,34 +4,37 @@ import background from "./assets/tron.mp4";
 import FileContainer from "./components/file/FileContainer";
 import Taskbar from "./components/taskbar/Taskbar";
 import Window from "./components/window/Window";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
+  const textIcon = <FontAwesomeIcon icon={faFileAlt} />
   const files = [
     {
       id: 1,
       title: "Portfolio.js",
-      src: "",
+      icon: textIcon,
       text: "Aca van proyectos de mi portfolio.",
-      isMaximized: true,
-      isWindowVisible: true,
+      isMaximized: false,
+      isVisible: true,
       isOnTaskbar: true,
     },
     {
       id: 2,
       title: "Conocimientos.doc",
-      src: "",
+      icon: textIcon,
       text: "Aca van lenguajes, frameworks, etc.",
-      isMaximized: true,
-      isWindowVisible: true,
+      isMaximized: false,
+      isVisible: true,
       isOnTaskbar: true,
     },
     {
       id: 3,
       title: "Intereses.txt",
-      src: "",
+      icon: textIcon,
       text: "Aca van mis pasatiempos.",
-      isMaximized: true,
-      isWindowVisible: true,
+      isMaximized: false,
+      isVisible: true,
       isOnTaskbar: true,
     },
   ];
@@ -48,15 +51,11 @@ function App() {
 
   function toggle(type, id) {
     var element = getElement(id);
-    console.log(element);
-    console.log(filesState);
     switch (type) {
       case "maximize":
         {
           const newElement = { ...element, isMaximized: !element.isMaximized };
           setFilesState((prevState) => [...removeElement(id), newElement]);
-          console.log(newElement);
-          console.log(filesState);
         }
         break;
       case "visible":
@@ -73,18 +72,49 @@ function App() {
         break;
       default:
         {
-          console.log("Error al usar toggle");
+          console.log("Toggle error.");
         }
         break;
     }
   }
 
+  function closeWindow(id){
+    var element = getElement(id);
+    const newElement = { ...element, isVisible: false, isOnTaskbar: false };
+    setFilesState((prevState) => [...removeElement(id), newElement]);
+  }
+
+  function openWindow(id){
+    var element = getElement(id);
+    const newElement = { ...element, isVisible: true, isOnTaskbar: true };
+    setFilesState((prevState) => [...removeElement(id), newElement]);
+  }
+
+  function minimizeWindow(id){
+    var element = getElement(id);
+    const newElement = { ...element, isVisible: false, isOnTaskbar: true };
+    setFilesState((prevState) => [...removeElement(id), newElement]);
+  }
+
+  //Sin terminar
+  function maximizeWindow(id){
+    var element = getElement(id);
+    const newElement = { ...element, isMaximized: true};
+    setFilesState((prevState) => [...removeElement(id), newElement]);
+  }
+
   let windows = <div />;
   if (Array.isArray(filesState)) {
-    windows = filesState.map(
-      (file) =>
-        file.isVisible || <Window file={file} toggle={toggle} key={file.id} />
-    );
+    windows = filesState.filter((file) => (
+        file.isVisible === true
+      )).map((file) => (
+        <Window file={file} 
+        closeWindow={closeWindow} 
+        openWindow={openWindow}
+        minimizeWindow={minimizeWindow}
+        maximizeWindow={maximizeWindow}
+        key={file.id} />
+      ));
   }
 
   return (
@@ -92,7 +122,7 @@ function App() {
       <video src={background} playsInline autoPlay muted loop id="bgvid" />
       <FileContainer files={filesState} />
       {windows}
-      <Taskbar />
+      <Taskbar files={filesState} toggle={toggle}/>
     </div>
   );
 }
