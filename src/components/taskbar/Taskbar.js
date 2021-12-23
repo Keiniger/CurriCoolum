@@ -20,7 +20,7 @@ export default function Taskbar({files, toggle}) {
       <hr />
       <div className={styles.taskbar}>
         <button className={styles.start}> Start </button>
-        <OpenedFilesContainer files={files} toggle={toggle}/>
+        <OpenedFilesContainer className={styles.openedFiles} files={files} toggle={toggle}/>
         <button className={styles.time}> {date?.curTime} </button>
       </div>
     </>

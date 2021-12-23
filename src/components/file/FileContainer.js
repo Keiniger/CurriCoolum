@@ -5,8 +5,10 @@ import styles from "./FileContainer.module.css";
 export default function FileContainer({ files, windowAction }) {
   let filesIcons = <div />;
   if (Array.isArray(files)) {
-    filesIcons = files.map((file) => (
-      <File file={file} windowAction={windowAction} key={file.id} />
+    filesIcons = files.sort((a,b)=>(
+        a.id-b.id
+      )).map((file) => (
+      <File file={file} windowAction={windowAction} key={file.id.toString()} />
     ));
   }
   return <div className={styles.container}>{filesIcons}</div>;

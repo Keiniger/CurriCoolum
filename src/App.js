@@ -104,7 +104,7 @@ function App() {
     windows = filesState.map((file) => (
         <Window file={file} 
         windowAction={windowAction}
-        key={file.id} />
+        key={file.id.toString()} />
       ));
   }
 

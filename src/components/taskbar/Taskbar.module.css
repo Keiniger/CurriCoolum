@@ -8,7 +8,6 @@
   width: 100vw;
   height: 2rem;
   display: flex;
-  justify-content: space-between;
 }
 
 hr {
@@ -35,8 +34,10 @@ button {
 
 .start {
   border-right: 2px solid #921af5;
+  margin-right: 8px;
 }
 
 .time {
   border-left: 2px solid #23ff9c;
+  margin-left: auto;
 }
