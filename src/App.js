@@ -12,6 +12,7 @@ function App() {
   const files = [
     {
       id: 1,
+      index: 1,
       title: "Portfolio.js",
       icon: textIcon,
       text: "Aca van proyectos de mi portfolio.",
@@ -23,6 +24,7 @@ function App() {
     },
     {
       id: 2,
+      index: 2,
       title: "Conocimientos.doc",
       icon: textIcon,
       text: "Aca van lenguajes, frameworks, etc.",
@@ -32,6 +34,7 @@ function App() {
     },
     {
       id: 3,
+      index: 3,
       title: "Intereses.txt",
       icon: textIcon,
       text: "Aca van mis pasatiempos.",
