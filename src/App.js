@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import background from "./assets/tron.mp4";
 import FileContainer from "./components/file/FileContainer";
