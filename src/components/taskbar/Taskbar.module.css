@@ -1,6 +1,5 @@
 .taskbar {
-  background-color: rgba(0, 0, 0, 30%);
-  backdrop-filter: blur(6px);
+  background-color: #000000;
   position: absolute;
   bottom: 0;
   left: 0;

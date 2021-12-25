@@ -1,15 +1,21 @@
 ## To do:
 
-[X] - Beautify window borders
-[ ] - Beautify opened taskbar files
-[X] - Delete randomized window position at startup
-[X] - Add maximize functionality
-[ ] - Change style of file when hovered
-[ ] - Change style of file when clicked
-[ ] - Add drag and drop for file icons and opened files in taskbar
-[ ] - Fill resumé with my info
-[ ] - Add multiple language support
-[ ] - Add ascii art of my face :)
-[ ] - Add start menu
-[ ] - Add weather widget
-[X] - Add animated window borders (https://codepen.io/alphardex/pen/vYEYGzp)
+- [X] Beautify window borders
+- [ ] Beautify opened taskbar files
+- [X] Delete randomized window position at startup
+- [X] Add maximize functionality
+- [ ] Change window positions and size when browser is resized
+- [ ] Fix window select bug
+- [ ] Change style of file when clicked
+- [ ] Open window when double clicking file
+- [ ] Add drag and drop for file icons (https://github.com/react-dnd/react-dnd)
+- [ ] Add drag and drop for opened files in taskbar (https://github.com/atlassian/react-beautiful-dnd)
+- [ ] Fill resumé with my info
+- [ ] Add multiple language support
+- [ ] Add ascii art of my face :)
+- [ ] Add start menu
+- [ ] Add weather widget
+- [ ] Make fully responsive
+- [ ] Add turn off animation, and turn of button in start menu
+- [ ] Add fullscreen mode in start menu
+- [X] Add animated window borders (https://codepen.io/alphardex/pen/vYEYGzp)
