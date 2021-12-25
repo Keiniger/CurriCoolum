@@ -7,42 +7,56 @@ import Window from "./components/window/Window";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
 
+const textIcon = <FontAwesomeIcon icon={faFileAlt} />
+const files = [
+  {
+    id: 1,
+    index: Date.now(),
+    title: "Portfolio.js",
+    icon: textIcon,
+    text: "Aca van proyectos de mi portfolio.",
+    isMaximized: false,
+    isVisible: true,
+    isOnTaskbar: true,
+    isSelected: false,
+    width: 0.5,
+    height: 0.6,
+    x: 0.1,
+    y: 0.1,
+  },
+  {
+    id: 2,
+    index: Date.now(),
+    title: "Conocimientos.doc",
+    icon: textIcon,
+    text: "Aca van lenguajes, frameworks, etc.",
+    isMaximized: false,
+    isVisible: true,
+    isOnTaskbar: true,
+    isSelected: false,
+    width: 0.5,
+    height: 0.6,
+    x: 0.05,
+    y: 0.2,
+  },
+  {
+    id: 3,
+    index: Date.now(),
+    title: "Intereses.txt",
+    icon: textIcon,
+    text: "Aca van mis pasatiempos.",
+    isMaximized: false,
+    isVisible: true,
+    isOnTaskbar: true,
+    isSelected: true,
+    width: 0.5,
+    height: 0.6,
+    x: 0.2,
+    y: 0.3,
+  },
+];
+
 function App() {
-  const textIcon = <FontAwesomeIcon icon={faFileAlt} />
-  const files = [
-    {
-      id: 1,
-      index: 1,
-      title: "Portfolio.js",
-      icon: textIcon,
-      text: "Aca van proyectos de mi portfolio.",
-      isMaximized: false,
-      isVisible: true,
-      isOnTaskbar: true,
-      x: 0.2,
-      y: 0.3,
-    },
-    {
-      id: 2,
-      index: 2,
-      title: "Conocimientos.doc",
-      icon: textIcon,
-      text: "Aca van lenguajes, frameworks, etc.",
-      isMaximized: false,
-      isVisible: true,
-      isOnTaskbar: true,
-    },
-    {
-      id: 3,
-      index: 3,
-      title: "Intereses.txt",
-      icon: textIcon,
-      text: "Aca van mis pasatiempos.",
-      isMaximized: false,
-      isVisible: true,
-      isOnTaskbar: true,
-    },
-  ];
   const [filesState, setFilesState] = useState(files);
 
   function getElement(id) {
@@ -97,6 +111,15 @@ function App() {
           listWithoutElement.forEach(file=>windowAction("minimize", file.id));  
         }
         toggle("maximize", element.id)
+      } break;
+      case "updateTimestamp":{
+        const newElement = { ...element, index: Date.now() };
+        setFilesState([...listWithoutElement, newElement]);
+      } break;
+      case "select":{
+        listWithoutElement = listWithoutElement.map((file) => ({...file, isSelected: false}))
+        const newElement = { ...element, isSelected: true };
+        setFilesState([...listWithoutElement, newElement]);
       } break;
       default: console.log("Action error.");
     }

@@ -1,9 +1,20 @@
-.windowButtonsContainer{
-    display: flex;
-  justify-content: space-between;
+.windowHeader{
+  display: flex;
 }
 
 .windowTitle {
   text-shadow: white 0 0 1px, white 0 0 2px, white 0 0 3px, white 0 0 4px;
-  color: white;
+  color: #ffffff;
+  margin-left: 8px;
+}
+
+.windowButton{
+  margin-left: 5px;
+  margin-top: 15px;
+}
+
+.windowButtonsContainer{
+  margin-left: auto;
+  width: 70px;
+  align-content: flex-end;
 }

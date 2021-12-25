@@ -8,9 +8,9 @@ export default function OpenedFilesContainer({ files, toggle }) {
     {files.filter(file=>(
         file.isOnTaskbar
       )).sort((a,b)=>(
-        a.id-b.id
+        a.index-b.index
       )).map((file) =>(
-        <OpenedFile file={file} toggle={toggle} key={file.title.toString()} />
+        <OpenedFile file={file} toggle={toggle} key={file.title.toString()}/>
       ))}
     </div>
   );

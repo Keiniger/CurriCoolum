@@ -1,12 +1,57 @@
+@keyframes moving-borders {
+  0% {
+    border: 3px solid transparent;
+    border-image: linear-gradient(0deg, #EE5179 , #18FF9F);
+    border-image-slice: 1;
+  }
+  25% {
+    border: 3px solid transparent;
+    border-image: linear-gradient(90deg, #EE5179 , #18FF9F);
+    border-image-slice: 1;
+  }
+  50% {
+    border: 3px solid transparent;
+    border-image: linear-gradient(180deg, #EE5179 , #18FF9F);
+    border-image-slice: 1;
+  }
+  75% {
+    border: 3px solid transparent;
+    border-image: linear-gradient(270deg, #EE5179 , #18FF9F);
+    border-image-slice: 1;
+  }
+  100% {
+    border: 3px solid transparent;
+    border-image: linear-gradient(360deg, #EE5179 , #18FF9F);
+    border-image-slice: 1;
+  }
+}
+
 .Rnd {
   cursor: default !important;
-  background-color: rgba(0, 0, 0, 30%);
-  backdrop-filter: blur(6px);
-  border: 1px solid white;
-  box-shadow: white 0 0 8px;
+  background-color: rgba(0, 0, 0, 60%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(30px) ;
+  box-shadow: black 0 0 30px;
+
+  border: 3px solid transparent;
+  border-image: linear-gradient(45deg, #9019F8 , #18FF9F);
+  border-image-slice: 1;
+}
+
+.RndSelected {
+  cursor: default !important;
+  background-color: rgba(0, 0, 0, 60%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(30px) ;
+  box-shadow: black 0 0 30px;
+
+  animation-name: moving-borders;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
 }
 
 h2 {
   text-shadow: white 0 0 1px, white 0 0 2px, white 0 0 3px, white 0 0 4px;
   color: white;
+  margin: 2rem;
 }

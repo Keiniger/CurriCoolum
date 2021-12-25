@@ -1,9 +1,9 @@
 ## To do:
 
-[ ] - Beautify window borders
+[X] - Beautify window borders
 [ ] - Beautify opened taskbar files
-[ ] - Delete randomized window position at startup
-[ ] - Add maximize functionality
+[X] - Delete randomized window position at startup
+[X] - Add maximize functionality
 [ ] - Change style of file when hovered
 [ ] - Change style of file when clicked
 [ ] - Add drag and drop for file icons and opened files in taskbar
@@ -12,4 +12,4 @@
 [ ] - Add ascii art of my face :)
 [ ] - Add start menu
 [ ] - Add weather widget
-[ ] - Add animated window borders (https://codepen.io/alphardex/pen/vYEYGzp)
+[X] - Add animated window borders (https://codepen.io/alphardex/pen/vYEYGzp)
