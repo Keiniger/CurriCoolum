@@ -4,57 +4,9 @@ import background from "./assets/tron.mp4";
 import FileContainer from "./components/file/FileContainer";
 import Taskbar from "./components/taskbar/Taskbar";
 import Window from "./components/window/Window";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
-
-const textIcon = <FontAwesomeIcon icon={faFileAlt} />
-const files = [
-  {
-    id: 1,
-    index: Date.now() + 1,
-    title: "Portfolio.js",
-    icon: textIcon,
-    text: <h2> Aca van proyectos de mi portfolio. </h2>,
-    isMaximized: false,
-    isVisible: true,
-    isOnTaskbar: true,
-    isSelected: false,
-    width: 0.5,
-    height: 0.6,
-    x: 0.1,
-    y: 0.1,
-  },
-  {
-    id: 2,
-    index: Date.now() + 2,
-    title: "Conocimientos.doc",
-    icon: textIcon,
-    text: <h2>Aca van lenguajes, frameworks, etc.</h2>,
-    isMaximized: false,
-    isVisible: true,
-    isOnTaskbar: true,
-    isSelected: false,
-    width: 0.5,
-    height: 0.6,
-    x: 0.05,
-    y: 0.2,
-  },
-  {
-    id: 3,
-    index: Date.now() + 3,
-    title: "Intereses.txt",
-    icon: textIcon,
-    text: <h2>Aca van mis pasatiempos.</h2>,
-    isMaximized: false,
-    isVisible: true,
-    isOnTaskbar: true,
-    isSelected: true,
-    width: 0.5,
-    height: 0.6,
-    x: 0.2,
-    y: 0.3,
-  },
-];
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
+import files from "./Contents";
 
 function App() {
   const [filesState, setFilesState] = useState(files);
@@ -69,79 +21,149 @@ function App() {
     return filesState.filter((file) => file.id !== id);
   }
 
-  function toggle(type, id) {
-    var element = getElement(id);
-    var listWithoutElement = removeElement(id);
+  function windowAction(type, id) {
+    let element = getElement(id);
+    let listWithoutElement = removeElement(id);
     switch (type) {
-      case "maximize":{
-          const newElement = { ...element, isMaximized: !element.isMaximized };
-          setFilesState([...listWithoutElement, newElement]);
-        } break;
-      case "visible":{
-          const newElement = { ...element, isVisible: !element.isVisible };
-          setFilesState([...listWithoutElement, newElement]);
-        } break;
-      case "onTaskbar":{
-          const newElement = { ...element, isOnTaskbar: !element.isOnTaskbar };
-          setFilesState([...listWithoutElement, newElement]);
-        } break;
-      default: console.log("Toggle error.");
-    }
-  }
-
-  function windowAction(type, id){
-    var element = getElement(id);
-    var listWithoutElement = removeElement(id);
-    switch(type){
-      case "close":{
-        const newElement = { ...element, isVisible: false, isOnTaskbar: false };
-        setFilesState([...listWithoutElement, newElement]);
-      } break;
-      case "open":{
-        const newElement = { ...element, isVisible: true, isOnTaskbar: true };
-        setFilesState([...listWithoutElement, newElement]);
-      } break;
-      case "minimize":{
-        const newElement = { ...element, isVisible: false, isOnTaskbar: true };
-        setFilesState([...listWithoutElement, newElement]);
-      } break;
-      case "maximize":{
-        if(element.isMaximized){
-          listWithoutElement.forEach(file=>toggle("visible", file.id));
-        } else {
-          listWithoutElement.forEach(file=>windowAction("minimize", file.id));  
+      case "toggle-maximize":
+        {
+          /*
+          if (element.isMaximized) {
+            listWithoutElement.forEach((file) =>
+              windowAction("toggle-visible", file.id)
+            );
+          } else {
+            listWithoutElement.forEach((file) =>
+              windowAction("make-minimize", file.id)
+            );
+          }*/
+          setFilesState([
+            ...listWithoutElement,
+            { ...element, isMaximized: !element.isMaximized },
+          ]);
         }
-        toggle("maximize", element.id)
-      } break;
-      case "updateTimestamp":{
-        setDate(Date.now())
-        const newElement = { ...element, index: Date.now() };
-        setFilesState([...listWithoutElement, newElement]);
-      } break;
-      case "select":{
-        listWithoutElement = listWithoutElement.map((file) => ({...file, isSelected: false}))
-        const newElement = { ...element, isSelected: true };
-        setFilesState([...listWithoutElement, newElement]);
-      } break;
-      default: console.log("Action error.");
-    }
-  }
+        break;
+      case "toggle-visible":
+        {
+          let properties = { isVisible: !element.isVisible };
 
-  let windows = <div />;
-  if (Array.isArray(filesState)) {
-    windows = filesState.map((file) => (
-        <Window file={file} 
-        windowAction={windowAction}
-        key={file.id.toString()} />
-      ));
+          if (!element.isVisible) {
+            properties = { ...properties, isSelected: true };
+            listWithoutElement = listWithoutElement.map((file) => ({
+              ...file,
+              isSelected: false,
+            }));
+          }
+          setFilesState([...listWithoutElement, { ...element, ...properties }]);
+        }
+        break;
+      case "make-close":
+        {
+          setFilesState([
+            ...listWithoutElement,
+            {
+              ...element,
+              isVisible: false,
+              isOnTaskbar: false,
+            },
+          ]);
+        }
+        break;
+      case "make-visible":
+        {
+          let max_z =
+            Math.max.apply(
+              Math,
+              filesState.map((file) => {
+                return file.z_index;
+              })
+            ) + 1;
+
+          listWithoutElement = listWithoutElement.map((file) => ({
+            ...file,
+            isSelected: false,
+          }));
+          setFilesState([
+            ...listWithoutElement,
+            {
+              ...element,
+              isSelected: true,
+              isVisible: true,
+              isOnTaskbar: true,
+              z_index: max_z,
+            },
+          ]);
+        }
+        break;
+      case "make-open":
+        {
+          listWithoutElement = listWithoutElement.map((file) => ({
+            ...file,
+            isSelected: false,
+          }));
+
+          let max_z =
+            Math.max.apply(
+              Math,
+              filesState.map((file) => {
+                return file.z_index;
+              })
+            ) + 1;
+          let indexProperties = {
+            z_index: max_z,
+          };
+
+          if (!element.isOnTaskbar) {
+            let max_x =
+              Math.max.apply(
+                Math,
+                filesState.map((file) => {
+                  return file.x_index;
+                })
+              ) + 1;
+            indexProperties = {
+              ...indexProperties,
+              x_index: max_x,
+            };
+          }
+          setFilesState([
+            ...listWithoutElement,
+            {
+              ...element,
+              isSelected: true,
+              isVisible: true,
+              isOnTaskbar: true,
+              ...indexProperties,
+            },
+          ]);
+        }
+        break;
+      case "make-minimize":
+        {
+          setFilesState([
+            ...listWithoutElement,
+            {
+              ...element,
+              isVisible: false,
+              isOnTaskbar: true,
+            },
+          ]);
+        }
+        break;
+      default:
+        console.log("Action error.");
+    }
   }
 
   return (
     <div className="App">
       <video src={background} playsInline autoPlay muted loop id="bgvid" />
-      <FileContainer files={filesState} windowAction={windowAction}/>
-      {windows}
-      <Taskbar files={filesState} toggle={toggle} windowAction={windowAction}/>
+      <FileContainer files={filesState} windowAction={windowAction} />
+      {Array.isArray(filesState) &&
+        filesState.map((file) => (
+          <Window file={file} windowAction={windowAction} key={file.id} />
+        ))}
+      <Taskbar files={filesState} windowAction={windowAction} />
     </div>
   );
 }

@@ -2,12 +2,8 @@ import React from "react";
 import styles from "./File.module.css";
 
 export default function File({ file, windowAction }) {
-  function openWindowHandler(){
-    if(!file.isOnTaskbar){
-      windowAction("updateTimestamp", file.id)
-    }
-    windowAction("open", file.id);
-    windowAction("select", file.id);
+  function openWindowHandler() {
+    windowAction("make-open", file.id);
   }
   return (
     <button className={styles.file} onClick={openWindowHandler}>

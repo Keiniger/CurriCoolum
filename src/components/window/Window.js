@@ -4,14 +4,14 @@ import { Rnd } from "react-rnd";
 import styles from "./Window.module.css";
 import WindowButtons from "./WindowButtons";
 
-export default function Window({ file, toggle, windowAction }) {
+export default function Window({ file, windowAction }) {
   const rnd = useRef(null);
   const [wasMaximized, setWasMaximized] = useState(false);
   const [prevSize, setPrevSize] = useState({ width: 0, height: 0 });
   const [prevPosition, setPrevPosition] = useState({ x: 0, y: 0 });
   const { browserHeight, browserWidth } = useWindowDimensions();
 
-/*
+  /*
   // Handles window reposition and resizing when browser size changes, can't make it work :()
   const [beforeAfterRatio, setBeforeAfterRatio] = useState({
     height: 1,
@@ -45,8 +45,7 @@ export default function Window({ file, toggle, windowAction }) {
 
   function toTop() {
     //windowAction("open", file.id);
-    windowAction("updateTimestamp", file.id);
-    windowAction("select", file.id);
+    windowAction("make-open", file.id);
   }
 
   function getCurrentSize() {
@@ -89,7 +88,8 @@ export default function Window({ file, toggle, windowAction }) {
       setWasMaximized(false);
     }
   }, [file.isMaximized, browserHeight, browserWidth]);
-
+  console.log(file);
+  console.log(rnd.current);
   return (
     <Rnd
       className={file.isSelected ? styles.RndSelected : styles.Rnd}
@@ -107,16 +107,15 @@ export default function Window({ file, toggle, windowAction }) {
       ref={rnd}
       disableDragging={file.isMaximized}
       enableResizing={!file.isMaximized}
-      style={{ visibility: file.isVisible ? "visible" : "hidden" }}
+      style={{
+        visibility: file.isVisible ? "visible" : "hidden",
+        zIndex: file.z_index,
+      }}
       onMouseDown={toTop}
       onResizeStart={toTop}
     >
-        <WindowButtons
-          file={file}
-          toggle={toggle}
-          windowAction={windowAction}
-        />
-        {file.text}
+      <WindowButtons file={file} windowAction={windowAction} />
+      {file.text}
     </Rnd>
   );
 }
