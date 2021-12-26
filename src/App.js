@@ -11,10 +11,10 @@ const textIcon = <FontAwesomeIcon icon={faFileAlt} />
 const files = [
   {
     id: 1,
-    index: Date.now(),
+    index: Date.now() + 1,
     title: "Portfolio.js",
     icon: textIcon,
-    text: "Aca van proyectos de mi portfolio.",
+    text: <h2> Aca van proyectos de mi portfolio. </h2>,
     isMaximized: false,
     isVisible: true,
     isOnTaskbar: true,
@@ -26,10 +26,10 @@ const files = [
   },
   {
     id: 2,
-    index: Date.now(),
+    index: Date.now() + 2,
     title: "Conocimientos.doc",
     icon: textIcon,
-    text: "Aca van lenguajes, frameworks, etc.",
+    text: <h2>Aca van lenguajes, frameworks, etc.</h2>,
     isMaximized: false,
     isVisible: true,
     isOnTaskbar: true,
@@ -41,10 +41,10 @@ const files = [
   },
   {
     id: 3,
-    index: Date.now(),
+    index: Date.now() + 3,
     title: "Intereses.txt",
     icon: textIcon,
-    text: "Aca van mis pasatiempos.",
+    text: <h2>Aca van mis pasatiempos.</h2>,
     isMaximized: false,
     isVisible: true,
     isOnTaskbar: true,
@@ -58,6 +58,7 @@ const files = [
 
 function App() {
   const [filesState, setFilesState] = useState(files);
+  const [date, setDate] = useState(Date.now());
 
   function getElement(id) {
     return filesState.find((file) => file.id === id);
@@ -113,6 +114,7 @@ function App() {
         toggle("maximize", element.id)
       } break;
       case "updateTimestamp":{
+        setDate(Date.now())
         const newElement = { ...element, index: Date.now() };
         setFilesState([...listWithoutElement, newElement]);
       } break;
@@ -139,7 +141,7 @@ function App() {
       <video src={background} playsInline autoPlay muted loop id="bgvid" />
       <FileContainer files={filesState} windowAction={windowAction}/>
       {windows}
-      <Taskbar files={filesState} toggle={toggle}/>
+      <Taskbar files={filesState} toggle={toggle} windowAction={windowAction}/>
     </div>
   );
 }

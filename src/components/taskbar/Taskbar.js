@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./Taskbar.module.css";
 import OpenedFilesContainer from "./OpenedFilesContainer";
 
-export default function Taskbar({files, toggle}) {
+export default function Taskbar({files, toggle, windowAction}) {
   const [date, setDate] = useState( new Date().toLocaleString("es-AR") );
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function Taskbar({files, toggle}) {
       <hr />
       <div className={styles.taskbar}>
         <button className={styles.start}> Start </button>
-        <OpenedFilesContainer className={styles.openedFiles} files={files} toggle={toggle} />
+        <OpenedFilesContainer className={styles.openedFiles} files={files} toggle={toggle} windowAction={windowAction}/>
         <button className={styles.time}> {date} </button>
       </div>
     </>

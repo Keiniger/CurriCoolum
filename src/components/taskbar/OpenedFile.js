@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./OpenedFile.module.css"
 
-export default function OpenedFile({ file, toggle }) {
+export default function OpenedFile({ file, toggle, windowAction }) {
   function makeVisible(){
     toggle("visible",file.id);
+    windowAction("select", file.id);
   }
 
   return (

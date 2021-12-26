@@ -9,12 +9,44 @@ export default function Window({ file, toggle, windowAction }) {
   const [wasMaximized, setWasMaximized] = useState(false);
   const [prevSize, setPrevSize] = useState({ width: 0, height: 0 });
   const [prevPosition, setPrevPosition] = useState({ x: 0, y: 0 });
-  const { maxHeight, maxWidth } = useWindowDimensions();
+  const { browserHeight, browserWidth } = useWindowDimensions();
+
+/*
+  // Handles window reposition and resizing when browser size changes, can't make it work :()
+  const [beforeAfterRatio, setBeforeAfterRatio] = useState({
+    height: 1,
+    width: 1,
+    ratio_x: 1,
+    ratio_y: 1,
+  });
+  useEffect(() => {
+    console.log(beforeAfterRatio);
+
+    let currentSize = getCurrentSize();
+    let currentPosition = getCurrentPosition();
+    
+    setBeforeAfterRatio((prevState) => ({
+      height: browserHeight,
+      width: browserWidth,
+      ratio_x: prevState.height/browserHeight,
+      ratio_y: prevState.width/browserWidth,
+    }));
+    
+    rnd.current.updateSize({
+      width: currentSize.width * beforeAfterRatio.ratio_x,
+      height: currentSize.height * beforeAfterRatio.ratio_y,
+    });
+    rnd.current.updatePosition({
+      x: currentPosition.x * beforeAfterRatio.ratio_x,
+      y: currentPosition.y * beforeAfterRatio.ratio_y,
+    });
+  }, [browserHeight, browserWidth]);
+*/
 
   function toTop() {
-    windowAction("open", file.id);
+    //windowAction("open", file.id);
+    windowAction("updateTimestamp", file.id);
     windowAction("select", file.id);
-
   }
 
   function getCurrentSize() {
@@ -27,12 +59,12 @@ export default function Window({ file, toggle, windowAction }) {
   function getCurrentPosition() {
     return rnd.current.originalPosition;
   }
-  
+
   useEffect(() => {
     function maximize() {
       rnd.current.updateSize({
-        width: maxWidth,
-        height: maxHeight - 34,
+        width: browserWidth,
+        height: browserHeight - 34,
       });
       rnd.current.updatePosition({
         x: 0,
@@ -56,36 +88,35 @@ export default function Window({ file, toggle, windowAction }) {
       demaximize(prevSize, prevPosition);
       setWasMaximized(false);
     }
-  }, [file.isMaximized, maxHeight, maxWidth]);
+  }, [file.isMaximized, browserHeight, browserWidth]);
 
   return (
     <Rnd
-      className={file.isSelected? styles.RndSelected : styles.Rnd}
+      className={file.isSelected ? styles.RndSelected : styles.Rnd}
       bounds="window"
       minHeight="200"
       minWidth="200"
-      maxHeight={maxHeight}
-      maxWidth={maxWidth}
+      maxHeight={browserHeight}
+      maxWidth={browserWidth}
       default={{
-        y: file.y * maxHeight,
-        x: file.x * maxWidth,
-        height: file.height * maxHeight,
-        width: file.width * maxWidth,
+        y: file.y * browserHeight,
+        x: file.x * browserWidth,
+        height: file.height * browserHeight,
+        width: file.width * browserWidth,
       }}
       ref={rnd}
       disableDragging={file.isMaximized}
       enableResizing={!file.isMaximized}
       style={{ visibility: file.isVisible ? "visible" : "hidden" }}
       onMouseDown={toTop}
+      onResizeStart={toTop}
     >
-      <div>
         <WindowButtons
           file={file}
           toggle={toggle}
           windowAction={windowAction}
         />
-        <h2>{file.text}</h2>
-      </div>
+        {file.text}
     </Rnd>
   );
 }

@@ -7,6 +7,7 @@ export default function File({ file, windowAction }) {
       windowAction("updateTimestamp", file.id)
     }
     windowAction("open", file.id);
+    windowAction("select", file.id);
   }
   return (
     <button className={styles.file} onClick={openWindowHandler}>

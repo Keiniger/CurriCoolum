@@ -1,9 +1,11 @@
 ## To do:
 
 - [X] Beautify window borders
-- [ ] Beautify opened taskbar files
+- [X] Beautify opened taskbar files
 - [X] Delete randomized window position at startup
 - [X] Add maximize functionality
+- [ ] Change everything to useContext and useReducer
+- [ ] Fix "updateTimestamp" bug
 - [ ] Change window positions and size when browser is resized
 - [ ] Fix window select bug
 - [ ] Change style of file when clicked
