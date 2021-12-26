@@ -55,3 +55,9 @@ h2 {
   color: white;
   margin: 2rem;
 }
+
+p {
+  text-shadow: white 0 0 1px, white 0 0 2px, white 0 0 3px, white 0 0 4px;
+  color: white;
+  margin: 2rem;
+}

@@ -1,20 +1,24 @@
-.windowHeader{
+.windowHeader {
   display: flex;
+  justify-content: space-between;
+  height: 2em;
+  background-color: rgba(255,255,255,10%);
+  padding-top: 5px;
 }
 
 .windowTitle {
   text-shadow: white 0 0 1px, white 0 0 2px, white 0 0 3px, white 0 0 4px;
   color: #ffffff;
-  margin-left: 8px;
+  margin: 5px 10px 0px;
 }
 
-.windowButton{
-  margin-left: 5px;
-  margin-top: 15px;
+.windowButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  margin-right: 17px;
+  margin-bottom: 5px;
 }
 
-.windowButtonsContainer{
-  margin-left: auto;
-  width: 70px;
-  align-content: flex-end;
+.windowButton {
+  margin-left: 10px;
 }
