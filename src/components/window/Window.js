@@ -115,7 +115,9 @@ export default function Window({ file, windowAction }) {
       onResizeStart={toTop}
     >
       <WindowButtons file={file} windowAction={windowAction} />
+      <div className="text">
       {file.text}
+      </div>
     </Rnd>
   );
 }

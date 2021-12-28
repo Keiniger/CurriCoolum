@@ -65,3 +65,9 @@ p {
   color: white;
   margin: 2rem;
 }
+
+.text {
+  position: sticky;
+  top: 2em;
+  display:inline-block;
+}
