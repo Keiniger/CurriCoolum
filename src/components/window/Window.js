@@ -94,8 +94,8 @@ export default function Window({ file, windowAction }) {
     <Rnd
       className={file.isSelected ? styles.RndSelected : styles.Rnd}
       bounds="window"
-      minHeight="200"
-      minWidth="200"
+      minHeight="300"
+      minWidth="300"
       maxHeight={browserHeight}
       maxWidth={browserWidth}
       default={{

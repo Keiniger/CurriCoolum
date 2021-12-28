@@ -1,15 +1,25 @@
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
-::-moz-selection { /* Code for Firefox */
-    color: #000000;
-    background: #3FEF9E;
-    text-shadow: black 0 0 1px, black 0 0 2px;
-  }
-  
-  ::selection {
-    color: #000000;
-    background: #3FEF9E;
-    text-shadow: black 0 0 1px, black 0 0 2px;
+::-moz-selection {
+  /* Code for Firefox */
+  color: #000000;
+  background: #3fef9e;
+  text-shadow: black 0 0 1px, black 0 0 2px;
+}
+
+::selection {
+  color: #000000;
+  background: #3fef9e;
+  text-shadow: black 0 0 1px, black 0 0 2px;
+}
+
+html,
+body {
+  scroll: no;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  margin: 0;
+  height: 100%;
 }

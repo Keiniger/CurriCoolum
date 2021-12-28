@@ -8,3 +8,9 @@
   left: 0;
   z-index: -1;
 }
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  padding-bottom: 2em;
+}

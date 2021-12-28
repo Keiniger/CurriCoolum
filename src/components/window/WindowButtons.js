@@ -22,9 +22,7 @@ export default function WindowButtons({ file, windowAction }) {
 
   return (
     <div className={styles.windowHeader}>
-      <div>
-        <p className={styles.windowTitle}> {file.title} </p>
-      </div>
+      <p className={styles.windowTitle}> {file.title} </p>
       <div className={styles.windowButtonsContainer}>
         <button className={styles.windowButton} onClick={minimizeHandler}> {minimizeIcon} </button>
         <button className={styles.windowButton} onClick={maximizeHandler}> {maximizeIcon} </button>
