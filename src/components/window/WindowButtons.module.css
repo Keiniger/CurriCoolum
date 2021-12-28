@@ -1,5 +1,4 @@
 .windowHeader {
-  display: block;
   display: flex;
   justify-content: space-between;
   height: 2em;

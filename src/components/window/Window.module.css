@@ -33,8 +33,6 @@
   -webkit-backdrop-filter: blur(30px) ;
   box-shadow: black 0 0 30px;
 
-  overflow: auto !important;
-
   border: 3px solid transparent;
   border-image: linear-gradient(45deg, #9019F8 , #18FF9F);
   border-image-slice: 1;
@@ -46,8 +44,6 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(30px) ;
   box-shadow: black 0 0 30px;
-
-  overflow: auto !important;
   
   animation-name: moving-borders;
   animation-duration: 8s;
@@ -66,8 +62,10 @@ p {
   margin: 2rem;
 }
 
-.text {
-  position: sticky;
-  top: 2em;
-  display:inline-block;
+.contents {
+  margin: 0;
+  cursor: text;
+  height: calc(100% - 37px);
+  scroll-behavior: smooth;
+  overflow-y: scroll !important;
 }

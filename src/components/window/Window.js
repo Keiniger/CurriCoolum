@@ -44,7 +44,6 @@ export default function Window({ file, windowAction }) {
 */
 
   function toTop() {
-    //windowAction("open", file.id);
     windowAction("make-open", file.id);
   }
 
@@ -69,10 +68,12 @@ export default function Window({ file, windowAction }) {
         x: 0,
         y: 0,
       });
+      setWasMaximized(true);
     }
     function demaximize(size, position) {
       rnd.current.updateSize(size);
       rnd.current.updatePosition(position);
+      setWasMaximized(false);
     }
 
     if (file.isMaximized) {
@@ -82,14 +83,11 @@ export default function Window({ file, windowAction }) {
       setPrevSize(currentSize);
       setPrevPosition(currentPosition);
       maximize();
-      setWasMaximized(true);
     } else if (wasMaximized) {
       demaximize(prevSize, prevPosition);
-      setWasMaximized(false);
     }
   }, [file.isMaximized, browserHeight, browserWidth]);
-  console.log(file);
-  console.log(rnd.current);
+
   return (
     <Rnd
       className={file.isSelected ? styles.RndSelected : styles.Rnd}
@@ -115,8 +113,8 @@ export default function Window({ file, windowAction }) {
       onResizeStart={toTop}
     >
       <WindowButtons file={file} windowAction={windowAction} />
-      <div className="text">
-      {file.text}
+      <div className={styles.contents} onMouseDown={()=>null}>
+        {file.text}
       </div>
     </Rnd>
   );
