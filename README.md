@@ -4,8 +4,10 @@
 - [X] Beautify opened taskbar files
 - [X] Delete randomized window position at startup
 - [X] Add maximize functionality
-- [ ] Change everything to useContext and useReducer
 - [X] Fix "updateTimestamp" bug
+- [X] Add popups
+- [ ] Change window button color on hover
+- [ ] Change popup background
 - [ ] Change window positions and size when browser is resized
 - [X] Fix window select bug
 - [ ] Change style of file when clicked
@@ -18,6 +20,7 @@
 - [ ] Add start menu
 - [ ] Add weather widget
 - [ ] Make fully responsive
+- [ ] Add containers
 - [ ] Add turn-off animation, and turn-off button in start menu
 - [ ] Add fullscreen mode in start menu
 - [X] Add animated window borders (https://codepen.io/alphardex/pen/vYEYGzp)

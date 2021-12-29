@@ -41,7 +41,7 @@ button {
 .time {
   border-left: 2px solid #23ff9c;
   margin-left: auto;
-  width: 200px;
+  width: 210px;
 }
 
 @media (max-width: 900px){

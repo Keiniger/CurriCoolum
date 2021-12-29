@@ -71,6 +71,7 @@ export default function Window({ file, windowAction }) {
     });
     setWasMaximized(true);
   }
+
   function demaximize(size, position) {
     rnd.current.updateSize(size);
     rnd.current.updatePosition(position);
@@ -95,7 +96,7 @@ export default function Window({ file, windowAction }) {
     let currentPosition = getCurrentPosition();
 
     let popupWindow = window.open(
-      "",
+      `${window.location.origin}/popup/${file.id}`,
       file.title,
       `width=${currentSize.width},height=${currentSize.height - 32},left=${
         currentPosition.x - 7
@@ -105,23 +106,17 @@ export default function Window({ file, windowAction }) {
     );
 
     popupWindow.onbeforeunload = function () {
-      let popupPosition = {
-        x: popupWindow.screenX,
-        y: popupWindow.screenY,
-      };
-
-      let popupSize = {
-        width: popupWindow.innerWidth,
-        height: popupWindow.innerHeight,
-      };
-
-      if (!file.isMaximized) {
-        rnd.current.updatePosition(popupPosition);
-        rnd.current.updateSize(popupSize);
-        console.log(popupPosition);
-        console.log(popupSize);
-      }
       windowAction("make-open", file.id);
+      if (!file.isMaximized) {
+        rnd.current.updatePosition({
+          x: popupWindow.screenX,
+          y: popupWindow.screenY,
+        });
+        rnd.current.updateSize({
+          width: popupWindow.innerWidth,
+          height: popupWindow.innerHeight,
+        });
+      }
     };
 
     console.log(popupWindow);
