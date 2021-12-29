@@ -9,6 +9,7 @@ export default function Window({ file, windowAction }) {
   const [wasMaximized, setWasMaximized] = useState(false);
   const [prevSize, setPrevSize] = useState({ width: 0, height: 0 });
   const [prevPosition, setPrevPosition] = useState({ x: 0, y: 0 });
+  const [disableDragging, setDisableDragging] = useState(false);
   const { browserHeight, browserWidth } = useWindowDimensions();
 
   /*
@@ -58,28 +59,27 @@ export default function Window({ file, windowAction }) {
     return rnd.current.originalPosition;
   }
 
-  useEffect(() => {
-    function maximize() {
-      rnd.current.updateSize({
-        width: browserWidth,
-        height: browserHeight - 34,
-      });
-      rnd.current.updatePosition({
-        x: 0,
-        y: 0,
-      });
-      setWasMaximized(true);
-    }
-    function demaximize(size, position) {
-      rnd.current.updateSize(size);
-      rnd.current.updatePosition(position);
-      setWasMaximized(false);
-    }
+  function maximize() {
+    rnd.current.updateSize({
+      width: browserWidth,
+      height: browserHeight - 34,
+    });
+    rnd.current.updatePosition({
+      x: 0,
+      y: 0,
+    });
+    setWasMaximized(true);
+  }
+  function demaximize(size, position) {
+    rnd.current.updateSize(size);
+    rnd.current.updatePosition(position);
+    setWasMaximized(false);
+  }
 
+  useEffect(() => {
     if (file.isMaximized) {
       let currentSize = getCurrentSize();
       let currentPosition = getCurrentPosition();
-
       setPrevSize(currentSize);
       setPrevPosition(currentPosition);
       maximize();
@@ -103,19 +103,26 @@ export default function Window({ file, windowAction }) {
         width: file.width * browserWidth,
       }}
       ref={rnd}
-      disableDragging={file.isMaximized}
+      disableDragging={(file.isMaximized || disableDragging)}
       enableResizing={!file.isMaximized}
       style={{
         visibility: file.isVisible ? "visible" : "hidden",
         zIndex: file.z_index,
       }}
-      onMouseDown={toTop}
+      onDragStart={toTop}
       onResizeStart={toTop}
     >
       <WindowButtons file={file} windowAction={windowAction} />
-      <div className={styles.contents} onMouseDown={(e)=>console.log(e)}>
+      <div
+        className={styles.contents}
+        onMouseEnter={()=>setDisableDragging(true)}
+        onMouseLeave={()=>setDisableDragging(false)}
+        onMouseDown={toTop}
+      >
         {file.text}
       </div>
     </Rnd>
   );
 }
+
+

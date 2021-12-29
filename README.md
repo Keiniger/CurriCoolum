@@ -5,9 +5,9 @@
 - [X] Delete randomized window position at startup
 - [X] Add maximize functionality
 - [ ] Change everything to useContext and useReducer
-- [ ] Fix "updateTimestamp" bug
+- [X] Fix "updateTimestamp" bug
 - [ ] Change window positions and size when browser is resized
-- [ ] Fix window select bug
+- [X] Fix window select bug
 - [ ] Change style of file when clicked
 - [ ] Open window when double clicking file
 - [ ] Add drag and drop for file icons (https://github.com/react-dnd/react-dnd)
@@ -18,6 +18,6 @@
 - [ ] Add start menu
 - [ ] Add weather widget
 - [ ] Make fully responsive
-- [ ] Add turn off animation, and turn of button in start menu
+- [ ] Add turn-off animation, and turn-off button in start menu
 - [ ] Add fullscreen mode in start menu
 - [X] Add animated window borders (https://codepen.io/alphardex/pen/vYEYGzp)

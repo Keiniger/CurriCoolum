@@ -45,7 +45,7 @@
 
 .contents {
   margin: 0;
-  cursor: text;
+  cursor: auto !important;
   height: calc(100% - 37px);
   scroll-behavior: smooth;
   overflow-y: scroll !important;
