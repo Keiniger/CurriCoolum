@@ -1,4 +1,4 @@
-@keyframes moving-borders {
+@-moz-keyframes movingBorders {
   0% {
     border: 3px solid transparent;
     border-image: linear-gradient(0deg, #EE5179 , #18FF9F);
@@ -16,11 +16,71 @@
   }
 }
 
+@-webkit-keyframes movingBorders {
+  0% {
+    border: 3px solid transparent;
+    border-image: linear-gradient(0deg, #EE5179 , #18FF9F);
+    border-image-slice: 1;
+  }
+  50% {
+    border: 3px solid transparent;
+    border-image: linear-gradient(180deg, #EE5179 , #18FF9F);
+    border-image-slice: 1;
+  }
+  100% {
+    border: 3px solid transparent;
+    border-image: linear-gradient(360deg, #EE5179 , #18FF9F);
+    border-image-slice: 1;
+  }
+}
+
+@keyframes movingBorders {
+  0% {
+    border: 3px solid transparent;
+    border-image: linear-gradient(0deg, #EE5179 , #18FF9F);
+    border-image-slice: 1;
+  }
+  50% {
+    border: 3px solid transparent;
+    border-image: linear-gradient(180deg, #EE5179 , #18FF9F);
+    border-image-slice: 1;
+  }
+  100% {
+    border: 3px solid transparent;
+    border-image: linear-gradient(360deg, #EE5179 , #18FF9F);
+    border-image-slice: 1;
+  }
+}
+
+.RndSelected {
+  cursor: default !important;
+  background-color: rgba(0, 0, 0, 60%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  -moz-backdrop-filter: blur(8px);
+  box-shadow: black 0 0 30px;
+  
+  border: 3px solid transparent;
+  border-image-slice: 1;
+  
+  animation-name: movingBorders;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  
+  -webkit-animation-name: movingBorders;
+  -webkit-animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+
+  -moz-animation-name: movingBorders;
+  -moz-animation-duration: 8s;
+  -moz-animation-iteration-count: infinite;
+}
+
 .Rnd {
   cursor: default !important;
   background-color: rgba(0, 0, 0, 60%);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(30px) ;
+  -webkit-backdrop-filter: blur(8px) ;
   box-shadow: black 0 0 30px;
 
   border: 3px solid transparent;
@@ -28,20 +88,12 @@
   border-image-slice: 1;
 }
 
-.RndSelected {
+.RndMaximized {
   cursor: default !important;
   background-color: rgba(0, 0, 0, 60%);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(30px) ;
-  box-shadow: black 0 0 30px;
-  
-  border: 3px solid transparent;
-  animation-name: moving-borders;
-  border-image-slice: 1;
-  animation-duration: 8s;
-  animation-iteration-count: infinite;
 }
-
 
 .contents {
   margin: 0;

@@ -8,7 +8,7 @@ export default function File({ file, windowAction }) {
   return (
     <button className={styles.file} onClick={openWindowHandler}>
       <div className={styles.fileIcon}>{file.icon}</div>
-      <p className={styles.fileText} contenteditable>{file.title}</p>
+      <p className={styles.fileText}>{file.title}</p>
     </button>
   );
 }

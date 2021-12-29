@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./WindowButtons.module.css";
-import minimizeIcon from "./icons/MinimizeIcon.png"
-import maximizeIcon from "./icons/MaximizeIcon.png"
-import closeIcon from "./icons/CloseIcon.png"
+import minimizeIcon from "./icons/MinimizeIcon.png";
+import maximizeIcon from "./icons/MaximizeIcon.png";
+import closeIcon from "./icons/CloseIcon.png";
 
-export default function WindowButtons({ file, windowAction }) {
+export default function WindowButtons({ file, windowAction, popup }) {
   function minimizeHandler() {
     windowAction("make-minimize", file.id);
   }
@@ -18,8 +18,10 @@ export default function WindowButtons({ file, windowAction }) {
   }
 
   return (
-    <div className={styles.windowHeader} >
-      <p className={styles.windowTitle}> {file.title} </p>
+    <div className={styles.windowHeader}>
+      <p className={styles.windowTitle} onClick={popup}>
+        {file.title}
+      </p>
       <div className={styles.windowButtonsContainer}>
         <img id="minimize" src={minimizeIcon} onClick={minimizeHandler} />
         <img id="maximize" src={maximizeIcon} onClick={maximizeHandler} />

@@ -3,6 +3,7 @@ import useWindowDimensions from "./useWindowDimensions";
 import { Rnd } from "react-rnd";
 import styles from "./Window.module.css";
 import WindowButtons from "./WindowButtons";
+import ReactDOMServer from "react-dom/server";
 
 export default function Window({ file, windowAction }) {
   const rnd = useRef(null);
@@ -88,9 +89,53 @@ export default function Window({ file, windowAction }) {
     }
   }, [file.isMaximized, browserHeight, browserWidth]);
 
+  function popup() {
+    windowAction("make-minimize", file.id);
+    let currentSize = getCurrentSize();
+    let currentPosition = getCurrentPosition();
+
+    let popupWindow = window.open(
+      "",
+      file.title,
+      `width=${currentSize.width},height=${currentSize.height - 32},left=${
+        currentPosition.x - 7
+      },top=${
+        currentPosition.y + 33 + 7
+      },location=no,menubar=no,status=no,titlebar=no`
+    );
+
+    popupWindow.onbeforeunload = function () {
+      let popupPosition = {
+        x: popupWindow.screenX,
+        y: popupWindow.screenY,
+      };
+
+      let popupSize = {
+        width: popupWindow.innerWidth,
+        height: popupWindow.innerHeight,
+      };
+
+      if (!file.isMaximized) {
+        rnd.current.updatePosition(popupPosition);
+        rnd.current.updateSize(popupSize);
+        console.log(popupPosition);
+        console.log(popupSize);
+      }
+      windowAction("make-open", file.id);
+    };
+
+    console.log(popupWindow);
+  }
+
   return (
     <Rnd
-      className={file.isSelected ? styles.RndSelected : styles.Rnd}
+      className={
+        file.isMaximized
+          ? styles.RndMaximized
+          : file.isSelected
+          ? styles.RndSelected
+          : styles.Rnd
+      }
       bounds="window"
       minHeight="300"
       minWidth="300"
@@ -103,7 +148,7 @@ export default function Window({ file, windowAction }) {
         width: file.width * browserWidth,
       }}
       ref={rnd}
-      disableDragging={(file.isMaximized || disableDragging)}
+      disableDragging={file.isMaximized || disableDragging}
       enableResizing={!file.isMaximized}
       style={{
         visibility: file.isVisible ? "visible" : "hidden",
@@ -112,11 +157,11 @@ export default function Window({ file, windowAction }) {
       onDragStart={toTop}
       onResizeStart={toTop}
     >
-      <WindowButtons file={file} windowAction={windowAction} />
+      <WindowButtons file={file} windowAction={windowAction} popup={popup} />
       <div
         className={styles.contents}
-        onMouseEnter={()=>setDisableDragging(true)}
-        onMouseLeave={()=>setDisableDragging(false)}
+        onMouseEnter={() => setDisableDragging(true)}
+        onMouseLeave={() => setDisableDragging(false)}
         onMouseDown={toTop}
       >
         {file.text}
@@ -124,5 +169,3 @@ export default function Window({ file, windowAction }) {
     </Rnd>
   );
 }
-
-
