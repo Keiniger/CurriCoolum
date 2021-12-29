@@ -4,19 +4,9 @@
     border-image: linear-gradient(0deg, #EE5179 , #18FF9F);
     border-image-slice: 1;
   }
-  25% {
-    border: 3px solid transparent;
-    border-image: linear-gradient(90deg, #EE5179 , #18FF9F);
-    border-image-slice: 1;
-  }
   50% {
     border: 3px solid transparent;
     border-image: linear-gradient(180deg, #EE5179 , #18FF9F);
-    border-image-slice: 1;
-  }
-  75% {
-    border: 3px solid transparent;
-    border-image: linear-gradient(270deg, #EE5179 , #18FF9F);
     border-image-slice: 1;
   }
   100% {
@@ -45,22 +35,13 @@
   -webkit-backdrop-filter: blur(30px) ;
   box-shadow: black 0 0 30px;
   
+  border: 3px solid transparent;
   animation-name: moving-borders;
+  border-image-slice: 1;
   animation-duration: 8s;
   animation-iteration-count: infinite;
 }
 
-h2 {
-  text-shadow: white 0 0 1px, white 0 0 2px, white 0 0 3px, white 0 0 4px;
-  color: white;
-  margin: 2rem;
-}
-
-p {
-  text-shadow: white 0 0 1px, white 0 0 2px, white 0 0 3px, white 0 0 4px;
-  color: white;
-  margin: 2rem;
-}
 
 .contents {
   margin: 0;

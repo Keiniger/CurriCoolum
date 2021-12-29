@@ -113,7 +113,7 @@ export default function Window({ file, windowAction }) {
       onResizeStart={toTop}
     >
       <WindowButtons file={file} windowAction={windowAction} />
-      <div className={styles.contents} onMouseDown={()=>null}>
+      <div className={styles.contents} onMouseDown={(e)=>console.log(e)}>
         {file.text}
       </div>
     </Rnd>

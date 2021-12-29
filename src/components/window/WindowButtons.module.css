@@ -18,10 +18,42 @@
 .windowButtonsContainer {
   display: flex;
   flex-direction: row;
-  margin-right: 17px;
-  margin-bottom: 5px;
+  margin: 5px 10px 0px;
 }
 
-.windowButton {
+img {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  width: 20px;
+  height: 20px;
   margin-left: 10px;
+}
+
+/*todo: change image color
+img[id=minimize]{
+
+}
+
+img[id=maximize]{
+
+}
+
+img[id=close]{
+
+}
+*/
+
+img[id=minimize]:hover{
+  filter: invert(1) drop-shadow(0 0 3px #19f8b5);
+  -webkit-filter: invert(1) drop-shadow(0 0 3px #19f8b5);
+}
+
+img[id=maximize]:hover{
+  filter: invert(1) drop-shadow(0 0 3px #ffda38);
+  -webkit-filter: invert(1) drop-shadow(0 0 3px #ffda38);
+}
+
+img[id=close]:hover{
+  filter: invert(1) drop-shadow(0 0 3px #EE5179);
+  -webkit-filter: invert(1) drop-shadow(0 0 3px #EE5179);
 }

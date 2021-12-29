@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
+import styles from "./Contents.module.css";
 
 const textIcon = <FontAwesomeIcon icon={faFileAlt} />;
 const files = [
