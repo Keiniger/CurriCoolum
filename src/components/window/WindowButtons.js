@@ -1,8 +1,5 @@
 import React from "react";
 import styles from "./WindowButtons.module.css";
-import minimizeIcon from "./icons/MinimizeIcon.png";
-import maximizeIcon from "./icons/MaximizeIcon.png";
-import closeIcon from "./icons/CloseIcon.png";
 
 export default function WindowButtons({ file, windowAction, popup }) {
   function minimizeHandler() {
@@ -23,9 +20,9 @@ export default function WindowButtons({ file, windowAction, popup }) {
         {file.title}
       </p>
       <div className={styles.windowButtonsContainer}>
-        <img id="minimize" src={minimizeIcon} onClick={minimizeHandler} />
-        <img id="maximize" src={maximizeIcon} onClick={maximizeHandler} />
-        <img id="close" src={closeIcon} onClick={closeHandler} />
+        <img id="minimize" onClick={minimizeHandler} />
+        <img id="maximize" onClick={maximizeHandler} />
+        <img id="close" onClick={closeHandler} />
       </div>
     </div>
   );
