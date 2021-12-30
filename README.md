@@ -6,21 +6,24 @@
 - [X] Add maximize functionality
 - [X] Fix "updateTimestamp" bug
 - [X] Add popups
-- [ ] Change window button color on hover
-- [ ] Change popup background
-- [ ] Change window positions and size when browser is resized
 - [X] Fix window select bug
+- [X] Add animated window borders (https://codepen.io/alphardex/pen/vYEYGzp)
+- [X] Change popup background
+- [ ] Fill resumé with my info
+- [ ] Fix netlify popups
+- [ ] Fix onClose popups not appearing if closed on second window
+- [ ] Change window button color on hover
+- [ ] Add multiple language support
+- [ ] Change window positions and size when browser is resized
 - [ ] Change style of file when clicked
 - [ ] Open window when double clicking file
 - [ ] Add drag and drop for file icons (https://github.com/react-dnd/react-dnd)
 - [ ] Add drag and drop for opened files in taskbar (https://github.com/atlassian/react-beautiful-dnd)
-- [ ] Fill resumé with my info
-- [ ] Add multiple language support
 - [ ] Add ascii art of my face :)
 - [ ] Add start menu
 - [ ] Add weather widget
-- [ ] Make fully responsive
+- [ ] Add retro game through iframe
+- [ ] Make taskbar responsive
 - [ ] Add containers
 - [ ] Add turn-off animation, and turn-off button in start menu
 - [ ] Add fullscreen mode in start menu
-- [X] Add animated window borders (https://codepen.io/alphardex/pen/vYEYGzp)
