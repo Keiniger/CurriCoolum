@@ -1,7 +1,10 @@
-import React from "react";
+import {useContext} from "react";
 import styles from "./WindowButtons.module.css";
+import {windowActionContext} from "../../App";
 
-export default function WindowButtons({ file, windowAction, popup }) {
+export default function WindowButtons({ file, popup }) {
+  const windowAction = useContext(windowActionContext);
+
   function minimizeHandler() {
     windowAction("make-minimize", file.id);
   }
@@ -20,9 +23,9 @@ export default function WindowButtons({ file, windowAction, popup }) {
         {file.title}
       </p>
       <div className={styles.windowButtonsContainer}>
-        <img id="minimize" onClick={minimizeHandler} />
-        <img id="maximize" onClick={maximizeHandler} />
-        <img id="close" onClick={closeHandler} />
+        <img className={styles.windowButton} id="minimize" onClick={minimizeHandler} />
+        <img className={styles.windowButton} id="maximize" onClick={maximizeHandler} />
+        <img className={styles.windowButton} id="close" onClick={closeHandler} />
       </div>
     </div>
   );

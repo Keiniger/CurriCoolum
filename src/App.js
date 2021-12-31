@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React from "react";
+import { useState, createContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import background from "./assets/tron.mp4";
@@ -6,12 +7,12 @@ import FileContainer from "./components/file/FileContainer";
 import Taskbar from "./components/taskbar/Taskbar";
 import Window from "./components/window/Window";
 import Popup from "./components/popup/Popup";
-import files from "./Contents";
+import files from "./components/contents/Contents";
 
+const windowActionContext = createContext();
 
 function App() {
   const [filesState, setFilesState] = useState(files);
-  const [date, setDate] = useState(Date.now());
 
   function getElement(id) {
     return filesState.find((file) => file.id === id);
@@ -44,9 +45,9 @@ function App() {
           ]);
         }
         break;
-        case "toggle-popup":
+      case "toggle-popup":
         {
-            setFilesState([
+          setFilesState([
             ...listWithoutElement,
             { ...element, isPopup: !element.isPopup },
           ]);
@@ -166,30 +167,38 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="App">
-              <video src={background} playsInline autoPlay muted loop id="bgvid" />
-              <FileContainer files={filesState} windowAction={windowAction} />
-              {Array.isArray(filesState) &&
-                filesState.map((file) => (
-                  <Window
-                    file={file}
-                    windowAction={windowAction}
-                    key={file.id}
-                  />
-                ))}
-              <Taskbar files={filesState} windowAction={windowAction} />
-            </div>
-          }
-        />
-        <Route path="popup/:id" element={<Popup files={filesState} windowAction={windowAction}/>} />
-      </Routes>
-    </BrowserRouter>
+    <windowActionContext.Provider value={windowAction}>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="App">
+                <video
+                  /**/
+                  src={background} 
+                  /**/
+                  playsInline
+                  autoPlay
+                  muted
+                  loop
+                  id="bgvid"
+                />
+                <FileContainer files={filesState} />
+                {Array.isArray(filesState) &&
+                  filesState.map((file) => (
+                    <Window file={file} key={file.id} />
+                  ))}
+                <Taskbar files={filesState} />
+              </div>
+            }
+          />
+          <Route path="popup/:id" element={<Popup files={filesState} />} />
+        </Routes>
+      </BrowserRouter>
+    </windowActionContext.Provider>
   );
 }
 
 export default App;
+export { windowActionContext };

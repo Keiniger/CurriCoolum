@@ -1,7 +1,9 @@
-import React from "react";
+import {useContext} from "react";
 import styles from "./OpenedFile.module.css";
+import {windowActionContext} from "../../App";
 
-export default function OpenedFile({ file, windowAction}) {
+export default function OpenedFile({ file}) {
+  const windowAction = useContext(windowActionContext);
   function handleClick() {
     if(file.isVisible) {
       if(!file.isSelected){

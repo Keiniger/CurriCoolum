@@ -1,12 +1,14 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, createContext ,useContext } from "react";
 import useWindowDimensions from "./useWindowDimensions";
 import { Rnd } from "react-rnd";
 import styles from "./Window.module.css";
 import WindowButtons from "./WindowButtons";
 import ReactDOMServer from "react-dom/server";
 import classNames from "classnames";
+import {windowActionContext} from "../../App";
 
-export default function Window({ file, windowAction }) {
+export default function Window({file}) {
+  const windowAction = useContext(windowActionContext);
   const rnd = useRef(null);
   const [wasMaximized, setWasMaximized] = useState(false);
   const [prevSize, setPrevSize] = useState({ width: 0, height: 0 });
@@ -41,7 +43,6 @@ export default function Window({ file, windowAction }) {
     return rnd.current.originalPosition;
   }
 
-
   useEffect(() => {
     function maximize() {
       rnd.current.updateSize({
@@ -68,7 +69,7 @@ export default function Window({ file, windowAction }) {
     } else if (wasMaximized) {
       demaximize(prevSize, prevPosition);
     }
-    
+
     updateContainerWidth();
   }, [file.isMaximized, browserHeight, browserWidth]);
 
@@ -134,15 +135,29 @@ export default function Window({ file, windowAction }) {
       onResizeStart={toTop}
       onResize={updateContainerWidth}
     >
-      <WindowButtons file={file} windowAction={windowAction} popup={popup} />
-      <div
-        className={classNames(styles.container, containerClass)}
-        onMouseEnter={() => setDisableDragging(true)}
-        onMouseLeave={() => setDisableDragging(false)}
-        onMouseDown={toTop}
-      >
-        {file.text}
-      </div>
+      <WindowButtons file={file} popup={popup} />
+
+      {file.content.text !== undefined ? (
+        <div
+          className={classNames(styles.container, containerClass)}
+          onMouseEnter={() => setDisableDragging(true)}
+          onMouseLeave={() => setDisableDragging(false)}
+          onMouseDown={toTop}
+        >
+          {file.content.text}
+        </div>
+      ) : file.content.image !== undefined ? (
+        <img
+          className={styles.image}
+          src={file.content.image}
+          alt={file.content.alt}
+          onMouseEnter={() => setDisableDragging(true)}
+          onMouseLeave={() => setDisableDragging(false)}
+          onMouseDown={toTop}
+        />
+      ) : (
+        "Error"
+      )}
     </Rnd>
   );
 }

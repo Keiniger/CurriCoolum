@@ -26,17 +26,14 @@
 
 img[id=minimize]:hover{
   content: url("./icons/MinimizeIconHover.png");  
-  filter: drop-shadow(0 0 1px #1DFF9C);
 }
 
 img[id=maximize]:hover{
   content: url("./icons/MaximizeIconHover.png");
-  filter: drop-shadow(0 0 1px #F9FF00);
 }
 
 img[id=close]:hover{
   content: url("./icons/CloseIconHover.png");
-  filter: drop-shadow(0 0 1px #F2536B);
 }
 
 img[id=minimize]{
@@ -51,7 +48,8 @@ img[id=close]{
   content: url("./icons/CloseIcon.png");
 }
 
-img {
+.windowButton {
+  filter: drop-shadow(0 0 1px black);
   width: 20px;
   height: 20px;
   margin-left: 10px;

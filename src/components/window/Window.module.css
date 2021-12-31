@@ -55,9 +55,11 @@
 .RndSelected {
   cursor: default !important;
   background-color: rgba(0, 0, 0, 60%);
+  /**/
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   -moz-backdrop-filter: blur(8px);
+  /**/
   box-shadow: black 0 0 30px;
 
   border: 3px solid transparent;
@@ -79,8 +81,10 @@
 .Rnd {
   cursor: default !important;
   background-color: rgba(0, 0, 0, 60%);
+  /**/
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  /**/
   box-shadow: black 0 0 30px;
 
   border: 3px solid transparent;
@@ -91,8 +95,10 @@
 .RndMaximized {
   cursor: default !important;
   background-color: rgba(0, 0, 0, 60%);
+  /**/
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(8px);
+  /**/
 }
 
 .container {
@@ -102,6 +108,17 @@
   margin-left: auto;
   cursor: auto !important;
   height: calc(100% - 37px);
+  scroll-behavior: smooth;
+  overflow-y: scroll !important;
+}
+
+.image {
+  width: 100%;
+  height: calc(100% - 37px);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: auto !important;
   scroll-behavior: smooth;
   overflow-y: scroll !important;
 }

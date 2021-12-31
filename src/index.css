@@ -17,7 +17,6 @@
 
 html,
 body {
-  scroll: no;
   scroll-behavior: smooth;
   overflow: hidden;
   margin: 0;

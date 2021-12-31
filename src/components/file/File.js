@@ -1,7 +1,9 @@
-import React from "react";
+import {useContext} from "react";
 import styles from "./File.module.css";
+import {windowActionContext} from "../../App";
 
-export default function File({ file, windowAction }) {
+export default function File({ file }) {
+  const windowAction = useContext(windowActionContext);
   function openWindowHandler() {
     windowAction("make-open", file.id);
   }
