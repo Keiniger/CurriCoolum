@@ -44,6 +44,14 @@ function App() {
           ]);
         }
         break;
+        case "toggle-popup":
+        {
+            setFilesState([
+            ...listWithoutElement,
+            { ...element, isPopup: !element.isPopup },
+          ]);
+        }
+        break;
       case "toggle-visible":
         {
           let properties = { isVisible: !element.isVisible };
@@ -64,6 +72,7 @@ function App() {
             ...listWithoutElement,
             {
               ...element,
+              isMaximized: false,
               isVisible: false,
               isOnTaskbar: false,
             },

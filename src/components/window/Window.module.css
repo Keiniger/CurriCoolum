@@ -1,17 +1,17 @@
 @-moz-keyframes movingBorders {
   0% {
     border: 3px solid transparent;
-    border-image: linear-gradient(0deg, #EE5179 , #18FF9F);
+    border-image: linear-gradient(0deg, #ee5179, #18ff9f);
     border-image-slice: 1;
   }
   50% {
     border: 3px solid transparent;
-    border-image: linear-gradient(180deg, #EE5179 , #18FF9F);
+    border-image: linear-gradient(180deg, #ee5179, #18ff9f);
     border-image-slice: 1;
   }
   100% {
     border: 3px solid transparent;
-    border-image: linear-gradient(360deg, #EE5179 , #18FF9F);
+    border-image: linear-gradient(360deg, #ee5179, #18ff9f);
     border-image-slice: 1;
   }
 }
@@ -19,17 +19,17 @@
 @-webkit-keyframes movingBorders {
   0% {
     border: 3px solid transparent;
-    border-image: linear-gradient(0deg, #EE5179 , #18FF9F);
+    border-image: linear-gradient(0deg, #ee5179, #18ff9f);
     border-image-slice: 1;
   }
   50% {
     border: 3px solid transparent;
-    border-image: linear-gradient(180deg, #EE5179 , #18FF9F);
+    border-image: linear-gradient(180deg, #ee5179, #18ff9f);
     border-image-slice: 1;
   }
   100% {
     border: 3px solid transparent;
-    border-image: linear-gradient(360deg, #EE5179 , #18FF9F);
+    border-image: linear-gradient(360deg, #ee5179, #18ff9f);
     border-image-slice: 1;
   }
 }
@@ -37,17 +37,17 @@
 @keyframes movingBorders {
   0% {
     border: 3px solid transparent;
-    border-image: linear-gradient(0deg, #EE5179 , #18FF9F);
+    border-image: linear-gradient(0deg, #ee5179, #18ff9f);
     border-image-slice: 1;
   }
   50% {
     border: 3px solid transparent;
-    border-image: linear-gradient(180deg, #EE5179 , #18FF9F);
+    border-image: linear-gradient(180deg, #ee5179, #18ff9f);
     border-image-slice: 1;
   }
   100% {
     border: 3px solid transparent;
-    border-image: linear-gradient(360deg, #EE5179 , #18FF9F);
+    border-image: linear-gradient(360deg, #ee5179, #18ff9f);
     border-image-slice: 1;
   }
 }
@@ -59,14 +59,14 @@
   -webkit-backdrop-filter: blur(8px);
   -moz-backdrop-filter: blur(8px);
   box-shadow: black 0 0 30px;
-  
+
   border: 3px solid transparent;
   border-image-slice: 1;
-  
+
   animation-name: movingBorders;
   animation-duration: 8s;
   animation-iteration-count: infinite;
-  
+
   -webkit-animation-name: movingBorders;
   -webkit-animation-duration: 8s;
   -webkit-animation-iteration-count: infinite;
@@ -80,11 +80,11 @@
   cursor: default !important;
   background-color: rgba(0, 0, 0, 60%);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px) ;
+  -webkit-backdrop-filter: blur(8px);
   box-shadow: black 0 0 30px;
 
   border: 3px solid transparent;
-  border-image: linear-gradient(45deg, #9019F8 , #18FF9F);
+  border-image: linear-gradient(45deg, #9019f8, #18ff9f);
   border-image-slice: 1;
 }
 
@@ -92,13 +92,32 @@
   cursor: default !important;
   background-color: rgba(0, 0, 0, 60%);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(30px) ;
+  -webkit-backdrop-filter: blur(30px);
 }
 
-.contents {
-  margin: 0;
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
   cursor: auto !important;
   height: calc(100% - 37px);
   scroll-behavior: smooth;
   overflow-y: scroll !important;
+}
+
+.containerXs{
+  width: auto;
+}
+
+.containerSm {
+  width: 750px;
+}
+
+.containerMd {
+  width: 970px;
+}
+
+.containerLg {
+  width: 1170px;
 }

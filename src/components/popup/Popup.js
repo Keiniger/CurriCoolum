@@ -6,5 +6,5 @@ export default function Popup({ files, windowAction }) {
   let { id } = useParams();
   let file = files[id - 1];
 
-  return <div className={styles.popup}>{file.text}</div>;
+  return <div className={styles.container}>{file.text}</div>;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./OpenedFile.module.css";
 
-export default function OpenedFile({ file, windowAction }) {
+export default function OpenedFile({ file, windowAction}) {
   function handleClick() {
     if(file.isVisible) {
       if(!file.isSelected){
