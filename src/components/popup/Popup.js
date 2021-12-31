@@ -7,7 +7,7 @@ export default function Popup({ files }) {
   let file = files[id - 1];
 
   return file.content.text !== undefined ? (
-    <div className={styles.container}>{file.text}</div>
+    <div className={styles.container}>{file.content.text}</div>
   ) : file.content.image !== undefined ? (
     file.content.image
   ) : (
