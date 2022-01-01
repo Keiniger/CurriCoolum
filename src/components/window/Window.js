@@ -5,10 +5,11 @@ import styles from "./Window.module.css";
 import WindowButtons from "./WindowButtons";
 import ReactDOMServer from "react-dom/server";
 import classNames from "classnames";
-import { windowActionContext } from "../../App";
+import { windowActionContext, languageContext } from "../../App";
 
 export default function Window({ file }) {
   const windowAction = useContext(windowActionContext);
+  const [language, setLanguage] = useContext(languageContext);
   const rnd = useRef(null);
   const [wasMaximized, setWasMaximized] = useState(false);
   const [prevSize, setPrevSize] = useState({ width: 0, height: 0 });
@@ -78,7 +79,7 @@ export default function Window({ file }) {
     console.log(file);
 
     let popupWindow = window.open(
-      `${window.location.origin}/popup/${file.id}`,
+      `${window.location.origin}/${language}/popup/${file.id}`,
       file.title,
       `width=${getCurrentSize().width},height=${
         getCurrentSize().height - 32

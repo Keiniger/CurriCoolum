@@ -1,9 +1,10 @@
 import {useContext} from "react";
 import styles from "./WindowButtons.module.css";
-import {windowActionContext} from "../../App";
+import {windowActionContext, languageContext} from "../../App";
 
 export default function WindowButtons({ file, popup }) {
   const windowAction = useContext(windowActionContext);
+  const [language, setLanguage] = useContext(languageContext);
 
   function minimizeHandler() {
     windowAction("make-minimize", file.id);
@@ -20,7 +21,7 @@ export default function WindowButtons({ file, popup }) {
   return (
     <div className={styles.windowHeader}>
       <p className={styles.windowTitle} onClick={popup}>
-        {file.title}
+        {file.title[language]}
       </p>
       <div className={styles.windowButtonsContainer}>
         <img className={styles.windowButton} id="minimize" onClick={minimizeHandler} />

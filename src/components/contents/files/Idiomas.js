@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { defaultLang } from "../../../App";
+import { useParams } from "react-router-dom";
 
+export let IdiomasTitle = {
+  en: "Languages",
+  es: "Idiomas",
+  it: "Lingue",
+  de: "Sprache",
+};
 export default function Idiomas() {
+  const { lang, id } = useParams();
+  const language =  lang || defaultLang;
   return (
     <>
-    <div
+      <div
         style={{
           display: "flex",
           flexWrap: "wrap",

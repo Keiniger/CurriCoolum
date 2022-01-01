@@ -1,9 +1,20 @@
 import { useContext } from "react";
+import { useParams } from "react-router-dom";
 import { windowActionContext } from "../../../App";
 import styles from "../Contents.module.css";
+import { defaultLang } from "../../../App";
+
+export let CertificadosTitle = {
+  en: "Certificates",
+  es: "Certificados",
+  it: "Certificati",
+  de: "Zertifikate",
+};
 
 export default function Certificados({ CaC, IA }) {
+  const { lang, id } = useParams();
   const windowAction = useContext(windowActionContext);
+  const language = lang || defaultLang;
 
   return (
     <>

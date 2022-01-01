@@ -1,4 +1,18 @@
-export default function textoSobreMi() {
+import React, { useContext } from "react";
+import { defaultLang } from "../../../App";
+import { useParams } from "react-router-dom";
+
+export let SobreMiTitle = {
+  en: "About me",
+  es: "Sobre mi",
+  it: "Su di me",
+  de: "Über mich",
+};
+export default function SobreMi() {
+  const { lang, id } = useParams();
+  const language =  lang || defaultLang;
+  // import useContext(languageContext)
+  // Add switch statement for languages
   return (
     <>
       <h1>Ignacio André Keiniger</h1>

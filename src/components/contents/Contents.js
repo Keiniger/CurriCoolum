@@ -12,12 +12,12 @@ import { faFileImage } from "@fortawesome/free-solid-svg-icons";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 
 // Content components
-import Certificados from "./files/Certificados";
-import Educacion from "./files/Educacion";
-import Conocimientos from "./files/Conocimientos";
-import SobreMi from "./files/SobreMi";
-import Portfolio from "./files/Portfolio";
-import Idiomas from "./files/Idiomas";
+import Certificados, {CertificadosTitle} from "./files/Certificados";
+import Educacion, {EducacionTitle} from "./files/Educacion";
+import Conocimientos, {ConocimientosTitle} from "./files/Conocimientos";
+import SobreMi, {SobreMiTitle}  from "./files/SobreMi";
+import Portfolio, {PortfolioTitle} from "./files/Portfolio";
+import Idiomas, {IdiomasTitle} from "./files/Idiomas";
 import CodoACodo from "./CodoACodo.png";
 import InteligenciaArtificial from "./InteligenciaArtificial.png";
 
@@ -45,7 +45,7 @@ const files = [
     x_index: idPortfolio,
     z_index: idPortfolio,
     icon: folderIcon,
-    title: "Portfolio",
+    title: PortfolioTitle,
     content: { text: <Portfolio /> },
     isMaximized: false,
     isVisible: true,
@@ -63,7 +63,7 @@ const files = [
     x_index: idConocimientos,
     z_index: idConocimientos,
     icon: graduationIcon,
-    title: "Conocimientos",
+    title: ConocimientosTitle,
     content: {
       text: <Conocimientos />,
     },
@@ -83,7 +83,7 @@ const files = [
     x_index: idSobreMi,
     z_index: idSobreMi,
     icon: idCardIcon,
-    title: "Sobre_mi",
+    title: SobreMiTitle,
     content: {
       text: <SobreMi />,
     },
@@ -103,7 +103,7 @@ const files = [
     x_index: idEducacion,
     z_index: idEducacion,
     icon: universityIcon,
-    title: "Educación",
+    title: EducacionTitle,
     content: {
       text: <Educacion />,
     },
@@ -123,7 +123,7 @@ const files = [
     x_index: idCertificados,
     z_index: idCertificados,
     icon: scrollIcon,
-    title: "Certificados",
+    title: CertificadosTitle,
     content: {
       text: <Certificados CaC={idCodoACodo} IA={idInteligenciaArtificial} />,
     },
@@ -143,7 +143,7 @@ const files = [
     x_index: idIdiomas,
     z_index: idIdiomas,
     icon: languageIcon,
-    title: "Idiomas",
+    title: IdiomasTitle,
     content: {
       text: <Idiomas />,
     },

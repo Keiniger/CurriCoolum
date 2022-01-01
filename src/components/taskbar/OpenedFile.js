@@ -1,9 +1,11 @@
 import {useContext} from "react";
 import styles from "./OpenedFile.module.css";
-import {windowActionContext} from "../../App";
+import {windowActionContext, languageContext} from "../../App";
 
 export default function OpenedFile({ file}) {
   const windowAction = useContext(windowActionContext);
+  const [language, setLanguage] = useContext(languageContext);
+  
   function handleClick() {
     if(file.isVisible) {
       if(!file.isSelected){
@@ -24,7 +26,7 @@ export default function OpenedFile({ file}) {
       onClick={handleClick}
     >
       <div className={styles.icon}>{file.icon} </div>
-      <div className={styles.title}>{file.title}</div>
+      <div className={styles.title}>{file.title[language]}</div>
     </button>
   );
 }

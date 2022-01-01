@@ -1,17 +1,20 @@
 import React from "react";
 import { useState, createContext } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useParams, Routes, Route } from "react-router-dom";
 import "./App.css";
 import background from "./assets/tron.mp4";
 import FileContainer from "./components/file/FileContainer";
 import Taskbar from "./components/taskbar/Taskbar";
 import Window from "./components/window/Window";
-import Popup from "./components/popup/Popup";
 import files from "./components/contents/Contents";
 
 const windowActionContext = createContext();
+const languageContext = createContext();
+const defaultLang = "es";
 
 function App() {
+  const { lang } = useParams();
+  const [language, setLanguage] = useState(lang || defaultLang);
   const [filesState, setFilesState] = useState(files);
 
   function getElement(id) {
@@ -168,37 +171,27 @@ function App() {
 
   return (
     <windowActionContext.Provider value={windowAction}>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <div className="App">
-                <video
-                  /**/
-                  src={background} 
-                  /**/
-                  playsInline
-                  autoPlay
-                  muted
-                  loop
-                  id="bgvid"
-                />
-                <FileContainer files={filesState} />
-                {Array.isArray(filesState) &&
-                  filesState.map((file) => (
-                    <Window file={file} key={file.id} />
-                  ))}
-                <Taskbar files={filesState} />
-              </div>
-            }
+      <languageContext.Provider value={[language, setLanguage]}>
+        <div className="App">
+          <video
+            /**/
+            src={background}
+            /**/
+            playsInline
+            autoPlay
+            muted
+            loop
+            id="bgvid"
           />
-          <Route path="popup/:id" element={<Popup files={filesState} />} />
-        </Routes>
-      </BrowserRouter>
+          <FileContainer files={filesState} />
+          {Array.isArray(filesState) &&
+            filesState.map((file) => <Window file={file} key={file.id} />)}
+          <Taskbar files={filesState} />
+        </div>
+      </languageContext.Provider>
     </windowActionContext.Provider>
   );
 }
 
 export default App;
-export { windowActionContext };
+export { windowActionContext, languageContext, defaultLang };
