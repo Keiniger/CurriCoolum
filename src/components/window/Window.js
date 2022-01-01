@@ -1,13 +1,13 @@
-import { useState, useRef, useEffect, createContext ,useContext } from "react";
+import { useState, useRef, useEffect, createContext, useContext } from "react";
 import useWindowDimensions from "./useWindowDimensions";
 import { Rnd } from "react-rnd";
 import styles from "./Window.module.css";
 import WindowButtons from "./WindowButtons";
 import ReactDOMServer from "react-dom/server";
 import classNames from "classnames";
-import {windowActionContext} from "../../App";
+import { windowActionContext } from "../../App";
 
-export default function Window({file}) {
+export default function Window({ file }) {
   const windowAction = useContext(windowActionContext);
   const rnd = useRef(null);
   const [wasMaximized, setWasMaximized] = useState(false);
@@ -43,25 +43,25 @@ export default function Window({file}) {
     return rnd.current.originalPosition;
   }
 
+  function maximize() {
+    rnd.current.updateSize({
+      width: browserWidth,
+      height: browserHeight - 34,
+    });
+    rnd.current.updatePosition({
+      x: 0,
+      y: 0,
+    });
+    setWasMaximized(true);
+  }
+
+  function demaximize(size, position) {
+    rnd.current.updateSize(size);
+    rnd.current.updatePosition(position);
+    setWasMaximized(false);
+  }
+
   useEffect(() => {
-    function maximize() {
-      rnd.current.updateSize({
-        width: browserWidth,
-        height: browserHeight - 34,
-      });
-      rnd.current.updatePosition({
-        x: 0,
-        y: 0,
-      });
-      setWasMaximized(true);
-    }
-
-    function demaximize(size, position) {
-      rnd.current.updateSize(size);
-      rnd.current.updatePosition(position);
-      setWasMaximized(false);
-    }
-
     if (file.isMaximized) {
       setPrevSize(getCurrentSize());
       setPrevPosition(getCurrentPosition());

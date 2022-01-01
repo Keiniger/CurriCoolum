@@ -7,6 +7,7 @@ export default function Certificados({ CaC, IA }) {
 
   return (
     <>
+      <h1> Certificados </h1>
       <ul>
         <li>
           P.E.T. (Preliminary English Test) de la Universidad de Cambridge de

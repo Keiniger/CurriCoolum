@@ -7,38 +7,36 @@ import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { faUniversity } from "@fortawesome/free-solid-svg-icons";
 import { faIdCard } from "@fortawesome/free-solid-svg-icons";
 import { faFolder } from "@fortawesome/free-solid-svg-icons";
-import { faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { faScroll } from "@fortawesome/free-solid-svg-icons";
 import { faFileImage } from "@fortawesome/free-solid-svg-icons";
-
+import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 
 // Content components
-import CodoACodo from "./CodoACodo.png";
-import InteligenciaArtificial from "./InteligenciaArtificial.png";
 import Certificados from "./files/Certificados";
 import Educacion from "./files/Educacion";
 import Conocimientos from "./files/Conocimientos";
 import SobreMi from "./files/SobreMi";
+import Portfolio from "./files/Portfolio";
+import Idiomas from "./files/Idiomas";
+import CodoACodo from "./CodoACodo.png";
+import InteligenciaArtificial from "./InteligenciaArtificial.png";
 
-const textIcon       = <FontAwesomeIcon icon={faFileAlt} />;
+const textIcon = <FontAwesomeIcon icon={faFileAlt} />;
 const graduationIcon = <FontAwesomeIcon icon={faGraduationCap} />;
 const universityIcon = <FontAwesomeIcon icon={faUniversity} />;
-const idCardIcon     = <FontAwesomeIcon icon={faIdCard} />;
-const folderIcon     = <FontAwesomeIcon icon={faFolder} />;
-const gamepadIcon    = <FontAwesomeIcon icon={faGamepad} />;
-const scrollIcon     = <FontAwesomeIcon icon={faScroll} />;
-const imageIcon      = <FontAwesomeIcon icon={faFileImage} />;
+const idCardIcon = <FontAwesomeIcon icon={faIdCard} />;
+const folderIcon = <FontAwesomeIcon icon={faFolder} />;
+const scrollIcon = <FontAwesomeIcon icon={faScroll} />;
+const imageIcon = <FontAwesomeIcon icon={faFileImage} />;
+const languageIcon = <FontAwesomeIcon icon={faLanguage} />;
 
-const textoIntereses = <h2>Aca van mis pasatiempos.</h2>;
-
-
-const idSobreMi                = 8;
-const idConocimientos          = 7;
-const idPortfolio              = 6;
-const idIntereses              = 5;
-const idEducacion              = 4;
-const idCertificados           = 3;
-const idCodoACodo              = 2;
+const idSobreMi = 8;
+const idConocimientos = 7;
+const idPortfolio = 6;
+const idEducacion = 5;
+const idIdiomas = 4;
+const idCertificados = 3;
+const idCodoACodo = 2;
 const idInteligenciaArtificial = 1;
 
 const files = [
@@ -48,7 +46,7 @@ const files = [
     z_index: idPortfolio,
     icon: folderIcon,
     title: "Portfolio",
-    content: { text: <h2> Aca van proyectos de mi portfolio. </h2> },
+    content: { text: <Portfolio /> },
     isMaximized: false,
     isVisible: true,
     isOnTaskbar: true,
@@ -78,24 +76,6 @@ const files = [
     width: 0.5,
     height: 0.6,
     x: 0.4,
-    y: 0.3,
-  },
-  {
-    id: idIntereses,
-    x_index: idIntereses,
-    z_index: idIntereses,
-    icon: gamepadIcon,
-    title: "Intereses",
-    content: { text: textoIntereses },
-    isMaximized: false,
-    isVisible: false,
-    isOnTaskbar: false,
-    isSelected: false,
-    isOnDesktop: true,
-    isPopup: true,
-    width: 0.5,
-    height: 0.6,
-    x: 0.2,
     y: 0.3,
   },
   {
@@ -145,7 +125,27 @@ const files = [
     icon: scrollIcon,
     title: "Certificados",
     content: {
-      text: <Certificados CaC={7} IA={8} />,
+      text: <Certificados CaC={idCodoACodo} IA={idInteligenciaArtificial} />,
+    },
+    isMaximized: false,
+    isVisible: false,
+    isOnTaskbar: false,
+    isSelected: false,
+    isOnDesktop: true,
+    isPopup: true,
+    width: 0.5,
+    height: 0.6,
+    x: 0.1,
+    y: 0.1,
+  },
+  {
+    id: idIdiomas,
+    x_index: idIdiomas,
+    z_index: idIdiomas,
+    icon: languageIcon,
+    title: "Idiomas",
+    content: {
+      text: <Idiomas />,
     },
     isMaximized: false,
     isVisible: false,

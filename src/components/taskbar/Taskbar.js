@@ -13,7 +13,7 @@ export default function Taskbar({files}) {
 
   return (
     <>
-      <hr />
+      <hr className={styles.hr}/>
       <div className={styles.taskbar}>
         <button className={styles.start}> Start </button>
         <OpenedFilesContainer className={styles.openedFiles} files={files} />
