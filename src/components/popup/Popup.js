@@ -5,20 +5,26 @@ import files from "../contents/Contents";
 
 export default function Popup() {
   let { lang, id } = useParams();
-  let file = null;
+  let file = files.filter((file) => file.id == id)[0];
+  console.log(file);
 
-  for (var i = 1; i <= files.length; i++) {
-    if (files[i]?.id == id) {
-      file = files[i];
-      break;
-    }
-  }
+  document.title = `${file.title[lang]} - Ignacio Keiniger`;
 
-  return file.content.text !== undefined ? (
-    <div className={styles.container}>{file.content.text}</div>
-  ) : file.content.image !== undefined ? (
-    file.content.image
-  ) : (
-    "Error"
+  return (
+    <div className={styles.blur}>
+      <div className={styles.container}>
+        {file.content.text !== undefined ? (
+          file.content.text
+        ) : file.content.image !== undefined ? (
+          <img
+            src={file.content.image}
+            alt={file.content.alt}
+            styles={{ maxWidth: "100%", objectFit: "cover" }}
+          />
+        ) : (
+          Error
+        )}
+      </div>
+    </div>
   );
 }

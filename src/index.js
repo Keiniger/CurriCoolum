@@ -2,16 +2,38 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import App from "./App";
-import Popup from "./components/popup/Popup";
+import { Suspense } from "react";
+const App = React.lazy(() => import("./App"));
+const Popup = React.lazy(() => import("./components/popup/Popup"));
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/:lang" element={<App />} />
-        <Route path="/:lang/popup/:id" element={<Popup />} />
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={<></>}>
+              <App />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/:lang"
+          element={
+            <Suspense fallback={<></>}>
+              <App />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/:lang/popup/:id"
+          element={
+            <Suspense fallback={<></>}>
+              <Popup />
+            </Suspense>
+          }
+        />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

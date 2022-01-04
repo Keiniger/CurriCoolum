@@ -163,7 +163,12 @@ const files = [
     x_index: idCodoACodo,
     z_index: idCodoACodo,
     icon: imageIcon,
-    title: "Codo_a_Codo.png",
+    title: {
+      es: "Certificado CaC",
+      en: "CaC Certificate",
+      it: "Certificato CaC",
+      de: "CaC Zertifikat",
+    },
     content: { image: CodoACodo, alt: "CodoACodo.png" },
     isMaximized: false,
     isVisible: false,
@@ -181,7 +186,12 @@ const files = [
     x_index: idInteligenciaArtificial,
     z_index: idInteligenciaArtificial,
     icon: imageIcon,
-    title: "InteligenciaArtificial.png",
+    title: {
+      es: "Certificado IA",
+      en: "IA Certificate",
+      it: "Certificato IA",
+      de: "KI Zertifikat",
+    },
     content: {
       image: InteligenciaArtificial,
       alt: "InteligenciaArtificial.png",

@@ -17,7 +17,7 @@ export default function SobreMi() {
     <>
       <h1>Ignacio André Keiniger</h1>
       <h2>
-        Villa Martelli · Vicente Lopez · 54 9 11 3505-6434 ·
+        Villa Martelli · Vicente Lopez · 54 9 11 3505-6434 · 
         <a href="mailto:nkeiniger@gmail.com">nkeiniger@gmail.com</a>
       </h2>
       <p>
