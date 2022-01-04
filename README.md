@@ -12,19 +12,20 @@
 - [X] Fix netlify popups
 - [X] Change window button color on hover
 - [X] Add containers
+- [X] Fill resumé with my info
+- [X] Add multiple language support
 
 ### Important
-- [ ] Fill resumé with my info
+- [ ] Translate contents
 - [ ] Add profile picture
 - [ ] Focus on popup and not fake window
 - [ ] Add start menu
 - [ ] Fix mobile incompatibility
-- [ ] Elevate state of popup window, add it to the other components as a prop
 - [ ] Fix onClose popups not appearing if closed on second window
 - [ ] Change window positions and size when browser is resized
-- [ ] Add multiple language support
 - [ ] Make taskbar responsive
 - [ ] Fix image windows distortion when resizing
+- [ ] Elevate state of popup window, add it to the other components as a prop
 
 ### Features
 - [ ] Change style of file when clicked
