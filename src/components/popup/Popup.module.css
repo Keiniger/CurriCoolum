@@ -15,8 +15,6 @@
   padding: 0;
   overflow-y: scroll !important;
   backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  -moz-backdrop-filter: blur(3px);
 }
 
 @media (min-width: 768px) {

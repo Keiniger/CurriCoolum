@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, createContext, useContext } from "react";
 import useWindowDimensions from "./useWindowDimensions";
 import { Rnd } from "react-rnd";
-import styles from "./Window.module.css";
+import styles from "./Window.module.scss";
 import WindowButtons from "./WindowButtons";
 import ReactDOMServer from "react-dom/server";
 import classNames from "classnames";

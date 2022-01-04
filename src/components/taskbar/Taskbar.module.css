@@ -21,26 +21,23 @@
   height: 2px;
   z-index: 2147483647;
 }
-/*
-button {
-  border: none;
-  padding: 0 1.5%;
-  text-align: center;
-  display: inline-block;
-  font-size: 16px;
-}*/
 
 .start {
   background-color: black;
+  color: white;
   border-right: 2px solid #921af5;
   margin-right: 5px;
+  padding: 6px 9px;
 }
 
 .time {
+  color: white;
   background-color: black;
   border-left: 2px solid #23ff9c;
   margin-left: auto;
-  width: 210px;
+  width: 150px;
+  padding: 6px 9px;
+  text-align: center;
 }
 
 @media (max-width: 900px){

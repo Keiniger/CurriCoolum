@@ -15,9 +15,9 @@ export default function Taskbar({files}) {
     <>
       <hr className={styles.hr}/>
       <div className={styles.taskbar}>
-        <button className={styles.start}> Start </button>
+        <div className={styles.start}> Start </div>
         <OpenedFilesContainer className={styles.openedFiles} files={files} />
-        <button className={styles.time}> {date} </button>
+        <div className={styles.time}> {date} </div>
       </div>
     </>
   );

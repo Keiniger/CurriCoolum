@@ -1,90 +1,54 @@
-@-moz-keyframes movingBorders {
-  0% {
-    border: 3px solid transparent;
-    border-image: linear-gradient(0deg, #ee5179, #18ff9f);
-    border-image-slice: 1;
-  }
-  50% {
-    border: 3px solid transparent;
-    border-image: linear-gradient(180deg, #ee5179, #18ff9f);
-    border-image-slice: 1;
-  }
-  100% {
-    border: 3px solid transparent;
-    border-image: linear-gradient(360deg, #ee5179, #18ff9f);
-    border-image-slice: 1;
-  }
-}
-
-@-webkit-keyframes movingBorders {
-  0% {
-    border: 3px solid transparent;
-    border-image: linear-gradient(0deg, #ee5179, #18ff9f);
-    border-image-slice: 1;
-  }
-  50% {
-    border: 3px solid transparent;
-    border-image: linear-gradient(180deg, #ee5179, #18ff9f);
-    border-image-slice: 1;
-  }
-  100% {
-    border: 3px solid transparent;
-    border-image: linear-gradient(360deg, #ee5179, #18ff9f);
-    border-image-slice: 1;
-  }
-}
-
 @keyframes movingBorders {
   0% {
     border: 3px solid transparent;
-    border-image: linear-gradient(0deg, #ee5179, #18ff9f);
+    border-image: linear-gradient(0deg, #18ff9f, #ee5179);
     border-image-slice: 1;
   }
   50% {
     border: 3px solid transparent;
-    border-image: linear-gradient(180deg, #ee5179, #18ff9f);
+    border-image: linear-gradient(180deg, #18ff9f, #ee5179);
     border-image-slice: 1;
   }
   100% {
     border: 3px solid transparent;
-    border-image: linear-gradient(360deg, #ee5179, #18ff9f);
+    border-image: linear-gradient(360deg, #18ff9f, #ee5179);
+    border-image-slice: 1;
+  }
+}
+
+@keyframes movingBordersFirefox {
+  0% {
+    border: 3px solid transparent;
+    border-image: linear-gradient(0deg, #18ff9f, #ee5179);
+    border-image-slice: 1;
+  }
+  100% {
+    border: 3px solid transparent;
+    border-image: linear-gradient(0deg, #18ff9f, #ee5179);
     border-image-slice: 1;
   }
 }
 
 .RndSelected {
   cursor: default !important;
-  background-color: rgba(0, 0, 0, 60%);
-  /**/
+  background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  -moz-backdrop-filter: blur(8px);
-  /**/
   box-shadow: black 0 0 30px;
 
   border: 3px solid transparent;
   border-image-slice: 1;
 
   animation-name: movingBorders;
-  animation-duration: 8s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
-
-  -webkit-animation-name: movingBorders;
-  -webkit-animation-duration: 8s;
-  -webkit-animation-iteration-count: infinite;
-
-  -moz-animation-name: movingBorders;
-  -moz-animation-duration: 8s;
-  -moz-animation-iteration-count: infinite;
+  -moz-animation-name: movingBordersFirefox !important;
 }
 
 .Rnd {
   cursor: default !important;
-  background-color: rgba(0, 0, 0, 60%);
-  /**/
+  background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  /**/
   box-shadow: black 0 0 30px;
 
   border: 3px solid transparent;
@@ -94,10 +58,9 @@
 
 .RndMaximized {
   cursor: default !important;
-  background-color: rgba(0, 0, 0, 60%);
+  background-color: rgba(0, 0, 0, 0.8);
   /**/
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   /**/
 }
 
@@ -110,6 +73,9 @@
   height: calc(100% - 37px);
   scroll-behavior: smooth;
   overflow-y: scroll !important;
+  overflow: auto;
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
 }
 
 .image {
@@ -123,7 +89,7 @@
   overflow-y: scroll !important;
 }
 
-.containerXs{
+.containerXs {
   width: auto;
 }
 

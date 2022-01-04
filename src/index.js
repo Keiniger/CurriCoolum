@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./index.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense } from "react";
 const App = React.lazy(() => import("./App"));

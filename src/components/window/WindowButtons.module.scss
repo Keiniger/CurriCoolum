@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   height: 2em;
-  background-color: rgba(255,255,255,10%);
+  background-color: rgba(255,255,255,0.3);
   padding-top: 5px;
   position: sticky !important;
   width: 100%;
@@ -25,27 +25,18 @@
 }
 
 img[id=minimize]:hover{
-  content: url("./icons/MinimizeIconHover.png");  
+  content: '';
+  background: url("./icons/MinimizeIconHover.png");  
 }
 
 img[id=maximize]:hover{
-  content: url("./icons/MaximizeIconHover.png");
+  content: '';
+  background: url("./icons/MaximizeIconHover.png");
 }
 
 img[id=close]:hover{
-  content: url("./icons/CloseIconHover.png");
-}
-
-img[id=minimize]{
-  content: url("./icons/MinimizeIcon.png");
-}
-
-img[id=maximize]{
-  content: url("./icons/MaximizeIcon.png");
-}
-
-img[id=close]{
-  content: url("./icons/CloseIcon.png");
+  content: '';
+  background: url("./icons/CloseIconHover.png");
 }
 
 .windowButton {

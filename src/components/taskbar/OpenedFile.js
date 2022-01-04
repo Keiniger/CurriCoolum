@@ -19,7 +19,8 @@ export default function OpenedFile({ file}) {
   }
 
   return (
-    <button
+    <div
+    id="openedFile"
       className={
         file.isSelected ? styles.fileOnTaskbarSelected : styles.fileOnTaskbar
       }
@@ -27,6 +28,6 @@ export default function OpenedFile({ file}) {
     >
       <div className={styles.icon}>{file.icon} </div>
       <div className={styles.title}>{file.title[language]}</div>
-    </button>
+    </div>
   );
 }

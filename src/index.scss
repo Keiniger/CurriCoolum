@@ -20,14 +20,29 @@ body {
   text-shadow: white 0 0 1px, white 0 0 2px, white 0 0 3px, white 0 0 4px;
   color: white;
   z-index: -2;
+  scrollbar-width: none;
 }
 
-body {
-  overflow: hidden;
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0 !important; /* Remove scrollbar space */
+  background: transparent !important; /* Optional: just make scrollbar invisible */
+  display: none;
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
 }
 
 a {
   color: white;
 }
 
-*{font-family: 'Chakra Petch', sans-serif !important;}
+* {
+  font-family: "Chakra Petch", sans-serif !important;
+}

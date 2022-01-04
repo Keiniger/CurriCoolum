@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, createContext } from "react";
 import { useParams, Routes, Route } from "react-router-dom";
-import "./App.css";
+import styles from "./App.module.scss";
 import background from "./assets/tron.mp4";
 import FileContainer from "./components/file/FileContainer";
 import Taskbar from "./components/taskbar/Taskbar";
@@ -172,16 +172,16 @@ function App() {
   return (
     <windowActionContext.Provider value={windowAction}>
       <languageContext.Provider value={[language, setLanguage]}>
-        <div className="App">
+        <div className={styles.App}>
           <video
             /**/
+            className={styles.bgvid}
             src={background}
             /**/
             playsInline
             autoPlay
             muted
             loop
-            id="bgvid"
           />
           <FileContainer files={filesState} />
           {Array.isArray(filesState) &&

@@ -4,6 +4,14 @@
     flex-direction: column;
     width: 120px;
     z-index: 0;
+    background-color: transparent;
+    border: none;
+    text-shadow: white 0 0 1px, white 0 0 2px, white 0 0 3px, white 0 0 4px;
+    color: white;
+    padding: 0 1.5%;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
 }
 
 .fileIcon{
@@ -14,15 +22,4 @@
 
 .fileText{
     margin-top: 5px;
-}
-
-button {
-  background-color: transparent;
-  border: none;
-  text-shadow: white 0 0 1px, white 0 0 2px, white 0 0 3px, white 0 0 4px;
-  color: white;
-  padding: 0 1.5%;
-  text-align: center;
-  display: inline-block;
-  font-size: 16px;
 }

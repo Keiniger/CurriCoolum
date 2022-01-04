@@ -16,6 +16,8 @@
 - [X] Add multiple language support
 
 ### Important
+- [ ] Add sass (https://blog.bitsrc.io/how-to-use-sass-and-css-modules-with-create-react-app-83fa8b805e5e)
+- [ ] Hide scrollbar but allow scrolling (https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll)
 - [ ] Translate contents
 - [ ] Add profile picture
 - [ ] Focus on popup and not fake window
