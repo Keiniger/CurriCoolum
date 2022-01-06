@@ -4,7 +4,7 @@ import { windowActionContext } from "../../../App";
 import styles from "../Contents.module.css";
 import { defaultLang } from "../../../App";
 
-export let CertificadosTitle = {
+export const CertificadosTitle = {
   en: "Certificates",
   es: "Certificados",
   it: "Certificati",
@@ -16,38 +16,59 @@ export default function Certificados({ CaC, IA }) {
   const windowAction = useContext(windowActionContext);
   const language = lang || defaultLang;
 
-  return (
-    <>
-      <h1> Certificados </h1>
-      <ul>
-        <li>
-          P.E.T. (Preliminary English Test) de la Universidad de Cambridge de
-          Inglaterra.
-        </li>
-        <li>
-          I.G.C.S.E. (International General Certificate of Secondary Education)
-          de la Universidad de Cambridge de Inglaterra. I.B. (International
-          Baccaulaureate) de Ginebra, Suiza.
-        </li>
-        <li>
-          <div
-            className={styles.certificateLink}
-            onClick={() => windowAction("make-open", CaC)}
-          >
-            Certificado del Programa Codo a Codo 4.0 de Python fullstack con
-            Django & Bootstrap
-          </div>
-        </li>
-        <li>
-          <div
-            className={styles.certificateLink}
-            onClick={() => windowAction("make-open", IA)}
-          >
-            Certificado del curso de capacitación Introducción a la Inteligencia
-            Artificial
-          </div>
-        </li>
-      </ul>
-    </>
-  );
+  switch (language) {
+    case "es":
+      {
+        return (
+          <>
+            <h1> Certificados </h1>
+            <ul>
+              <li>
+                P.E.T. (Preliminary English Test) de la Universidad de Cambridge
+                de Inglaterra.
+              </li>
+              <li>
+                I.G.C.S.E. (International General Certificate of Secondary
+                Education) de la Universidad de Cambridge de Inglaterra. I.B.
+                (International Baccaulaureate) de Ginebra, Suiza.
+              </li>
+              <li>
+                <div
+                  className={styles.certificateLink}
+                  onClick={() => windowAction("make-open", CaC)}
+                >
+                  Certificado del Programa Codo a Codo 4.0 de Python fullstack
+                  con Django & Bootstrap
+                </div>
+              </li>
+              <li>
+                <div
+                  className={styles.certificateLink}
+                  onClick={() => windowAction("make-open", IA)}
+                >
+                  Certificado del curso de capacitación Introducción a la
+                  Inteligencia Artificial
+                </div>
+              </li>
+            </ul>
+          </>
+        );
+      }
+      break;
+    case "en":
+      {
+        return <>"Placeholder"</>;
+      }
+      break;
+    case "it":
+      {
+        return <>"Placeholder"</>;
+      }
+      break;
+    case "de":
+      {
+        return <>"Placeholder"</>;
+      }
+      break;
+  }
 }

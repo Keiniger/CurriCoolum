@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
-import {defaultLang} from "../../../App";
+import { defaultLang } from "../../../App";
 
-export let ConocimientosTitle = {
+export const ConocimientosTitle = {
   en: "Skills",
   es: "Conocimientos",
   it: "Abilità",
@@ -11,8 +11,18 @@ export let ConocimientosTitle = {
 
 export default function Conocimientos() {
   const { lang, id } = useParams();
-  const language =  lang || defaultLang;
-  
+  const language = lang || defaultLang;
+
+  let conocimientosVarios;
+
+  switch (language) {
+    case "es": { conocimientosVarios = "Conocimientos varios"; } break;
+    case "en": { conocimientosVarios = "Other skills";         } break;
+    case "it": { conocimientosVarios = "Altre abilità";        } break;
+    case "de": { conocimientosVarios = "Andere Fähigkeiten";   } break;
+    default  : { conocimientosVarios = "Other skills";         } break;
+  }
+
   return (
     <>
       <div
@@ -110,11 +120,11 @@ export default function Conocimientos() {
         <div>
           <h2> Workflow </h2>
           <ul>
-            <li> Mobile-First, Diseño Responsive </li>
+            <li> Mobile-First, Responsive Design </li>
             <li> Teamwork </li>
-            <li> Agile development y Scrum </li>
+            <li> Agile development & Scrum </li>
           </ul>
-          <h2> Conocimientos varios </h2>
+          <h2> {conocimientosVarios} </h2>
           <ul>
             <li> Git/Github </li>
             <li> REST APIs </li>

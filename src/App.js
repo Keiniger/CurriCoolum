@@ -10,11 +10,29 @@ import files from "./components/contents/Contents";
 
 const windowActionContext = createContext();
 const languageContext = createContext();
+
 const defaultLang = "es";
+
+const title = {
+  es: "Curriculum" ,
+  en: "Résumé",
+  it: "Curriculum",
+  de: "Lebenslauf",
+} 
+
+const name = {
+  es: "Ignacio Keiniger" ,
+  en: "Andrew Keiniger",
+  it: "Ignazio Keiniger",
+  de: "Ignatz Keiniger",
+}
 
 function App() {
   const { lang } = useParams();
   const [language, setLanguage] = useState(lang || defaultLang);
+  document.title = `${title[language]} - ${name[language]}`;
+  document.documentElement.setAttribute("lang", language);
+
   const [filesState, setFilesState] = useState(files);
 
   function getElement(id) {
@@ -194,4 +212,4 @@ function App() {
 }
 
 export default App;
-export { windowActionContext, languageContext, defaultLang };
+export { windowActionContext, languageContext, defaultLang, name };

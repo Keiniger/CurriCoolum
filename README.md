@@ -14,29 +14,32 @@
 - [X] Add containers
 - [X] Fill resumé with my info
 - [X] Add multiple language support
+- [X] Hide scrollbar but allow scrolling (https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll)
+- [ ] Change <html lang=""> when changing language
+- [ ] Fix onClose popups not appearing if closed on second window
 
 ### Important
-- [ ] Add sass (https://blog.bitsrc.io/how-to-use-sass-and-css-modules-with-create-react-app-83fa8b805e5e)
-- [ ] Hide scrollbar but allow scrolling (https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll)
 - [ ] Translate contents
+- [ ] Add "Contact me" file
+- [ ] Add "Download" button to download a pdf version of my resumé
+- [ ] Add sass (https://blog.bitsrc.io/how-to-use-sass-and-css-modules-with-create-react-app-83fa8b805e5e)
 - [ ] Add profile picture
 - [ ] Focus on popup and not fake window
 - [ ] Add start menu
 - [ ] Fix mobile incompatibility
-- [ ] Fix onClose popups not appearing if closed on second window
 - [ ] Change window positions and size when browser is resized
 - [ ] Make taskbar responsive
 - [ ] Fix image windows distortion when resizing
 - [ ] Elevate state of popup window, add it to the other components as a prop
+- [ ] Add fullscreen mode in start menu
 
 ### Features
 - [ ] Change style of file when clicked
-- [ ] Open window when double clicking file (?)
 - [ ] Add weather widget
 - [ ] Add retro game through iframe
-- [ ] Add fullscreen mode in start menu
 - [ ] Add turn-off animation, and turn-off button in start menu
 - [ ] Add drag and drop for file icons (https://github.com/react-dnd/react-dnd)
 - [ ] Add drag and drop for opened files in taskbar (https://github.com/atlassian/react-beautiful-dnd)
+- [ ] Open window when double clicking file (?)
 
 

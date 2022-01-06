@@ -92,7 +92,19 @@ export default function Window({ file }) {
       windowAction("make-open", file.id);
       console.log(file);
 
-      if (!file.isMaximized) {
+      function invalidPosition(x, y){
+        const booleanX = ((x < 0) || (x >= browserWidth));
+        const booleanY = ((y < 0) || (y >= browserHeight));
+        return (booleanX || booleanY);
+      }
+
+      if(invalidPosition(popupWindow.screenX, popupWindow.screenY)){
+        rnd.current.updatePosition({
+          x: 0,
+          y: 0,
+        });
+      }
+      else if (!file.isMaximized) {
         rnd.current.updatePosition({
           x: popupWindow.screenX,
           y: popupWindow.screenY,
