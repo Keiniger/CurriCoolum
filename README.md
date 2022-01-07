@@ -53,4 +53,52 @@
 - [ ] Add drag and drop for opened files in taskbar (https://github.com/atlassian/react-beautiful-dnd)
 - [ ] Open window when double clicking file (?)
 
-
+### Portfolio
+- [ ] Trabajo práctico de Diseño de Sistemas (UTN)
+  - [ ] Thumbnail
+  - [ ] Website
+  - [ ] Github
+- [ ] Homepage
+  - [ ] Thumbnail
+  - [X] Website
+  - [ ] Github
+- [ ] GEOC
+  - [ ] Thumbnail
+  - [X] Website
+  - [ ] Github
+- [ ] React Quotes
+  - [ ] Thumbnail
+  - [ ] Website
+  - [ ] Github
+- [ ] Chaos project
+  - [ ] Thumbnail
+  - [X] Website
+  - [ ] Github
+- [ ] Meetups
+  - [ ] Thumbnail
+  - [ ] Website
+  - [ ] Github
+- [X] Foodies Delivery
+  - [X] Thumbnail
+  - [X] Website
+  - [X] Github
+- [ ] Floating
+  - [ ] Thumbnail
+  - [ ] Website
+  - [ ] Github
+- [ ] Trabajo práctico de Gestión de Bases de Datos (UTN)
+  - [ ] Thumbnail
+  - [ ] Website
+  - [ ] Github
+- [ ] Trabajo práctico de Sistemas Operativos (UTN)
+  - [ ] Thumbnail
+  - [ ] Website
+  - [ ] Github
+- [ ] Moevius
+  - [ ] Thumbnail
+  - [X] Website
+  - [ ] Github
+- [ ] Este curriculum
+  - [ ] Thumbnail
+  - [X] Website
+  - [ ] Github

@@ -445,7 +445,7 @@ export default function Portfolio() {
             <p>
               Hergestellt mit C, Makefiles und Linux Scripting. Es war ein
               viermonatiger Auftrag, der mit einer Gruppe von fünf Personen
-              entwickelt wurde. Ich hatte den asynchronen Code zwischen
+              entwickelt wurde. Ich hatte den asynchronen code zwischen
               Prozessen über Semaphore und der Deadlock-Nachweis derselben
               Prozesse zuständig.
             </p>
