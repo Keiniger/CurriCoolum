@@ -21,24 +21,23 @@ export default function Certificados({ CaC, IA }) {
       {
         return (
           <>
-            <h1> Certificados </h1>
             <ul>
               <li>
-                P.E.T. (Preliminary English Test) de la Universidad de Cambridge
-                de Inglaterra.
+                P.E.T. (Preliminary English Test) de la Universidad de
+                Cambridge.
               </li>
               <li>
                 I.G.C.S.E. (International General Certificate of Secondary
-                Education) de la Universidad de Cambridge de Inglaterra. I.B.
-                (International Baccaulaureate) de Ginebra, Suiza.
+                Education) de la Universidad de Cambridge.
               </li>
+              <li>I.B. (International Baccaulaureate).</li>
               <li>
                 <div
                   className={styles.certificateLink}
                   onClick={() => windowAction("make-open", CaC)}
                 >
                   Certificado del Programa Codo a Codo 4.0 de Python fullstack
-                  con Django & Bootstrap
+                  con Django y Bootstrap
                 </div>
               </li>
               <li>
@@ -57,17 +56,116 @@ export default function Certificados({ CaC, IA }) {
       break;
     case "en":
       {
-        return <>"Placeholder"</>;
+        return (
+          <>
+            <ul>
+              <li>
+                P.E.T. (Preliminary English Test) provided by Cambridge
+                University.
+              </li>
+              <li>
+                I.G.C.S.E. (International General Certificate of Secondary
+                Education) provided by Cambridge University.
+              </li>
+              <li>I.B. (International Baccaulaureate).</li>
+              <li>
+                <div
+                  className={styles.certificateLink}
+                  onClick={() => windowAction("make-open", CaC)}
+                >
+                  Codo a Codo 4.0 program certificate, granted by completing the
+                  Python fullstack with Django and Bootstrap course.
+                </div>
+              </li>
+              <li>
+                <div
+                  className={styles.certificateLink}
+                  onClick={() => windowAction("make-open", IA)}
+                >
+                  "Introduction to Artificial Intelligence"(Introducción a la
+                  Inteligencia Artificial) course completion certificate.
+                </div>
+              </li>
+            </ul>
+          </>
+        );
       }
       break;
     case "it":
       {
-        return <>"Placeholder"</>;
+        return (
+          <>
+            <ul>
+              <li>
+                P.E.T. (Preliminary English Test) fornito dall'università di
+                Cambridge.
+              </li>
+              <li>
+                I.G.C.S.E. (International General Certificate of Secondary
+                Education) fornito dall'università di Cambridge.
+              </li>
+              <li>I.B. (International Baccaulaureate).</li>
+              <li>
+                <div
+                  className={styles.certificateLink}
+                  onClick={() => windowAction("make-open", CaC)}
+                >
+                  Certificato del programa Codo a Codo 4.0, concesso per
+                  completare il corso di Python fullstack con Django e
+                  Bootstrap.
+                </div>
+              </li>
+              <li>
+                <div
+                  className={styles.certificateLink}
+                  onClick={() => windowAction("make-open", IA)}
+                >
+                  Certificato di completamento del corso "Introduzione
+                  all'Intelligenza Artificiale"(Introducción a la Inteligencia
+                  Artificial).
+                </div>
+              </li>
+            </ul>
+          </>
+        );
       }
       break;
     case "de":
       {
-        return <>"Placeholder"</>;
+        return (
+          <>
+            <ul>
+              <li>
+                P.E.T. (Preliminary English Test) bereitgestellt von der
+                Universität Cambridge
+              </li>
+              <li>
+                I.G.C.S.E. (International General Certificate of Secondary
+                Education) bereitgestellt von der Universität Cambridge.
+              </li>
+              <li>I.B. (International Baccaulaureate).</li>
+              <li>
+                <div
+                  className={styles.certificateLink}
+                  onClick={() => windowAction("make-open", CaC)}
+                >
+                  Codo a Codo 4.0 Programmzertifikat, das durch den Abschluss
+                  des Python fullstack mit Django und Bootstrap Kurses verliehen
+                  wird.
+                </div>
+              </li>
+              <li>
+                <div
+                  className={styles.certificateLink}
+                  onClick={() => windowAction("make-open", IA)}
+                >
+                  "Einführung in die Künstliche Intelligenz"(Introducción a la
+                  Inteligencia Artificial) Kursabschlusszertifikat.
+                </div>
+              </li>
+            </ul>
+          </>
+        );
       }
       break;
   }

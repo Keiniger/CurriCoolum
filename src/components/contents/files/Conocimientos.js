@@ -100,7 +100,7 @@ export default function Conocimientos() {
                 <li> Functional Components </li>
                 <li> Class Components</li>
                 <li> Redux </li>
-                <li> React Router </li>
+                <li> React-Router </li>
                 <li> Next.js </li>
                 <li> Styled Components </li>
                 <li> React Motion </li>
@@ -113,6 +113,9 @@ export default function Conocimientos() {
                 <li> Vuex </li>
                 <li> Nuxt.js </li>
               </ul>
+            </li>
+            <li>
+              Angular
             </li>
           </ul>
         </div>

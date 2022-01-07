@@ -15,22 +15,33 @@
 - [X] Fill resumé with my info
 - [X] Add multiple language support
 - [X] Hide scrollbar but allow scrolling (https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll)
-- [ ] Change <html lang=""> when changing language
-- [ ] Fix onClose popups not appearing if closed on second window
+- [X] Change <html lang=""> when changing language
+- [X] Fix onClose popups not appearing if closed on second window
+- [X] Translate contents
+- [X] "cursor: default;" when hovering taskbar
 
 ### Important
-- [ ] Translate contents
+- [ ] "cursor: ponter;" when hovering file text
+- [ ] Add portfolio links
+- [ ] Add portfolio images
+- [ ] Add loading component
+- [ ] Add error page when visiting wrong route
 - [ ] Add "Contact me" file
-- [ ] Add "Download" button to download a pdf version of my resumé
-- [ ] Add sass (https://blog.bitsrc.io/how-to-use-sass-and-css-modules-with-create-react-app-83fa8b805e5e)
+- [ ] Add "Change language" button
+- [ ] Add "Download" button to download a pdf version of my resumé on start menu
+- [ ] Add portfolio websites through iframe
+- [ ] Remove sass (https://blog.bitsrc.io/how-to-use-sass-and-css-modules-with-create-react-app-83fa8b805e5e)
 - [ ] Add profile picture
 - [ ] Focus on popup and not fake window
+    - [ ] Elevate state of popup window, add it to the other components as a prop
+    - [ ] Add windowAction("add-popup", file.id, popup);
+    - [ ] Add windowAction("focus-popup", file.id);
+    - [ ] Add windowAction("remove-popup", file.id);
 - [ ] Add start menu
 - [ ] Fix mobile incompatibility
 - [ ] Change window positions and size when browser is resized
 - [ ] Make taskbar responsive
 - [ ] Fix image windows distortion when resizing
-- [ ] Elevate state of popup window, add it to the other components as a prop
 - [ ] Add fullscreen mode in start menu
 
 ### Features

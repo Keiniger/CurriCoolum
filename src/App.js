@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, createContext } from "react";
+import { useState, useEffect, createContext } from "react";
 import { useParams, Routes, Route } from "react-router-dom";
 import styles from "./App.module.scss";
 import background from "./assets/tron.mp4";
@@ -14,24 +14,28 @@ const languageContext = createContext();
 const defaultLang = "es";
 
 const title = {
-  es: "Curriculum" ,
+  es: "Curriculum",
   en: "Résumé",
   it: "Curriculum",
   de: "Lebenslauf",
-} 
+};
 
 const name = {
-  es: "Ignacio Keiniger" ,
+  es: "Ignacio Keiniger",
   en: "Andrew Keiniger",
   it: "Ignazio Keiniger",
   de: "Ignatz Keiniger",
-}
+};
 
 function App() {
   const { lang } = useParams();
   const [language, setLanguage] = useState(lang || defaultLang);
-  document.title = `${title[language]} - ${name[language]}`;
-  document.documentElement.setAttribute("lang", language);
+
+  //useEffect here
+  useEffect(() => {
+    document.title = `${title[language]} - ${name[language]}`;
+    document.documentElement.setAttribute("lang", language);
+  }, []);
 
   const [filesState, setFilesState] = useState(files);
 

@@ -8,6 +8,7 @@
   height: 2rem;
   display: flex;
   z-index: 2147483647;
+  cursor: default !important;
 }
 
 .hr {

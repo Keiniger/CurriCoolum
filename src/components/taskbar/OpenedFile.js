@@ -20,7 +20,7 @@ export default function OpenedFile({ file}) {
 
   return (
     <div
-    id="openedFile"
+      id="openedFile"
       className={
         file.isSelected ? styles.fileOnTaskbarSelected : styles.fileOnTaskbar
       }
