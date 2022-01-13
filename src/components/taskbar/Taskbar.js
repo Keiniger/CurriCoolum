@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./Taskbar.module.css";
 import OpenedFilesContainer from "./OpenedFilesContainer";
-import { defaultLang } from "../../App";
+import { browserLang, defaultLang } from "../../App";
 
 export default function Taskbar({ files }) {
   const { lang } = useParams();
-  const language = lang || defaultLang;
+  const language = lang || browserLang || defaultLang;
 
   const start = {
     es: "Inicio",

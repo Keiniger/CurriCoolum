@@ -19,11 +19,12 @@
 - [X] Fix onClose popups not appearing if closed on second window
 - [X] Translate contents
 - [X] "cursor: default;" when hovering taskbar
+- [X] "cursor: ponter;" when hovering file text
 
 ### Important
-- [ ] "cursor: ponter;" when hovering file text
 - [ ] Add portfolio links
 - [ ] Add portfolio images
+- [ ] Add automatic language detection (https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference)
 - [ ] Add loading component
 - [ ] Add error page when visiting wrong route
 - [ ] Add "Contact me" file
@@ -58,34 +59,34 @@
   - [ ] Thumbnail
   - [ ] Website
   - [ ] Github
-- [ ] Homepage
-  - [ ] Thumbnail
+- [X] Homepage
+  - [X] Thumbnail
   - [X] Website
-  - [ ] Github
-- [ ] GEOC
-  - [ ] Thumbnail
+  - [X] Github
+- [X] GEOC
+  - [X] Thumbnail
   - [X] Website
-  - [ ] Github
-- [ ] React Quotes
-  - [ ] Thumbnail
-  - [ ] Website
-  - [ ] Github
-- [ ] Chaos project
-  - [ ] Thumbnail
+  - [X] Github
+- [X] React Quotes
+  - [X] Thumbnail
   - [X] Website
-  - [ ] Github
-- [ ] Meetups
-  - [ ] Thumbnail
-  - [ ] Website
-  - [ ] Github
+  - [X] Github
+- [X] Project Chaos
+  - [X] Thumbnail
+  - [X] Website
+  - [X] Github
 - [X] Foodies Delivery
   - [X] Thumbnail
   - [X] Website
   - [X] Github
-- [ ] Floating
-  - [ ] Thumbnail
-  - [ ] Website
-  - [ ] Github
+- [X] Moneylog
+  - [X] Thumbnail
+  - [X] Website
+  - [X] Github
+- [X] Aesthetic OS
+  - [X] Thumbnail
+  - [X] Website
+  - [X] Github
 - [ ] Trabajo práctico de Gestión de Bases de Datos (UTN)
   - [ ] Thumbnail
   - [ ] Website
@@ -93,10 +94,6 @@
 - [ ] Trabajo práctico de Sistemas Operativos (UTN)
   - [ ] Thumbnail
   - [ ] Website
-  - [ ] Github
-- [ ] Moevius
-  - [ ] Thumbnail
-  - [X] Website
   - [ ] Github
 - [ ] Este curriculum
   - [ ] Thumbnail

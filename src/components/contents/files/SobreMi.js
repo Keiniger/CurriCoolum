@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { defaultLang } from "../../../App";
+import { browserLang, defaultLang } from "../../../App";
 import { useParams } from "react-router-dom";
 
 export const SobreMiTitle = {
@@ -11,9 +11,7 @@ export const SobreMiTitle = {
 
 export default function SobreMi() {
   const { lang, id } = useParams();
-  const language = lang || defaultLang;
-  // import useContext(languageContext)
-  // Add switch statement for languages
+  const language = lang || browserLang || defaultLang;
 
   switch (language) {
     case "es":

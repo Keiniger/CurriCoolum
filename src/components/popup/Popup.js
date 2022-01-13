@@ -3,15 +3,16 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./Popup.module.css";
 import files from "../contents/Contents";
-import { name } from "../../App";
+import { name, browserLang } from "../../App";
 
 export default function Popup() {
   let { lang, id } = useParams();
+  const language = lang || browserLang
   let file = files.filter((file) => file.id == id)[0];
 
   useEffect(() => {
-    document.documentElement.setAttribute("lang", lang);
-    document.title = `${file.title[lang]} - ${name[lang]}`;
+    document.documentElement.setAttribute("lang", language);
+    document.title = `${file.title[language]} - ${name[language]}`;
   }, []);
 
   return (

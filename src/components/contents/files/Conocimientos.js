@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { defaultLang } from "../../../App";
+import { browserLang, defaultLang } from "../../../App";
 
 export const ConocimientosTitle = {
   en: "Skills",
@@ -11,7 +11,7 @@ export const ConocimientosTitle = {
 
 export default function Conocimientos() {
   const { lang, id } = useParams();
-  const language = lang || defaultLang;
+  const language = lang || browserLang || defaultLang;
 
   let conocimientosVarios;
 

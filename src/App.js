@@ -12,6 +12,14 @@ const windowActionContext = createContext();
 const languageContext = createContext();
 
 const defaultLang = "es";
+let browserLang;
+if (
+  ["es", "en", "it", "de"].some(
+    (element) => element === navigator.language.substring(0, 2)
+  )
+) {
+  browserLang = navigator.language.substring(0, 2);
+}
 
 const title = {
   es: "Curriculum",
@@ -29,7 +37,12 @@ const name = {
 
 function App() {
   const { lang } = useParams();
-  const [language, setLanguage] = useState(lang || defaultLang);
+
+  console.log(lang);
+  console.log(browserLang);
+  const [language, setLanguage] = useState(
+    lang || browserLang || defaultLang
+  );
 
   //useEffect here
   useEffect(() => {
@@ -216,4 +229,4 @@ function App() {
 }
 
 export default App;
-export { windowActionContext, languageContext, defaultLang, name };
+export { windowActionContext, languageContext, defaultLang, browserLang, name };

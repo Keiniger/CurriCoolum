@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { defaultLang } from "../../../App";
+import { browserLang, defaultLang } from "../../../App";
 import { useParams } from "react-router-dom";
 
 export const PortfolioTitle = {
@@ -11,7 +11,7 @@ export const PortfolioTitle = {
 
 export default function Portfolio() {
   const { lang, id } = useParams();
-  const language = lang || defaultLang;
+  const language = lang || browserLang || defaultLang;
 
   switch (language) {
     case "es":
