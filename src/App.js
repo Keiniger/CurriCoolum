@@ -10,7 +10,6 @@ import files from "./components/contents/Contents";
 
 const windowActionContext = createContext();
 const languageContext = createContext();
-
 const defaultLang = "es";
 let browserLang;
 if (
@@ -37,14 +36,10 @@ const name = {
 
 function App() {
   const { lang } = useParams();
-
-  console.log(lang);
-  console.log(browserLang);
   const [language, setLanguage] = useState(
     lang || browserLang || defaultLang
   );
 
-  //useEffect here
   useEffect(() => {
     document.title = `${title[language]} - ${name[language]}`;
     document.documentElement.setAttribute("lang", language);

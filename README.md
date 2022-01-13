@@ -21,14 +21,16 @@
 - [X] "cursor: default;" when hovering taskbar
 - [X] "cursor: ponter;" when hovering file text
 - [X] Add automatic language detection (https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference)
+- [X] Add portfolio links
+- [X] Add portfolio images
+- [X] Add "Change language" button
+- [X] Add start menu
+- [X] Add fullscreen mode in start menu
 
 ### Important
-- [ ] Add portfolio links
-- [ ] Add portfolio images
 - [ ] Add loading component
 - [ ] Add error page when visiting wrong route
 - [ ] Add "Contact me" file
-- [ ] Add "Change language" button
 - [ ] Add "Download" button to download a pdf version of my resumé on start menu
 - [ ] Add portfolio websites through iframe
 - [ ] Remove sass (https://blog.bitsrc.io/how-to-use-sass-and-css-modules-with-create-react-app-83fa8b805e5e)
@@ -38,12 +40,10 @@
     - [ ] Add windowAction("add-popup", file.id, popup);
     - [ ] Add windowAction("focus-popup", file.id);
     - [ ] Add windowAction("remove-popup", file.id);
-- [ ] Add start menu
 - [ ] Fix mobile incompatibility
 - [ ] Change window positions and size when browser is resized
 - [ ] Make taskbar responsive
 - [ ] Fix image windows distortion when resizing
-- [ ] Add fullscreen mode in start menu
 
 ### Features
 - [ ] Change style of file when clicked
@@ -87,14 +87,14 @@
   - [X] Thumbnail
   - [X] Website
   - [X] Github
-- [ ] Trabajo práctico de Gestión de Bases de Datos (UTN)
-  - [ ] Thumbnail
-  - [ ] Website
-  - [ ] Github
-- [ ] Trabajo práctico de Sistemas Operativos (UTN)
-  - [ ] Thumbnail
-  - [ ] Website
-  - [ ] Github
+- [X] Trabajo práctico de Gestión de Bases de Datos (UTN)
+  - [X] Thumbnail
+  - [X] Website
+  - [X] Github
+- [X] Trabajo práctico de Sistemas Operativos (UTN)
+  - [X] Thumbnail
+  - [X] Website
+  - [X] Github
 - [ ] Este curriculum
   - [ ] Thumbnail
   - [X] Website

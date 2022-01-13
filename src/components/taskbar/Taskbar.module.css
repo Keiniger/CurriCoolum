@@ -25,10 +25,67 @@
 
 .start {
   background-color: black;
-  color: white;
   border-right: 2px solid #921af5;
   margin-right: 5px;
   padding: 6px 9px;
+}
+
+.startMenu{
+  position: absolute;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  border-right: 2px solid #921af5;
+  border-top: 2px solid #921af5;
+  bottom: 2rem;
+  left: 0;
+  width: 200px;
+  max-width: 200px;
+  list-style-type: none;
+  z-index: 2147483647;
+}
+
+.startMenu > li {
+  font-size: 1.25em;
+  margin: 0;
+  padding: 300px auto 50px 5px; 
+}
+
+.startMenu > li:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.languagesMenu{
+  position: absolute;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  border-right: 2px solid #921af5;
+  border-top: 2px solid #921af5;
+  bottom: 2rem;
+  left: 201px;
+  width: 100px;
+  max-width: 100px;
+  list-style-type: none;
+  z-index: 2147483647;
+}
+
+.languagesMenu > li {
+  font-size: 1.25em;
+  margin: 0;
+  padding: 100px auto 50px 5px; 
+}
+
+.languagesMenu > li:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.start:hover {
+  cursor: pointer;
 }
 
 .time {
@@ -41,7 +98,7 @@
   text-align: center;
 }
 
-@media (max-width: 900px){
+@media (max-width: 900px) {
   .time {
     visibility: hidden;
   }
