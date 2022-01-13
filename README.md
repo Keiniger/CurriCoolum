@@ -55,10 +55,10 @@
 - [ ] Open window when double clicking file (?)
 
 ### Portfolio
-- [ ] Trabajo práctico de Diseño de Sistemas (UTN)
-  - [ ] Thumbnail
-  - [ ] Website
-  - [ ] Github
+- [X] Trabajo práctico de Diseño de Sistemas (UTN)
+  - [X] Thumbnail
+  - [X] Website
+  - [X] Github
 - [X] Homepage
   - [X] Thumbnail
   - [X] Website
@@ -96,6 +96,4 @@
   - [X] Website
   - [X] Github
 - [ ] Este curriculum
-  - [ ] Thumbnail
-  - [X] Website
   - [ ] Github
