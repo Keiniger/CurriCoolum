@@ -20,11 +20,11 @@
 - [X] Translate contents
 - [X] "cursor: default;" when hovering taskbar
 - [X] "cursor: ponter;" when hovering file text
+- [X] Add automatic language detection (https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference)
 
 ### Important
 - [ ] Add portfolio links
 - [ ] Add portfolio images
-- [ ] Add automatic language detection (https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference)
 - [ ] Add loading component
 - [ ] Add error page when visiting wrong route
 - [ ] Add "Contact me" file
