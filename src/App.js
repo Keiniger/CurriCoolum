@@ -8,6 +8,16 @@ import Taskbar from "./components/taskbar/Taskbar";
 import Window from "./components/window/Window";
 import files from "./components/contents/Contents";
 
+function translations(_en, _es, _it, _de, lang){
+  let translations = {
+    en: _en,
+    es: _es,
+    it: _it,
+    de: _de,
+  }
+  return translations[lang];
+}
+
 const windowActionContext = createContext();
 const languageContext = createContext();
 const defaultLang = "es";
@@ -40,10 +50,18 @@ function App() {
     lang || browserLang || defaultLang
   );
 
-  useEffect(() => {
+  function changeDOMLanguage(language){
     document.title = `${title[language]} - ${name[language]}`;
     document.documentElement.setAttribute("lang", language);
+  }
+  useEffect(() => {
+    changeDOMLanguage(language);
   }, []);
+
+  function changeLanguage(lang){
+    setLanguage(lang);
+    changeDOMLanguage(lang);
+  }
 
   const [filesState, setFilesState] = useState(files);
 
@@ -201,7 +219,7 @@ function App() {
 
   return (
     <windowActionContext.Provider value={windowAction}>
-      <languageContext.Provider value={[language, setLanguage]}>
+      <languageContext.Provider value={[language, changeLanguage]}>
         <div className={styles.App}>
           <video
             /**/
@@ -224,4 +242,4 @@ function App() {
 }
 
 export default App;
-export { windowActionContext, languageContext, defaultLang, browserLang, name };
+export { windowActionContext, languageContext, defaultLang, browserLang, name, translations };

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styles from "./Portfolio.module.css";
-import { browserLang, defaultLang } from "../../../App";
+import { browserLang, defaultLang, translations } from "../../../App";
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
@@ -168,6 +168,8 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            {/*
+
             <Title>Neon-Homepage</Title>
             <Subtitle>
               <a href={sites.neon_homepage.github} target="_blank">
@@ -191,6 +193,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            */}
             <Title>GEOC</Title>
             <Subtitle>
               <a href={sites.geoc.github} target="_blank">
@@ -233,6 +236,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            {/*
             <Title>Project Chaos</Title>
             <Subtitle>
               <a href={sites.project_chaos.github} target="_blank">
@@ -255,6 +259,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            */}
             <Title>Foodies Delivery</Title>
             <Subtitle>
               <a href={sites.foodies.github} target="_blank">
@@ -392,6 +397,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            {/*
             <Title>Neon-Homepage</Title>
             <Subtitle>
               <a href={sites.neon_homepage.github} target="_blank">
@@ -415,6 +421,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            */}
             <Title>GEOC</Title>
             <Subtitle>
               <a href={sites.geoc.github} target="_blank">
@@ -456,6 +463,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            {/*
             <Title>Project Chaos</Title>
             <Subtitle>
               <a href={sites.project_chaos.github} target="_blank">
@@ -478,6 +486,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            */}
             <Title>Foodies Delivery</Title>
             <Subtitle>
               <a href={sites.foodies.github} target="_blank">
@@ -620,6 +629,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            {/*
             <Title>Neon-Homepage</Title>
             <Subtitle>
               <a href={sites.neon_homepage.github} target="_blank">
@@ -643,6 +653,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            */}
             <Title>GEOC</Title>
             <Subtitle>
               <a href={sites.geoc.github} target="_blank">
@@ -685,6 +696,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            {/*
             <Title>Project Chaos</Title>
             <Subtitle>
               <a href={sites.project_chaos.github} target="_blank">
@@ -708,6 +720,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            */}
             <Title>Foodies Delivery</Title>
             <Subtitle>
               <a href={sites.foodies.github} target="_blank">
@@ -848,6 +861,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            {/*
             <Title>Neon-Homepage</Title>
             <Subtitle>
               <a href={sites.neon_homepage.github} target="_blank">
@@ -871,6 +885,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            */}
             <Title>GEOC</Title>
             <Subtitle>
               <a href={sites.geoc.github} target="_blank">
@@ -914,6 +929,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            {/*
             <Title>Project Chaos</Title>
             <Subtitle>
               <a href={sites.project_chaos.github} target="_blank">
@@ -937,6 +953,7 @@ export default function Portfolio() {
             <br />
             <hr />
             <br />
+            */}
             <Title>Foodies Delivery</Title>
             <Subtitle>
               <a href={sites.foodies.github} target="_blank">

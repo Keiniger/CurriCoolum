@@ -4,7 +4,7 @@ import {windowActionContext, languageContext} from "../../App";
 
 export default function File({ file }) {
   const windowAction = useContext(windowActionContext);
-  const [language, setLanguage] = useContext(languageContext);
+  const [language, changeLanguage] = useContext(languageContext);
 
   return (
     <button className={styles.file} onClick={()=>windowAction("make-open", file.id)}>

@@ -13,7 +13,7 @@ export default function Conocimientos() {
   const { lang, id } = useParams();
   const language = lang || browserLang || defaultLang;
 
-  let conocimientosVarios;
+  let conocimientosVarios, actualmenteAprendiendo;
 
   switch (language) {
     case "es": { conocimientosVarios = "Conocimientos varios"; } break;
@@ -21,6 +21,14 @@ export default function Conocimientos() {
     case "it": { conocimientosVarios = "Altre abilità";        } break;
     case "de": { conocimientosVarios = "Andere Fähigkeiten";   } break;
     default  : { conocimientosVarios = "Other skills";         } break;
+  }
+
+  switch (language) {
+    case "es": { actualmenteAprendiendo = "Actualmente aprendiendo"; } break;
+    case "en": { actualmenteAprendiendo = "Currently learning";      } break;
+    case "it": { actualmenteAprendiendo = "attualmente apprendendo"; } break;
+    case "de": { actualmenteAprendiendo = "Learne gerade";           } break;
+    default  : { actualmenteAprendiendo = "Currently learning";      } break;
   }
 
   return (
@@ -114,9 +122,6 @@ export default function Conocimientos() {
                 <li> Nuxt.js </li>
               </ul>
             </li>
-            <li>
-              Angular
-            </li>
           </ul>
         </div>
 
@@ -140,6 +145,12 @@ export default function Conocimientos() {
                 <li> Bash Scripting </li>
               </ul>
             </li>
+          </ul>
+          <h2> {actualmenteAprendiendo} </h2>
+          <ul>
+            <li> Solidity </li>
+            <li> Svelte </li>
+            <li> Angular </li>
           </ul>
         </div>
       </div>

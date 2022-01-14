@@ -45,15 +45,16 @@
   z-index: 2147483647;
 }
 
-.startMenu > li {
-  font-size: 1.25em;
-  margin: 0;
-  padding: 300px auto 50px 5px; 
+.startMenu > li, .languagesMenu > li {
+  display:flex;
+  align-items: center;
+  height: 2rem;
+  padding-left: 10px;
 }
 
-.startMenu > li:hover {
-  background-color: white;
-  color: black;
+.startMenu > li:hover, .languagesMenu > li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
   cursor: pointer;
 }
 
@@ -70,18 +71,6 @@
   max-width: 100px;
   list-style-type: none;
   z-index: 2147483647;
-}
-
-.languagesMenu > li {
-  font-size: 1.25em;
-  margin: 0;
-  padding: 100px auto 50px 5px; 
-}
-
-.languagesMenu > li:hover {
-  background-color: white;
-  color: black;
-  cursor: pointer;
 }
 
 .start:hover {

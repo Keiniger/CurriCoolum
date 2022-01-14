@@ -20,7 +20,8 @@ export default function SobreMi() {
           <>
             <h1>Ignacio André Keiniger</h1>
             <h2>
-              Villa Martelli · Vicente Lopez · +54 9 11 3505-6434 ·
+              Villa Martelli · Vicente Lopez · +54 9 11 3505-6434
+              <br />
               <a href="mailto:nkeiniger@gmail.com">nkeiniger@gmail.com</a>
             </h2>
             <p>
@@ -42,7 +43,8 @@ export default function SobreMi() {
           <>
             <h1>Andrew I. Keiniger</h1>
             <h2>
-              Argentina · Buenos Aires · +54 9 11 3505-6434 ·
+              Argentina · Buenos Aires · +54 9 11 3505-6434
+              <br />
               <a href="mailto:nkeiniger@gmail.com">nkeiniger@gmail.com</a>
             </h2>
             <p>
@@ -64,7 +66,8 @@ export default function SobreMi() {
           <>
             <h1>Ignazio Andrea Keiniger</h1>
             <h2>
-              Argentina · Buenos Aires · +54 9 11 3505-6434 ·
+              Argentina · Buenos Aires · +54 9 11 3505-6434
+              <br />
               <a href="mailto:nkeiniger@gmail.com">nkeiniger@gmail.com</a>
             </h2>
             <p>
@@ -87,7 +90,8 @@ export default function SobreMi() {
           <>
             <h1>Ignatz Andreas Keiniger</h1>
             <h2>
-              Argentina · Buenos Aires · +54 9 11 3505-6434 ·
+              Argentina · Buenos Aires · +54 9 11 3505-6434
+              <br />
               <a href="mailto:nkeiniger@gmail.com">nkeiniger@gmail.com</a>
             </h2>
             <p>

@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./Taskbar.module.css";
 import OpenedFilesContainer from "./OpenedFilesContainer";
-import { languageContext } from "../../App";
+import { languageContext, translations } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 const start = {
@@ -14,7 +14,7 @@ const start = {
 
 // todo: move time to another component
 export default function Taskbar({ files }) {
-  const [language, setLanguage] = useContext(languageContext);
+  const [language, changeLanguage] = useContext(languageContext);
   const [startMenuIsVisible, setStartMenuIsVisible] = useState(false);
 
   function toggleStartMenu() {
@@ -28,7 +28,7 @@ export default function Taskbar({ files }) {
       <div className={styles.taskbar}>
         <div className={styles.start} onClick={toggleStartMenu}>
           {" "}
-          {start[language]}{" "}
+          {translations("Start", "Inicio", "Inizio", "Anfang", language)}{" "}
         </div>
         <OpenedFilesContainer className={styles.openedFiles} files={files} />
         <Time language={language} />
@@ -38,7 +38,8 @@ export default function Taskbar({ files }) {
 }
 
 function StartMenu() {
-  const [language, setLanguage] = useContext(languageContext);
+  const [language, changeLanguage] = useContext(languageContext);
+  const [languageMenuIsShown, setLanguageMenuIsShown] = useState(false);
   const navigate = useNavigate();
 
   function toggleFullScreen() {
@@ -53,7 +54,7 @@ function StartMenu() {
 
   function handleLanguageChange(lang) {
     navigate(`/${lang}`);
-    setLanguage(lang);
+    changeLanguage(lang);
   }
 
   const langList = {
@@ -90,10 +91,46 @@ function StartMenu() {
   return (
     <div styles={{ display: "flex" }}>
       <ul className={styles.startMenu}>
-        <li onClick={toggleFullScreen}>Toggle fullscreen</li>
-        <li>Languages</li>
+        <li onClick={toggleFullScreen}>
+          {translations(
+            "Fullscreen",
+            "Pantalla completa",
+            "Sschermo intero",
+            "Vollbild",
+            language
+          )}
+        </li>
+        <li
+          onMouseEnter={() => setLanguageMenuIsShown(true)}
+          onMouseLeave={() => setLanguageMenuIsShown(false)}
+        >
+          {translations(
+            "Change Language",
+            "Cambiar idioma",
+            "Cambia lingua",
+            "Sprache ändern",
+            language
+          )}
+        </li>
+        <li>
+          {translations(
+            "Download rèsumè",
+            "Descargar curriculum",
+            "Scarica curriculum",
+            "Lebenslauf herunterladen",
+            language
+          )}
+        </li>
       </ul>
-      <ul className={styles.languagesMenu}>{langList[language]}</ul>
+      {languageMenuIsShown && (
+        <ul
+          onMouseEnter={() => setLanguageMenuIsShown(true)}
+          onMouseLeave={() => setLanguageMenuIsShown(false)}
+          className={styles.languagesMenu}
+        >
+          {langList[language]}
+        </ul>
+      )}
     </div>
   );
 }
@@ -104,13 +141,22 @@ const time = {
   it: "it-IT",
   de: "de-DE",
 };
+function getDate(lang) {
+  return new Date().toLocaleString(time[lang]);
+}
 function Time() {
-  const [language, setLanguage] = useContext(languageContext);
-  const [date, setDate] = useState(new Date().toLocaleString(time[language]));
+  const [language, changeLanguage] = useContext(languageContext);
+  const [date, setDate] = useState(null);
+
   useEffect(() => {
-    setInterval(() => {
-      setDate(new Date().toLocaleString(time[language]));
+    const startTimer = setInterval(() => {
+      setDate(getDate(language));
     }, 1000);
-  });
+
+    return function cleanup() {
+      clearInterval(startTimer);
+    };
+  }, [language]);
+
   return <div className={styles.time}> {date} </div>;
 }

@@ -16,7 +16,7 @@ const reset = {
 
 export default function WindowButtons({ file, popup }) {
   const windowAction = useContext(windowActionContext);
-  const [language, setLanguage] = useContext(languageContext);
+  const [language, changeLanguage] = useContext(languageContext);
   const [hover, setHover] = useState(reset);
 
   return (
