@@ -32,6 +32,7 @@
 - [ ] Add error page when visiting wrong route
 - [ ] Add "Contact me" file
 - [ ] Add "Download" button to download a pdf version of my resumé on start menu
+- [ ] Add translations() function in the rest of the content components
 - [ ] Add portfolio websites through iframe
 - [ ] Remove sass (https://blog.bitsrc.io/how-to-use-sass-and-css-modules-with-create-react-app-83fa8b805e5e)
 - [ ] Add profile picture
