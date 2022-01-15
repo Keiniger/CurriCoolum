@@ -91,7 +91,7 @@ export default function Conocimientos() {
             <li>
               CSS
               <ul>
-                <li> SASS/CSS </li>
+                <li> SASS/SCSS </li>
                 <li> Bootstrap </li>
               </ul>
             </li>
@@ -128,7 +128,6 @@ export default function Conocimientos() {
         <div>
           <h2> Workflow </h2>
           <ul>
-            <li> Mobile-First, Responsive Design </li>
             <li> Teamwork </li>
             <li> Agile development & Scrum </li>
           </ul>
