@@ -5,14 +5,6 @@ import OpenedFilesContainer from "./OpenedFilesContainer";
 import { languageContext, translations } from "../../App";
 import { useNavigate } from "react-router-dom";
 
-const start = {
-  es: "Inicio",
-  en: "Start",
-  it: "Inizio",
-  de: "Anfang",
-};
-
-// todo: move time to another component
 export default function Taskbar({ files }) {
   const [language, changeLanguage] = useContext(languageContext);
   const [startMenuIsVisible, setStartMenuIsVisible] = useState(false);
@@ -23,7 +15,9 @@ export default function Taskbar({ files }) {
 
   return (
     <>
-      {startMenuIsVisible && <StartMenu />}
+      {startMenuIsVisible && (
+        <StartMenu setStartMenuIsVisible={setStartMenuIsVisible} />
+      )}
       <hr className={styles.hr} />
       <div className={styles.taskbar}>
         <div className={styles.start} onClick={toggleStartMenu}>
@@ -37,7 +31,7 @@ export default function Taskbar({ files }) {
   );
 }
 
-function StartMenu() {
+function StartMenu({ setStartMenuIsVisible }) {
   const [language, changeLanguage] = useContext(languageContext);
   const [languageMenuIsShown, setLanguageMenuIsShown] = useState(false);
   const navigate = useNavigate();
@@ -55,16 +49,6 @@ function StartMenu() {
   function handleLanguageChange(lang) {
     navigate(`/${lang}`);
     changeLanguage(lang);
-  }
-
-  function handleDownload(){
-    const fileNames = {
-      en: "Rèsumè - Andrew Keiniger (en)",
-      es: "Curriculum Vitae - Ignacio Keiniger (es)",
-      it: "Curriculum Vitae - Ignazio Keiniger (it)",
-      de: "Lebenslauf - Ignatz Keiniger (de)",
-    }
-    navigate(`/${fileNames[language]}.pdf`);
   }
 
   const langList = {
@@ -99,7 +83,11 @@ function StartMenu() {
   };
 
   return (
-    <div styles={{ display: "flex" }}>
+    <div
+      styles={{ display: "flex" }}
+      onMouseEnter={() => setStartMenuIsVisible(true)}
+      onMouseLeave={() => setStartMenuIsVisible(false)}
+    >
       <ul className={styles.startMenu}>
         <li onClick={toggleFullScreen}>
           {translations(
@@ -122,20 +110,41 @@ function StartMenu() {
             language
           )}
         </li>
-        <li onClick={handleDownload}>
-          {translations(
-            "Download rèsumè",
-            "Descargar curriculum",
-            "Scarica curriculum",
-            "Lebenslauf herunterladen",
-            language
-          )}
+        <li>
+          <a
+            href={`${translations(
+              "Rèsumè - Andrew Keiniger (en)",
+              "Curriculum Vitae - Ignacio Keiniger (es)",
+              "Curriculum Vitae - Ignazio Keiniger (it)",
+              "Lebenslauf - Ignatz Keiniger (de)",
+              language
+            )}.pdf`}
+            target="_blank"
+            /*download*/
+            rel="noreferrer"
+            style={{
+              textDecorationLine: "none",
+            }}
+          >
+            {translations(
+              "Download rèsumè",
+              "Descargar curriculum",
+              "Scarica curriculum",
+              "Lebenslauf herunterladen",
+              language
+            )}
+          </a>
         </li>
       </ul>
       {languageMenuIsShown && (
         <ul
-          onMouseEnter={() => setLanguageMenuIsShown(true)}
-          onMouseLeave={() => setLanguageMenuIsShown(false)}
+          onMouseEnter={() => {
+            setStartMenuIsVisible(true);
+            setLanguageMenuIsShown(true);
+          }}
+          onMouseLeave={() => {
+            setLanguageMenuIsShown(false);
+          }}
           className={styles.languagesMenu}
         >
           {langList[language]}
