@@ -43,7 +43,7 @@ export default function Educacion() {
             <h2>Colegio Tarbut</h2>
             <h3>Elementary school and high school</h3>
             <p>
-              Billingual bachelor in Economics and Business Management
+              Bilingual bachelor in Economics and Business Management
               <br />
               Buenos Aires, Olivos
             </p>

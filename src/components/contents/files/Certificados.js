@@ -67,7 +67,7 @@ export default function Certificados({ CaC, IA }) {
                 I.G.C.S.E. (International General Certificate of Secondary
                 Education) provided by Cambridge University.
               </li>
-              <li>I.B. (International Baccaulaureate).</li>
+              <li>I.B. (International Baccalaureate).</li>
               <li>
                 <div
                   className={styles.certificateLink}
@@ -160,7 +160,7 @@ export default function Certificados({ CaC, IA }) {
                   onClick={() => windowAction("make-open", IA)}
                 >
                   "Einführung in die Künstliche Intelligenz"(Introducción a la
-                  Inteligencia Artificial) Kursabschlusszertifikat.
+                  Inteligencia Artificial) Kurs Abschlusszertifikat.
                 </div>
               </li>
             </ul>

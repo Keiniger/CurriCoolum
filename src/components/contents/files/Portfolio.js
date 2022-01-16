@@ -21,62 +21,62 @@ export const PortfolioTitle = {
 const sites = {
   tp_diseño: {
     website: "",
-    github: "https://github.com/Nacho-Keiniger/Trabajo-Pr-ctico-C-",
+    github: "https://github.com/Keiniger/TP-Diseno-de-Sistemas",
     image:
-      "https://raw.githubusercontent.com/Nacho-Keiniger/Trabajo-Pr-ctico-C-/main/Homepage.png",
+      "https://raw.githubusercontent.com/Keiniger/TP-Diseno-de-Sistemas/main/Homepage.png",
   },
   moneylog: {
     website: "https://moneylog-tracker.netlify.app/",
-    github: "https://github.com/Nacho-Keiniger/Moneylog",
+    github: "https://github.com/Keiniger/Moneylog",
     image:
-      "https://raw.githubusercontent.com/Nacho-Keiniger/Moneylog/main/Moneylog.png",
+      "https://raw.githubusercontent.com/Keiniger/Moneylog/main/Moneylog.png",
   },
   neon_homepage: {
     website: "https://neon-homepage.netlify.app/",
-    github: "https://github.com/Nacho-Keiniger/Neon-Homepage",
+    github: "https://github.com/Keiniger/Neon-Homepage",
     image:
-      "https://raw.githubusercontent.com/Nacho-Keiniger/Neon-Homepage/master/NeonHomepage.png",
+      "https://raw.githubusercontent.com/Keiniger/Neon-Homepage/master/NeonHomepage.png",
   },
   geoc: {
     website: "https://geoc.netlify.app/",
-    github: "https://github.com/Nacho-Keiniger/GEOC",
+    github: "https://github.com/Keiniger/GEOC",
     image:
-      "https://raw.githubusercontent.com/Nacho-Keiniger/GEOC/main/GEOC.png",
+      "https://raw.githubusercontent.com/Keiniger/GEOC/main/GEOC.png",
   },
   quotery: {
     website: "https://quotery.netlify.app/",
-    github: "https://github.com/Nacho-Keiniger/Quotery",
+    github: "https://github.com/Keiniger/Quotery",
     image:
-      "https://raw.githubusercontent.com/Nacho-Keiniger/Quotery/main/Quotery.png",
+      "https://raw.githubusercontent.com/Keiniger/Quotery/main/Quotery.png",
   },
   project_chaos: {
     website: "https://project-chaos.netlify.app/",
-    github: "https://github.com/Nacho-Keiniger/Project-Chaos",
+    github: "https://github.com/Keiniger/Project-Chaos",
     image:
-      "https://raw.githubusercontent.com/Nacho-Keiniger/Project-Chaos/main/Project-Chaos.png",
+      "https://raw.githubusercontent.com/Keiniger/Project-Chaos/main/Project-Chaos.png",
   },
   foodies: {
     website: "https://foodies-delivery.netlify.app/",
-    github: "https://github.com/Nacho-Keiniger/Foodies",
+    github: "https://github.com/Keiniger/Foodies",
     image:
-      "https://raw.githubusercontent.com/Nacho-Keiniger/Foodies/main/Foodies.png",
+      "https://raw.githubusercontent.com/Keiniger/Foodies/main/Foodies.png",
   },
   aesthetic_os: {
     website: "https://aesthetic-os.netlify.app/",
-    github: "https://github.com/Nacho-Keiniger/Aesthetic-OS",
+    github: "https://github.com/Keiniger/Aesthetic-OS",
     image:
-      "https://raw.githubusercontent.com/Nacho-Keiniger/Aesthetic-OS/main/Aesthetic-OS.png",
+      "https://raw.githubusercontent.com/Keiniger/Aesthetic-OS/main/Aesthetic-OS.png",
   },
   tp_gbd: {
     website: "",
-    github: "https://github.com/Nacho-Keiniger/TP-SO",
+    github: "https://github.com/Keiniger/TP-Gestion-de-Datos",
     image:
-      "https://raw.githubusercontent.com/Nacho-Keiniger/Trabajo-Pr-ctico-SQL/main/TP-SQL.png",
+      "https://raw.githubusercontent.com/Keiniger/TP-Gestion-de-Datos/main/TP-SQL.png",
   },
   tp_so: {
     website: "",
-    github: "https://github.com/Nacho-Keiniger/TP-SO",
-    image: "https://raw.githubusercontent.com/Nacho-Keiniger/TP-SO/main/SO.png",
+    github: "https://github.com/Keiniger/TP-Sistemas-Operativos",
+    image: "https://raw.githubusercontent.com/Keiniger/TP-Sistemas-Operativos/main/SO.png",
   },
 };
 

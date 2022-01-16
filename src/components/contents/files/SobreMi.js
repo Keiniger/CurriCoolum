@@ -49,7 +49,7 @@ export default function SobreMi() {
             </h2>
             <p>
               I'm a 22 year old Full Stack developer. I love learning new
-              technologies and problemsolving. I'm interested in
+              technologies and problem solving. I'm interested in
               cryptocurrencies, blockchain technologies, smart contracts,
               functional programming and machine learning.
               <br />
@@ -72,9 +72,8 @@ export default function SobreMi() {
             </h2>
             <p>
               Ho 22 anni e sono uno sviluppatore fullstack. Amo imparare nuove
-              technologie e risolvere problemi. Sono interessato in
-              criptovalute, technologie blockchain, contrati inteligenti e
-              machine learning.
+              tecnologie e risolvere problemi. Sono interessato a criptovalute,
+              tecnologie blockchain, contratti intelligenti e machine learning.
               <br />
               Attualmente, sto nel quarto anno di università alla Universidad
               Tecnológica Nacional, facendo la carriera Ingegneria
@@ -95,7 +94,7 @@ export default function SobreMi() {
               <a href="mailto:nkeiniger@gmail.com">nkeiniger@gmail.com</a>
             </h2>
             <p>
-              Ich bin ein 22-jähriger Full-Stack-Entwickler. Ich liebe es, neue
+              Ich bin ein 22-jähriger Full Stack Entwickler. Ich liebe es, neue
               Technologien zu lernen und Probleme zu lösen. Ich interessiere
               mich für Kryptowährungen, Blockchain-Technologien, Smart
               Contracts, funktionale Programmierung und maschinelles Lernen.

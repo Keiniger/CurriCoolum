@@ -16,19 +16,59 @@ export default function Conocimientos() {
   let conocimientosVarios, actualmenteAprendiendo;
 
   switch (language) {
-    case "es": { conocimientosVarios = "Conocimientos varios"; } break;
-    case "en": { conocimientosVarios = "Other skills";         } break;
-    case "it": { conocimientosVarios = "Altre abilità";        } break;
-    case "de": { conocimientosVarios = "Andere Fähigkeiten";   } break;
-    default  : { conocimientosVarios = "Other skills";         } break;
+    case "es":
+      {
+        conocimientosVarios = "Conocimientos varios";
+      }
+      break;
+    case "en":
+      {
+        conocimientosVarios = "Other skills";
+      }
+      break;
+    case "it":
+      {
+        conocimientosVarios = "Altre abilità";
+      }
+      break;
+    case "de":
+      {
+        conocimientosVarios = "Andere Fähigkeiten";
+      }
+      break;
+    default:
+      {
+        conocimientosVarios = "Other skills";
+      }
+      break;
   }
 
   switch (language) {
-    case "es": { actualmenteAprendiendo = "Actualmente aprendiendo"; } break;
-    case "en": { actualmenteAprendiendo = "Currently learning";      } break;
-    case "it": { actualmenteAprendiendo = "attualmente apprendendo"; } break;
-    case "de": { actualmenteAprendiendo = "Learne gerade";           } break;
-    default  : { actualmenteAprendiendo = "Currently learning";      } break;
+    case "es":
+      {
+        actualmenteAprendiendo = "Actualmente aprendiendo";
+      }
+      break;
+    case "en":
+      {
+        actualmenteAprendiendo = "Currently learning";
+      }
+      break;
+    case "it":
+      {
+        actualmenteAprendiendo = "attualmente imparando";
+      }
+      break;
+    case "de":
+      {
+        actualmenteAprendiendo = "Learne gerade";
+      }
+      break;
+    default:
+      {
+        actualmenteAprendiendo = "Currently learning";
+      }
+      break;
   }
 
   return (
@@ -57,7 +97,7 @@ export default function Conocimientos() {
               <ul>
                 <li>MYSQL</li>
                 <li>SQL Server</li>
-                <li>PostgressSQL</li>
+                <li>PostgreSQL</li>
               </ul>
             </li>
             <li>
@@ -135,9 +175,14 @@ export default function Conocimientos() {
           <ul>
             <li> Git/Github </li>
             <li> REST APIs </li>
-            <li> Adobe Photoshop </li>
-            <li> Adobe XD </li>
-            <li> Adobe Illustrator </li>
+            <li>
+              Adobe suite
+              <ul>
+                <li> Adobe Photoshop </li>
+                <li> Adobe XD </li>
+                <li> Adobe Illustrator </li>
+              </ul>
+            </li>
             <li>
               Linux
               <ul>
