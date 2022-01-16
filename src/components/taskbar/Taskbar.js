@@ -64,7 +64,7 @@ function StartMenu() {
       it: "Curriculum Vitae - Ignazio Keiniger (it)",
       de: "Lebenslauf - Ignatz Keiniger (de)",
     }
-    navigate(`/${fileNames[language]}`);
+    navigate(`/${fileNames[language]}.pdf`);
   }
 
   const langList = {
