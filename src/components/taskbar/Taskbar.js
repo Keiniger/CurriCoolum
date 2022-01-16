@@ -57,6 +57,16 @@ function StartMenu() {
     changeLanguage(lang);
   }
 
+  function handleDownload(){
+    const fileNames = {
+      en: "Rèsumè - Andrew Keiniger (en)",
+      es: "Curriculum Vitae - Ignacio Keiniger (es)",
+      it: "Curriculum Vitae - Ignazio Keiniger (it)",
+      de: "Lebenslauf - Ignatz Keiniger (de)",
+    }
+    navigate(`/${fileNames[language]}`);
+  }
+
   const langList = {
     en: (
       <>
@@ -112,7 +122,7 @@ function StartMenu() {
             language
           )}
         </li>
-        <li>
+        <li onClick={handleDownload}>
           {translations(
             "Download rèsumè",
             "Descargar curriculum",
