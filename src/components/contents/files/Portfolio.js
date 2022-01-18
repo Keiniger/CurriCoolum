@@ -511,7 +511,7 @@ export default function Portfolio() {
         )}
       </Title>
       <Subtitle>
-        <a href={sites.tp_so.github} target="_blank">
+        <a href={sites.este_curriculum.github} target="_blank">
           Github {openIcon}
         </a>
       </Subtitle>
