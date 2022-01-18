@@ -55,7 +55,7 @@ export default function SobreMi() {
           flexWrap: "wrap",
         }}
       >
-        <img src={profile_pic} alt="Profile picture" style={profile} />
+        <img src={profile_pic} alt="Profile" style={profile} />
         <div style={{ textAlign: "center" }}>
           <h1>
             {translations(

@@ -1,6 +1,6 @@
 /* eslint-disable default-case */
 /* eslint-disable no-lone-blocks */
-import React, { useContext } from "react";
+import React from "react";
 import { browserLang, defaultLang } from "../../../App";
 import { useParams } from "react-router-dom";
 
@@ -12,7 +12,7 @@ export const IdiomasTitle = {
 };
 
 export default function Idiomas() {
-  const { lang, id } = useParams();
+  const { lang } = useParams();
   const language = lang || browserLang || defaultLang;
 
   switch (language) {

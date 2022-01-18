@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./Portfolio.module.css";
 import { browserLang, defaultLang, translations } from "../../../App";
 import { useParams } from "react-router-dom";
@@ -84,22 +84,6 @@ const sites = {
   },
 };
 
-function Links({ list }) {
-  console.log(list);
-  return (
-    <h3 style={{ textAlign: "center" }}>
-      {list.map((el, index) => {
-        <>
-          <a href={el.href} target="_blank" rel="noreferrer">
-            {" "}
-            {el.to} {openIcon}{" "}
-          </a>
-        </>;
-      })}
-    </h3>
-  );
-}
-
 function Paragraph({ children }) {
   return <p style={{ textAlign: "center" }}>{children}</p>;
 }
@@ -119,7 +103,7 @@ function Subtitle({ children }) {
 }
 
 export default function Portfolio() {
-  const { lang, id } = useParams();
+  const { lang } = useParams();
   const language = lang || browserLang || defaultLang;
 
   return (

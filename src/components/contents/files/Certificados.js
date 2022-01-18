@@ -1,3 +1,5 @@
+/* eslint-disable no-lone-blocks */
+/* eslint-disable default-case */
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { windowActionContext } from "../../../App";
@@ -12,7 +14,7 @@ export const CertificadosTitle = {
 };
 
 export default function Certificados({ CaC, IA }) {
-  const { lang, id } = useParams();
+  const { lang } = useParams();
   const windowAction = useContext(windowActionContext);
   const language = lang || browserLang || defaultLang;
 
@@ -53,7 +55,6 @@ export default function Certificados({ CaC, IA }) {
           </>
         );
       }
-      break;
     case "en":
       {
         return (
@@ -90,7 +91,6 @@ export default function Certificados({ CaC, IA }) {
           </>
         );
       }
-      break;
     case "it":
       {
         return (
@@ -129,7 +129,6 @@ export default function Certificados({ CaC, IA }) {
           </>
         );
       }
-      break;
     case "de":
       {
         return (
@@ -167,6 +166,5 @@ export default function Certificados({ CaC, IA }) {
           </>
         );
       }
-      break;
   }
 }

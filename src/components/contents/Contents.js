@@ -1,8 +1,5 @@
-import styles from "./Contents.module.css";
-
 // Font Awesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { faUniversity } from "@fortawesome/free-solid-svg-icons";
 import { faIdCard } from "@fortawesome/free-solid-svg-icons";
@@ -21,7 +18,6 @@ import Idiomas, {IdiomasTitle} from "./files/Idiomas";
 import CodoACodo from "./CodoACodo.png";
 import InteligenciaArtificial from "./InteligenciaArtificial.png";
 
-const textIcon = <FontAwesomeIcon icon={faFileAlt} />;
 const graduationIcon = <FontAwesomeIcon icon={faGraduationCap} />;
 const universityIcon = <FontAwesomeIcon icon={faUniversity} />;
 const idCardIcon = <FontAwesomeIcon icon={faIdCard} />;

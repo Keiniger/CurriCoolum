@@ -1,15 +1,15 @@
-import { useState, useRef, useEffect, createContext, useContext } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import useWindowDimensions from "./useWindowDimensions";
 import { Rnd } from "react-rnd";
 import styles from "./Window.module.scss";
 import WindowButtons from "./WindowButtons";
-import ReactDOMServer from "react-dom/server";
 import classNames from "classnames";
 import { windowActionContext, languageContext } from "../../App";
 
 export default function Window({ file }) {
   const windowAction = useContext(windowActionContext);
-  const [language, setLanguage] = useContext(languageContext);
+  // eslint-disable-next-line no-unused-vars
+  const [language, _] = useContext(languageContext);
   const rnd = useRef(null);
   const [wasMaximized, setWasMaximized] = useState(false);
   const [prevSize, setPrevSize] = useState({ width: 0, height: 0 });
@@ -76,11 +76,10 @@ export default function Window({ file }) {
 
   function popup() {
     windowAction("make-minimize", file.id);
-    console.log(file);
-
+    
     let popupWindow = window.open(
       `${window.location.origin}/${language}/popup/${file.id}`,
-      file.title,
+      file.title[language],
       `width=${getCurrentSize().width},height=${
         getCurrentSize().height - 32
       },left=${getCurrentPosition().x - 7},top=${
@@ -90,7 +89,6 @@ export default function Window({ file }) {
 
     popupWindow.onbeforeunload = function () {
       windowAction("make-open", file.id);
-      console.log(file);
 
       function invalidPosition(x, y) {
         const booleanX = x < 0 || x >= browserWidth;
