@@ -92,19 +92,18 @@ export default function Window({ file }) {
       windowAction("make-open", file.id);
       console.log(file);
 
-      function invalidPosition(x, y){
-        const booleanX = ((x < 0) || (x >= browserWidth));
-        const booleanY = ((y < 0) || (y >= browserHeight));
-        return (booleanX || booleanY);
+      function invalidPosition(x, y) {
+        const booleanX = x < 0 || x >= browserWidth;
+        const booleanY = y < 0 || y >= browserHeight;
+        return booleanX || booleanY;
       }
 
-      if(invalidPosition(popupWindow.screenX, popupWindow.screenY)){
+      if (invalidPosition(popupWindow.screenX, popupWindow.screenY)) {
         rnd.current.updatePosition({
           x: 0,
           y: 0,
         });
-      }
-      else if (!file.isMaximized) {
+      } else if (!file.isMaximized) {
         rnd.current.updatePosition({
           x: popupWindow.screenX,
           y: popupWindow.screenY,
@@ -127,15 +126,18 @@ export default function Window({ file }) {
           : styles.Rnd
       }
       bounds="window"
-      minHeight="300"
-      minWidth="300"
+      minHeight={file.minHeight || "300"}
+      minWidth={file.minWidth || "300"}
       maxHeight={browserHeight}
       maxWidth={browserWidth}
       default={{
         y: file.y * browserHeight,
         x: file.x * browserWidth,
-        height: file.height * browserHeight,
-        width: file.width * browserWidth,
+        height: Math.max(
+          file.minHeight || -Infinity,
+          file.height * browserHeight
+        ),
+        width: Math.max(file.minWidth || -Infinity, file.width * browserWidth),
       }}
       ref={rnd}
       disableDragging={file.isMaximized || disableDragging}

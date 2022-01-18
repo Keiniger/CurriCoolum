@@ -81,7 +81,7 @@ const sites = {
   este_curriculum: {
     website: "",
     github: "https://github.com/Keiniger/CurriCoolum",
-  }
+  },
 };
 
 function Links({ list }) {
@@ -90,7 +90,7 @@ function Links({ list }) {
     <h3 style={{ textAlign: "center" }}>
       {list.map((el, index) => {
         <>
-          <a href={el.href} target="_blank">
+          <a href={el.href} target="_blank" rel="noreferrer">
             {" "}
             {el.to} {openIcon}{" "}
           </a>
@@ -98,6 +98,10 @@ function Links({ list }) {
       })}
     </h3>
   );
+}
+
+function Paragraph({ children }) {
+  return <p style={{ textAlign: "center" }}>{children}</p>;
 }
 
 function VerticalLine() {
@@ -130,17 +134,19 @@ export default function Portfolio() {
         )}
       </Title>
       <Subtitle>
-        <a href={sites.tp_diseño.github} target="_blank">
+        <a href={sites.tp_diseño.github} target="_blank" rel="noreferrer">
           {" "}
           Github {openIcon}
         </a>
       </Subtitle>
-      <img
-        className={styles.image}
-        alt="tp_diseño"
-        src={sites.tp_diseño.image}
-      />
-      <p>
+      <a href={sites.tp_diseño.github} target="_blank" rel="noreferrer">
+        <img
+          className={styles.image}
+          alt="tp_diseño"
+          src={sites.tp_diseño.image}
+        />
+      </a>
+      <Paragraph>
         {translations(
           `Made with C#, HTML, Bootstrap, Javascript and MySQL. It's
           completely responsive. It was the result of a year-long
@@ -174,22 +180,65 @@ export default function Portfolio() {
           Login-System beteiligt.`,
           language
         )}
-      </p>
+      </Paragraph>
+      <br />
+      <hr />
+      <br />
+      <Title>Aesthetic OS</Title>
+      <Subtitle>
+        <a href={sites.aesthetic_os.github} target="_blank" rel="noreferrer">
+          Github {openIcon}
+        </a>
+        <VerticalLine />
+        <a href={sites.aesthetic_os.website} target="_blank" rel="noreferrer">
+          Website {openIcon}
+        </a>
+      </Subtitle>{" "}
+      <a href={sites.aesthetic_os.website} target="_blank" rel="noreferrer">
+        <img
+          className={styles.image}
+          alt="aesthetic_os"
+          src={sites.aesthetic_os.image}
+        />
+      </a>
+      <Paragraph>
+        {translations(
+          `Made with React. It's a website I developed with the intention of
+           emulating an operating system's interface in the browser.`,
+
+          `Hecho con React. Es una página que desarrollé con la intención de emular
+          la interfaz de un sistema operativo en el navegador.`,
+
+          `Fatto con React. È un sito web che ho sviluppato con l'intenzione
+          di emulare l'interfaccia di un sistema operativo nel browser.`,
+
+          `Gemacht mit React. Es ist eine Website, die ich mit der Absicht
+          entwickelt habe, die Schnittstelle eines Betriebssystems im
+          Browser zu emulieren.`,
+          language
+        )}
+      </Paragraph>
       <br />
       <hr />
       <br />
       <h2 style={{ textAlign: "center" }}>Moneylog</h2>
       <Subtitle>
-        <a href={sites.moneylog.github} target="_blank">
+        <a href={sites.moneylog.github} target="_blank" rel="noreferrer">
           Github {openIcon}
         </a>
         <VerticalLine />
-        <a href={sites.moneylog.website} target="_blank">
+        <a href={sites.moneylog.website} target="_blank" rel="noreferrer">
           Website {openIcon}
         </a>
       </Subtitle>
-      <img className={styles.image} alt="moneylog" src={sites.moneylog.image} />
-      <p>
+      <a href={sites.moneylog.website} target="_blank" rel="noreferrer">
+        <img
+          className={styles.image}
+          alt="moneylog"
+          src={sites.moneylog.image}
+        />
+      </a>
+      <Paragraph>
         {translations(
           `Made with React. It's a website that helps you track 
           monthly expenditures.`,
@@ -204,7 +253,7 @@ export default function Portfolio() {
           hilft, monatliche Ausgaben zu verfolgen.`,
           language
         )}
-      </p>
+      </Paragraph>
       <br />
       <hr />
       <br />
@@ -219,12 +268,14 @@ export default function Portfolio() {
           Website {openIcon}
         </a>
       </Subtitle>
-      <img
-        className={styles.image}
-        alt="neon_homepage"
-        src={sites.neon_homepage.image}
-      />
-      <p>
+        <a href={sites.neon_homepage.website} target="_blank">
+          <img
+            className={styles.image}
+            alt="neon_homepage"
+            src={sites.neon_homepage.image}
+          />
+        </a>
+      <Paragraph>
         {translations(
           `One of my fist websites. It was written with Sass for the styling
           and HTML for everything else. It's completely responsive and it's
@@ -243,23 +294,25 @@ export default function Portfolio() {
           es ist angenommen, dass es für einen Browser eine Homepage ist.`,
           language
         )}
-      </p>
+      </Paragraph>
       <br />
       <hr />
       <br />
       */}
       <Title>GEOC</Title>
       <Subtitle>
-        <a href={sites.geoc.github} target="_blank">
+        <a href={sites.geoc.github} target="_blank" rel="noreferrer">
           Github {openIcon}
         </a>
         <VerticalLine />
-        <a href={sites.geoc.website} target="_blank">
+        <a href={sites.geoc.website} target="_blank" rel="noreferrer">
           Website {openIcon}
         </a>
-      </Subtitle>
-      <img className={styles.image} alt="geoc" src={sites.geoc.image} />
-      <p>
+      </Subtitle>{" "}
+      <a href={sites.geoc.website} target="_blank" rel="noreferrer">
+        <img className={styles.image} alt="geoc" src={sites.geoc.image} />
+      </a>
+      <Paragraph>
         {translations(
           `Made with Bootstrap and vanilla Javascript. It's also completely
           responsive. It was designed as a mockup for a business in the need
@@ -280,22 +333,24 @@ export default function Portfolio() {
           und es war eine Uni-Aufgabe.`,
           language
         )}
-      </p>
+      </Paragraph>
       <br />
       <hr />
       <br />
       <Title>Quotery</Title>
       <Subtitle>
-        <a href={sites.quotery.github} target="_blank">
+        <a href={sites.quotery.github} target="_blank" rel="noreferrer">
           Github {openIcon}
         </a>
         <VerticalLine />
-        <a href={sites.quotery.website} target="_blank">
+        <a href={sites.quotery.website} target="_blank" rel="noreferrer">
           Website {openIcon}
         </a>
-      </Subtitle>
-      <img className={styles.image} alt="quotery" src={sites.quotery.image} />
-      <p>
+      </Subtitle>{" "}
+      <a href={sites.quotery.website} target="_blank" rel="noreferrer">
+        <img className={styles.image} alt="quotery" src={sites.quotery.image} />
+      </a>
+      <Paragraph>
         {translations(
           `Made with React, React-Router and Firebase. It's a website in
           which one can upload quotes, phrases, aphorisms, etc.`,
@@ -311,7 +366,7 @@ export default function Portfolio() {
           hochladen kann.`,
           language
         )}
-      </p>
+      </Paragraph>
       <br />
       <hr />
       <br />
@@ -325,13 +380,15 @@ export default function Portfolio() {
         <a href={sites.project_chaos.website} target="_blank">
           Website {openIcon}
         </a>
-      </Subtitle>
+      </Subtitle>        
+      <a href={sites.project_chaos.website} target="_blank">
       <img
         className={styles.image}
         alt="project_chaos"
         src={sites.project_chaos.image}
       />
-      <p>
+        </a>
+      <Paragraph>
         {translations(
           `Made with Angular and Firebase as a database. It's a real-time
           multiplayer card game that can be played directly on the browser.`,
@@ -348,23 +405,25 @@ export default function Portfolio() {
           abgespielt werden kann.`,
           language
         )}
-      </p>
+      </Paragraph>
       <br />
       <hr />
       <br />
       */}
       <Title>Foodies Delivery</Title>
       <Subtitle>
-        <a href={sites.foodies.github} target="_blank">
+        <a href={sites.foodies.github} target="_blank" rel="noreferrer">
           Github {openIcon}
         </a>
         <VerticalLine />
-        <a href={sites.foodies.website} target="_blank">
+        <a href={sites.foodies.website} target="_blank" rel="noreferrer">
           Website {openIcon}
         </a>
-      </Subtitle>
-      <img className={styles.image} alt="foodies" src={sites.foodies.image} />
-      <p>
+      </Subtitle>{" "}
+      <a href={sites.foodies.website} target="_blank" rel="noreferrer">
+        <img className={styles.image} alt="foodies" src={sites.foodies.image} />
+      </a>
+      <Paragraph>
         {translations(
           `Made with React, Redux and Firebase. It's a dummy UI for a food
           delivery app.`,
@@ -379,42 +438,7 @@ export default function Portfolio() {
           Dummy-Benutzeroberfläche für eine Food-Delivery-App.`,
           language
         )}
-      </p>
-      <br />
-      <hr />
-      <br />
-      <Title>Aesthetic OS</Title>
-      <Subtitle>
-        <a href={sites.aesthetic_os.github} target="_blank">
-          Github {openIcon}
-        </a>
-        <VerticalLine />
-        <a href={sites.aesthetic_os.website} target="_blank">
-          Website {openIcon}
-        </a>
-      </Subtitle>
-      <img
-        className={styles.image}
-        alt="aesthetic_os"
-        src={sites.aesthetic_os.image}
-      />
-      <p>
-        {translations(
-          `Made with React. It's a website I developed with the intention of
-           emulating an operating system's interface in the browser.`,
-
-          `Hecho con React. Es una página que desarrollé con la intención de emular
-          la interfaz de un sistema operativo en el navegador.`,
-
-          `Fatto con React. È un sito web che ho sviluppato con l'intenzione
-          di emulare l'interfaccia di un sistema operativo nel browser.`,
-
-          `Gemacht mit React. Es ist eine Website, die ich mit der Absicht
-          entwickelt habe, die Schnittstelle eines Betriebssystems im
-          Browser zu emulieren.`,
-          language
-        )}
-      </p>
+      </Paragraph>
       <br />
       <hr />
       <br />
@@ -428,12 +452,14 @@ export default function Portfolio() {
         )}
       </Title>
       <Subtitle>
-        <a href={sites.tp_gbd.github} target="_blank">
+        <a href={sites.tp_gbd.github} target="_blank" rel="noreferrer">
           Github {openIcon}
         </a>
-      </Subtitle>
-      <img className={styles.image} alt="tp_gbd" src={sites.tp_gbd.image} />
-      <p>
+      </Subtitle>{" "}
+      <a href={sites.tp_gbd.github} target="_blank" rel="noreferrer">
+        <img className={styles.image} alt="tp_gbd" src={sites.tp_gbd.image} />
+      </a>
+      <Paragraph>
         {translations(
           `Made with SQL Server and PL-SQL. It was a four month long
            assignment developed with four people. I was in charge of the
@@ -454,7 +480,7 @@ export default function Portfolio() {
           PL-SQL Scripting.`,
           language
         )}
-      </p>
+      </Paragraph>
       <br />
       <hr />
       <br />
@@ -468,12 +494,14 @@ export default function Portfolio() {
         )}
       </Title>
       <Subtitle>
-        <a href={sites.tp_so.github} target="_blank">
+        <a href={sites.tp_so.github} target="_blank" rel="noreferrer">
           Github {openIcon}
         </a>
-      </Subtitle>
-      <img className={styles.image} alt="tp_so" src={sites.tp_so.image} />
-      <p>
+      </Subtitle>{" "}
+      <a href={sites.tp_so.github} target="_blank" rel="noreferrer">
+        <img className={styles.image} alt="tp_so" src={sites.tp_so.image} />
+      </a>
+      <Paragraph>
         {translations(
           `Made with C, Makefiles and Linux Scripting. It was a four month
           assignment, developed with a group of five people. I was in charge
@@ -497,7 +525,7 @@ export default function Portfolio() {
           Prozesse zuständig.`,
           language
         )}
-      </p>
+      </Paragraph>
       <br />
       <hr />
       <br />
@@ -511,11 +539,11 @@ export default function Portfolio() {
         )}
       </Title>
       <Subtitle>
-        <a href={sites.este_curriculum.github} target="_blank">
+        <a href={sites.este_curriculum.github} target="_blank" rel="noreferrer">
           Github {openIcon}
         </a>
       </Subtitle>
-      <p>
+      <Paragraph>
         {translations(
           `Made with React, React-Router, Rnd-React and lots of love <3`,
           `Hecho con React, React-Router, Rnd-React y mucho amor <3`,
@@ -523,7 +551,7 @@ export default function Portfolio() {
           `Hergestellt mit React, React-Router, Rnd-React und viel Liebe <3`,
           language
         )}
-      </p>
+      </Paragraph>
       <br />
     </>
   );

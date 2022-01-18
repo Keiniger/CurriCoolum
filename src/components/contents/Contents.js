@@ -94,6 +94,7 @@ const files = [
     isOnDesktop: true,
     isPopup: true,
     width: 0.4,
+    minHeight: "360",
     height: 0.35,
     x: 0.07,
     y: 0.02,
