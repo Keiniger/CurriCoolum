@@ -127,7 +127,7 @@ function StartMenu({ setStartMenuIsVisible }) {
             }}
           >
             {translations(
-              "Download rèsumè",
+              "Download résumé",
               "Descargar curriculum",
               "Scarica curriculum",
               "Lebenslauf herunterladen",

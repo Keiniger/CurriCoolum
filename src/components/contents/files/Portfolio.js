@@ -40,8 +40,7 @@ const sites = {
   geoc: {
     website: "https://geoc.netlify.app/",
     github: "https://github.com/Keiniger/GEOC",
-    image:
-      "https://raw.githubusercontent.com/Keiniger/GEOC/main/GEOC.png",
+    image: "https://raw.githubusercontent.com/Keiniger/GEOC/main/GEOC.png",
   },
   quotery: {
     website: "https://quotery.netlify.app/",
@@ -76,8 +75,13 @@ const sites = {
   tp_so: {
     website: "",
     github: "https://github.com/Keiniger/TP-Sistemas-Operativos",
-    image: "https://raw.githubusercontent.com/Keiniger/TP-Sistemas-Operativos/main/SO.png",
+    image:
+      "https://raw.githubusercontent.com/Keiniger/TP-Sistemas-Operativos/main/SO.png",
   },
+  este_curriculum: {
+    website: "",
+    github: "https://github.com/Keiniger/CurriCoolum",
+  }
 };
 
 function Links({ list }) {
@@ -499,21 +503,27 @@ export default function Portfolio() {
       <br />
       <Title>
         {translations(
-          "This rèsumè",
+          "This résumé",
           "Este curriculum",
           "Questo curriculum",
           "Diese Lebenszeit",
           language
         )}
       </Title>
-      {translations(
-        `Made with React, React-Router, Rnd-React and lots of love <3`,
-        `Hecho con React, React-Router, Rnd-React y mucho amor <3`,
-        `Realizzato con React, React-Router, Rnd-React e molto amore <3`,
-        `Hergestellt mit React, React-Router, Rnd-React und viel Liebe <3`,
-        language
-      )}
-      <p></p>
+      <Subtitle>
+        <a href={sites.tp_so.github} target="_blank">
+          Github {openIcon}
+        </a>
+      </Subtitle>
+      <p>
+        {translations(
+          `Made with React, React-Router, Rnd-React and lots of love <3`,
+          `Hecho con React, React-Router, Rnd-React y mucho amor <3`,
+          `Realizzato con React, React-Router, Rnd-React e molto amore <3`,
+          `Hergestellt mit React, React-Router, Rnd-React und viel Liebe <3`,
+          language
+        )}
+      </p>
       <br />
     </>
   );
