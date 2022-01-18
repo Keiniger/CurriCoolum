@@ -193,7 +193,7 @@ export default function Conocimientos() {
           <h2> {actualmenteAprendiendo} </h2>
           <ul>
             <li> Solidity </li>
-            <li> Svelte </li>
+            <li> React Native </li>
             <li> Angular </li>
           </ul>
         </div>
