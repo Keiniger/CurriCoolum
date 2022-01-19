@@ -241,7 +241,7 @@ export default function Portfolio() {
       <br />
       <hr />
       <br />
-      {/*
+      {/**/}
       <Title>Neon-Homepage</Title>
       <Subtitle>
         <a href={sites.neon_homepage.github} target="_blank">
@@ -282,7 +282,45 @@ export default function Portfolio() {
       <br />
       <hr />
       <br />
-      */}
+      <Title>Project Chaos</Title>
+      <Subtitle>
+        <a href={sites.project_chaos.github} target="_blank">
+          Github {openIcon}
+        </a>
+        <VerticalLine />
+        <a href={sites.project_chaos.website} target="_blank">
+          Website {openIcon}
+        </a>
+      </Subtitle>        
+      <a href={sites.project_chaos.website} target="_blank">
+      <img
+        className={styles.image}
+        alt="project_chaos"
+        src={sites.project_chaos.image}
+      />
+        </a>
+      <Paragraph>
+        {translations(
+          `Made with Angular and Firebase as a database. It's a real-time
+          multiplayer card game that can be played directly on the browser.`,
+
+          `Hecho con Angular y Firebase como base de datos. Es un juego de
+          cartas de dos jugadores en tiempo real.`,
+
+          `Realizzato con Angular e Firebase come database. È un gioco di
+          carte multiplayer in tempo reale che può essere giocato
+          direttamente sul browser.`,
+
+          `Gemacht mit Angular und Firebase als Datenbank. Es ist ein
+          Echtzeit-Multiplayer-Kartenspiel, das direkt auf dem Browser
+          abgespielt werden kann.`,
+          language
+        )}
+      </Paragraph>
+      <br />
+      <hr />
+      <br />
+      {/**/}
       <Title>GEOC</Title>
       <Subtitle>
         <a href={sites.geoc.github} target="_blank" rel="noreferrer">
@@ -354,46 +392,6 @@ export default function Portfolio() {
       <br />
       <hr />
       <br />
-      {/*
-      <Title>Project Chaos</Title>
-      <Subtitle>
-        <a href={sites.project_chaos.github} target="_blank">
-          Github {openIcon}
-        </a>
-        <VerticalLine />
-        <a href={sites.project_chaos.website} target="_blank">
-          Website {openIcon}
-        </a>
-      </Subtitle>        
-      <a href={sites.project_chaos.website} target="_blank">
-      <img
-        className={styles.image}
-        alt="project_chaos"
-        src={sites.project_chaos.image}
-      />
-        </a>
-      <Paragraph>
-        {translations(
-          `Made with Angular and Firebase as a database. It's a real-time
-          multiplayer card game that can be played directly on the browser.`,
-
-          `Hecho con Angular y Firebase como base de datos. Es un juego de
-          cartas de dos jugadores en tiempo real.`,
-
-          `Realizzato con Angular e Firebase come database. È un gioco di
-          carte multiplayer in tempo reale che può essere giocato
-          direttamente sul browser.`,
-
-          `Gemacht mit Angular und Firebase als Datenbank. Es ist ein
-          Echtzeit-Multiplayer-Kartenspiel, das direkt auf dem Browser
-          abgespielt werden kann.`,
-          language
-        )}
-      </Paragraph>
-      <br />
-      <hr />
-      <br />
-      */}
       <Title>Foodies Delivery</Title>
       <Subtitle>
         <a href={sites.foodies.github} target="_blank" rel="noreferrer">
