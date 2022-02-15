@@ -241,7 +241,7 @@ export default function Portfolio() {
       <br />
       <hr />
       <br />
-      {/**/}
+      {/*
       <Title>Neon-Homepage</Title>
       <Subtitle>
         <a href={sites.neon_homepage.github} target="_blank">
@@ -283,6 +283,8 @@ export default function Portfolio() {
       <hr />
       <br />
       <Title>Project Chaos</Title>
+      */}
+      {/*
       <Subtitle>
         <a href={sites.project_chaos.github} target="_blank">
           Github {openIcon}
@@ -320,7 +322,7 @@ export default function Portfolio() {
       <br />
       <hr />
       <br />
-      {/**/}
+      */}
       <Title>GEOC</Title>
       <Subtitle>
         <a href={sites.geoc.github} target="_blank" rel="noreferrer">
