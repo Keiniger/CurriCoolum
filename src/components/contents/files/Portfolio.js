@@ -497,7 +497,7 @@ export default function Portfolio() {
           desarrollo de código asíncrono entre procesos por medio de semáforos, y
           de la detección de deadlock de esos mismos procesos.`,
 
-          `ealizzato con C, Makefiles e scripting Linux. Era un incarico di
+          `Realizzato con C, Makefiles e scripting Linux. Era un incarico di
           quattro mesi, sviluppato con un gruppo di cinque persone. Ero
           responsabile del codice asincrono tra i processi attraverso
           semafori e il rilevamento del deadlock di quegli stessi processi.`,

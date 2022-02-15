@@ -110,6 +110,7 @@ function StartMenu({ setStartMenuIsVisible }) {
             language
           )}
         </li>
+        {/*
         <li>
           <a
             href={`${translations(
@@ -120,7 +121,6 @@ function StartMenu({ setStartMenuIsVisible }) {
               language
             )}.pdf`}
             target="_blank"
-            /*download*/
             rel="noreferrer"
             style={{
               textDecorationLine: "none",
@@ -135,6 +135,7 @@ function StartMenu({ setStartMenuIsVisible }) {
             )}
           </a>
         </li>
+        */}
       </ul>
       {languageMenuIsShown && (
         <ul
