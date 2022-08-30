@@ -83,13 +83,10 @@ export default function Conocimientos() {
         <div>
           <h2>Backend</h2>
           <ul>
-            <li>C/C++</li>
             <li>
-              C#
+              Node.js
               <ul>
-                <li>Entity Framework</li>
-                <li>ASP.NET Core</li>
-                <li>Razor pages</li>
+                <li>Express</li>
               </ul>
             </li>
             <li>
@@ -103,20 +100,25 @@ export default function Conocimientos() {
             <li>
               No-SQL
               <ul>
+                <li>Elasticsearch</li>
+                <li>Redis</li>
                 <li>MongoDB</li>
                 <li>Firebase</li>
+              </ul>
+            </li>
+            <li>C/C++</li>
+            <li>
+              C#
+              <ul>
+                <li>Entity Framework</li>
+                <li>ASP.NET Core</li>
+                <li>Razor pages</li>
               </ul>
             </li>
             <li>
               Python
               <ul>
                 <li>Django</li>
-              </ul>
-            </li>
-            <li>
-              Node.js
-              <ul>
-                <li>Express</li>
               </ul>
             </li>
             <li>Haskell</li>
@@ -143,6 +145,14 @@ export default function Conocimientos() {
               </ul>
             </li>
             <li>
+              Angular
+              <ul>
+                <li> Angular Universal </li>
+                <li> NgRx </li>
+                <li> Material design </li>
+              </ul>
+            </li>
+            <li>
               React
               <ul>
                 <li> Functional Components </li>
@@ -151,8 +161,6 @@ export default function Conocimientos() {
                 <li> React-Router </li>
                 <li> Next.js </li>
                 <li> Styled Components </li>
-                <li> React Motion </li>
-                <li> Formik </li>
               </ul>
             </li>
             <li>
@@ -170,10 +178,12 @@ export default function Conocimientos() {
           <ul>
             <li> Teamwork </li>
             <li> Agile development & Scrum </li>
+            <li> Gitflow </li>
           </ul>
           <h2> {conocimientosVarios} </h2>
           <ul>
             <li> Git/Github </li>
+            <li> Docker </li>
             <li> REST APIs </li>
             <li>
               Adobe suite
@@ -183,6 +193,7 @@ export default function Conocimientos() {
                 <li> Adobe Illustrator </li>
               </ul>
             </li>
+            <li> Figma </li>
             <li>
               Linux
               <ul>
@@ -194,7 +205,6 @@ export default function Conocimientos() {
           <ul>
             <li> Solidity </li>
             <li> React Native </li>
-            <li> Angular </li>
           </ul>
         </div>
       </div>
