@@ -91,29 +91,32 @@ export default function SobreMi() {
         </div>
         <p style={{ textAlign: "justify", width: "70&", maxWidth: "675px" }}>
           {translations(
-            `I'm a 22 year old Full Stack developer. I love learning new 
-          technologies and problem solving. I'm interested in cryptocurrencies, 
-          blockchain technologies, smart contracts, functional programming 
-          and machine learning.`,
+            `I'm a 23 year old Full Stack developer. I love learning new technologies 
+            and problem solving. I'm interested in natural language processing, 
+            blockchain technologies, functional programming and machine learning. 
+            Currently, I'm in the fourth year of a five year program at Universidad 
+            Tecnológica Nacional, and my major is Computer Science.
+            `,
 
-            `Tengo 22 años y soy desarrollador Full Stack. Amo aprender sobre 
-          nuevas tecnologías y resolver problemas. Estoy interesado en criptomonedas, 
-          tecnologías blockchain, contratos inteligentes, programación 
+            `Tengo 23 años y soy desarrollador Full Stack. Amo aprender sobre 
+          nuevas tecnologías y resolver problemas. Estoy interesado en el 
+          procesamiento del lenguaje natural, las tecnologías blockchain, programación 
           funcional y machine learning.`,
 
-            `Ho 22 anni e sono uno sviluppatore fullstack. Amo imparare nuove 
-          tecnologie e risolvere problemi. Sono interessato a criptovalute, 
-          tecnologie blockchain, contratti intelligenti e machine learning.`,
+            `Ho 23 anni e sono uno sviluppatore fullstack. Amo imparare nuove 
+          tecnologie e risolvere problemi. Sono interessato all'elaborazione 
+          del linguaggio naturale, le tecnologie blockchain, programazione 
+          funzionale e machine learning.`,
 
-            `Ich bin ein 22-jähriger Full Stack Entwickler. Ich liebe es, neue 
+            `Ich bin ein 23-jähriger Full Stack Entwickler. Ich liebe es, neue 
           Technologien zu lernen und Probleme zu lösen. Ich interessiere mich 
-          für Kryptowährungen, Blockchain-Technologien, Smart Contracts, 
-          funktionale Programmierung und maschinelles Lernen.`,
+          für Computerlinguistik, Blockchain-Technologien, funktionale 
+          Programmierung und maschinelles Lernen.`,
             language
           )}
           <br />
           {translations(
-            `Currently, I'm in my fourth year at Universidad Tecnológica Nacional, and my major is Computer Science.`,
+            `Currently, I'm in the fourth year of a five year program at Universidad Tecnológica Nacional, and my major is Computer Science.`,
             `Actualmente estoy cursando 4to año de la carrera de Ingeniería en Sistemas en la UTN`,
             `Attualmente, sto nel quarto anno di università alla Universidad Tecnológica Nacional, facendo la carriera Ingegneria dell'informazione.`,
             `Derzeit bin ich in meinem vierten Jahr an der Universidad Tecnológica Nacional und mein Bürgermeister ist Informatik.`,
