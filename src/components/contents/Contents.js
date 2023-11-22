@@ -4,17 +4,19 @@ import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { faUniversity } from "@fortawesome/free-solid-svg-icons";
 import { faIdCard } from "@fortawesome/free-solid-svg-icons";
 import { faFolder } from "@fortawesome/free-solid-svg-icons";
+import { faSuitcase } from "@fortawesome/free-solid-svg-icons";
 import { faScroll } from "@fortawesome/free-solid-svg-icons";
 import { faFileImage } from "@fortawesome/free-solid-svg-icons";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 
 // Content components
-import Certificados, {CertificadosTitle} from "./files/Certificados";
-import Educacion, {EducacionTitle} from "./files/Educacion";
-import Conocimientos, {ConocimientosTitle} from "./files/Conocimientos";
-import SobreMi, {SobreMiTitle}  from "./files/SobreMi";
-import Portfolio, {PortfolioTitle} from "./files/Portfolio";
-import Idiomas, {IdiomasTitle} from "./files/Idiomas";
+import Certificados, { CertificadosTitle } from "./files/Certificados";
+import Educacion, { EducacionTitle } from "./files/Educacion";
+import Conocimientos, { ConocimientosTitle } from "./files/Conocimientos";
+import SobreMi, { SobreMiTitle } from "./files/SobreMi";
+import Portfolio, { PortfolioTitle } from "./files/Portfolio";
+import Idiomas, { IdiomasTitle } from "./files/Idiomas";
+import Experiencia, { ExperienciaTitle } from "./files/Experiencia";
 import CodoACodo from "./CodoACodo.png";
 import InteligenciaArtificial from "./InteligenciaArtificial.png";
 
@@ -22,12 +24,14 @@ const graduationIcon = <FontAwesomeIcon icon={faGraduationCap} />;
 const universityIcon = <FontAwesomeIcon icon={faUniversity} />;
 const idCardIcon = <FontAwesomeIcon icon={faIdCard} />;
 const folderIcon = <FontAwesomeIcon icon={faFolder} />;
+const suitcaseIcon = <FontAwesomeIcon icon={faSuitcase} />;
 const scrollIcon = <FontAwesomeIcon icon={faScroll} />;
 const imageIcon = <FontAwesomeIcon icon={faFileImage} />;
 const languageIcon = <FontAwesomeIcon icon={faLanguage} />;
 
+const idConocimientos = 9;
 const idSobreMi = 8;
-const idConocimientos = 7;
+const idExperiencia = 7;
 const idPortfolio = 6;
 const idEducacion = 5;
 const idIdiomas = 4;
@@ -69,10 +73,10 @@ const files = [
     isSelected: false,
     isOnDesktop: true,
     isPopup: true,
-    width: 0.55,
-    height: 0.55,
-    x: 0.05,
-    y: 0.4,
+    width: 0.4,
+    height: 0.3,
+    x: 0.55,
+    y: 0.6,
   },
   {
     id: idSobreMi,
@@ -203,6 +207,24 @@ const files = [
     height: 0.6,
     x: 0.2,
     y: 0.3,
+  },
+  {
+    id: idExperiencia,
+    x_index: idExperiencia,
+    z_index: idExperiencia,
+    icon: suitcaseIcon,
+    title: ExperienciaTitle,
+    content: { text: <Experiencia /> },
+    isMaximized: false,
+    isVisible: true,
+    isOnTaskbar: true,
+    isSelected: false,
+    isOnDesktop: true,
+    isPopup: true,
+    width: 0.55,
+    height: 0.55,
+    x: 0.05,
+    y: 0.4,
   },
 ];
 

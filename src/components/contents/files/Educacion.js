@@ -15,6 +15,61 @@ export default function Educacion() {
 
   return (
     <>
+      <h2>Universidad Tecnológica Nacional</h2>
+      <h3>
+        {" "}
+        {translations(
+          "Engineering of Information Systems",
+          "Ingeniería en Sistemas de Información",
+          "Ingegneria informatica",
+          "Ingenieurinformatik",
+          language
+        )}
+      </h3>
+      <p>
+        <div style={{ fontStyle: "italic" }}>
+          {translations(
+            "March 2017 - March 2022, Buenos Aires",
+            "Marzo 2017 - Marzo 2022, Buenos Aires",
+            "Marzo 2017 - Marzo 2022, Buenos Aires",
+            "Marsch 2017 - Marsch 2022, Buenos Aires",
+            language
+          )}
+        </div>
+      </p>
+      <p>
+        {" "}
+        {translations(
+          "Buenos Aires, Almagro",
+          "Buenos Aires, Almagro",
+          "Buenos Aires, Almagro",
+          "Buenos Aires, Almagro",
+          language
+        )}
+      </p>
+      <ul>
+        <li>
+          {translations(
+            "Major in Engineering of Information Systems (GPA 8.1)",
+            "Especialización en Ingeniería de Sistemas de Información (Promedio de calificaciones: 8.1)",
+            "Magistrale in Ingegneria dei Sistemi Informativi (media voti 8.1)",
+            "Hauptfach Informationssystemtechnik (Durchschnittsnote 8,1)",
+            language
+          )}
+        </li>
+        <li>
+          {translations(
+            "Teaching Assistant for the annual subject Programming Paradigms",
+            "Asistente de enseñanza para la asignatura anual Paradigmas de Programación",
+            "Assistente didattico per la materia annuale Paradigmi di Programmazione",
+            "Lehrassistent für das jährliche Fach Programmierparadigmen",
+            language
+          )}
+        </li>
+      </ul>
+      <br />
+      <hr />
+      <br />
       <h2>Colegio Tarbut</h2>
       <h3>
         {translations(
@@ -47,47 +102,12 @@ export default function Educacion() {
         <br />
         {translations(
           "Buenos Aires, Olivos",
-          "Sede Olivos, Rosales 3019",
+          "Buenos Aires, Olivos",
           "Buenos Aires, Olivos",
           "Buenos Aires, Olivos",
           language
         )}
         <br />
-      </p>
-      <br />
-      <hr />
-      <br />
-      <h2>Universidad Tecnológica Nacional</h2>
-      <h3>
-        {" "}
-        {translations(
-          "Computer Science(4th year)",
-          "Ingeniería en Sistemas de Información (4to año)",
-          "Ingegneria informatica (4to anno)",
-          "Ingenieurinformatik (4te Jahr)",
-          language
-        )}
-      </h3>
-      <p>
-        <div style={{ fontStyle: "italic" }}>
-          {translations(
-            "March 2017 - Now, Buenos Aires",
-            "Marzo 2017 - Actualmente, Sede Medrano 951/Mozart 2300",
-            "Marzo 2017 - Adesso, Buenos Aires",
-            "Marsch 2017 - Jetzt, Buenos Aires",
-            language
-          )}
-        </div>
-      </p>
-      <p>
-        {" "}
-        {translations(
-          "Buenos Aires, Almagro",
-          "Sede Almagro, Medrano 951",
-          "Buenos Aires, Almagro",
-          "Buenos Aires, Almagro",
-          language
-        )}
       </p>
     </>
   );

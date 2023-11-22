@@ -8,13 +8,13 @@ import Taskbar from "./components/taskbar/Taskbar";
 import Window from "./components/window/Window";
 import files from "./components/contents/Contents";
 
-function translations(_en, _es, _it, _de, lang){
+function translations(_en, _es, _it, _de, lang) {
   let translations = {
     en: _en,
     es: _es,
     it: _it,
     de: _de,
-  }
+  };
   return translations[lang];
 }
 
@@ -46,11 +46,9 @@ const name = {
 
 function App() {
   const { lang } = useParams();
-  const [language, setLanguage] = useState(
-    lang || browserLang || defaultLang
-  );
+  const [language, setLanguage] = useState(lang || browserLang || defaultLang);
 
-  function changeDOMLanguage(language){
+  function changeDOMLanguage(language) {
     document.title = `${title[language]} - ${name[language]}`;
     document.documentElement.setAttribute("lang", language);
   }
@@ -58,7 +56,7 @@ function App() {
     changeDOMLanguage(language);
   }, []);
 
-  function changeLanguage(lang){
+  function changeLanguage(lang) {
     setLanguage(lang);
     changeDOMLanguage(lang);
   }
@@ -80,16 +78,6 @@ function App() {
     switch (type) {
       case "toggle-maximize":
         {
-          /*
-          if (element.isMaximized) {
-            listWithoutElement.forEach((file) =>
-              windowAction("toggle-visible", file.id)
-            );
-          } else {
-            listWithoutElement.forEach((file) =>
-              windowAction("make-minimize", file.id)
-            );
-          }*/
           setFilesState([
             ...listWithoutElement,
             { ...element, isMaximized: !element.isMaximized },
@@ -222,10 +210,8 @@ function App() {
       <languageContext.Provider value={[language, changeLanguage]}>
         <div className={styles.App}>
           <video
-            /**/
             className={styles.bgvid}
             src={background}
-            /**/
             playsInline
             autoPlay
             muted
@@ -242,4 +228,11 @@ function App() {
 }
 
 export default App;
-export { windowActionContext, languageContext, defaultLang, browserLang, name, translations };
+export {
+  windowActionContext,
+  languageContext,
+  defaultLang,
+  browserLang,
+  name,
+  translations,
+};

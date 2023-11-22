@@ -15,7 +15,7 @@
     "react-dom": "^17.0.2",
     "react-rnd": "^10.3.5",
     "react-router-dom": "^6.2.1",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^5.0.0",
     "react-spring": "^9.3.3",
     "web-vitals": "^2.1.2"
   },
@@ -32,10 +32,10 @@
     ]
   },
   "browserslist": [
-      "last 3 chrome version",
-      "last 3 firefox version",
-      "last 3 safari version"
-    ],
+    "last 3 chrome version",
+    "last 3 firefox version",
+    "last 3 safari version"
+  ],
   "devDependencies": {
     "react-container-query": "^0.12.0"
   }

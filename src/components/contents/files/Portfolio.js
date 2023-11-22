@@ -108,6 +108,44 @@ export default function Portfolio() {
 
   return (
     <>
+      <Title>Project Chaos</Title>
+      <Subtitle>
+        <a href={sites.project_chaos.github} target="_blank">
+          Github {openIcon}
+        </a>
+        <VerticalLine />
+        <a href={sites.project_chaos.website} target="_blank">
+          Website {openIcon}
+        </a>
+      </Subtitle>
+      <a href={sites.project_chaos.website} target="_blank">
+        <img
+          className={styles.image}
+          alt="project_chaos"
+          src={sites.project_chaos.image}
+        />
+      </a>
+      <Paragraph>
+        {translations(
+          `Made with Angular and Firebase as a database. It's a real-time
+          multiplayer card game that can be played directly on the browser.`,
+
+          `Hecho con Angular y Firebase como base de datos. Es un juego de
+          cartas de dos jugadores en tiempo real.`,
+
+          `Realizzato con Angular e Firebase come database. È un gioco di
+          carte multiplayer in tempo reale che può essere giocato
+          direttamente sul browser.`,
+
+          `Gemacht mit Angular und Firebase als Datenbank. Es ist ein
+          Echtzeit-Multiplayer-Kartenspiel, das direkt auf dem Browser
+          abgespielt werden kann.`,
+          language
+        )}
+      </Paragraph>
+      <br />
+      <hr />
+      <br />
       <Title>
         {translations(
           "Assignment for the subject 'System Design' (UTN)",
@@ -252,13 +290,13 @@ export default function Portfolio() {
           Website {openIcon}
         </a>
       </Subtitle>
-        <a href={sites.neon_homepage.website} target="_blank">
-          <img
-            className={styles.image}
-            alt="neon_homepage"
-            src={sites.neon_homepage.image}
-          />
-        </a>
+      <a href={sites.neon_homepage.website} target="_blank">
+        <img
+          className={styles.image}
+          alt="neon_homepage"
+          src={sites.neon_homepage.image}
+        />
+      </a>
       <Paragraph>
         {translations(
           `One of my fist websites. It was written with Sass for the styling
@@ -276,44 +314,6 @@ export default function Portfolio() {
           `Eine meiner Faust-Websites. Es wurde mit Sass für das Styling und
           HTML für alles andere geschrieben. Es ist völlig ansprechend und
           es ist angenommen, dass es für einen Browser eine Homepage ist.`,
-          language
-        )}
-      </Paragraph>
-      <br />
-      <hr />
-      <br />
-      <Title>Project Chaos</Title>
-      <Subtitle>
-        <a href={sites.project_chaos.github} target="_blank">
-          Github {openIcon}
-        </a>
-        <VerticalLine />
-        <a href={sites.project_chaos.website} target="_blank">
-          Website {openIcon}
-        </a>
-      </Subtitle>        
-      <a href={sites.project_chaos.website} target="_blank">
-      <img
-        className={styles.image}
-        alt="project_chaos"
-        src={sites.project_chaos.image}
-      />
-        </a>
-      <Paragraph>
-        {translations(
-          `Made with Angular and Firebase as a database. It's a real-time
-          multiplayer card game that can be played directly on the browser.`,
-
-          `Hecho con Angular y Firebase como base de datos. Es un juego de
-          cartas de dos jugadores en tiempo real.`,
-
-          `Realizzato con Angular e Firebase come database. È un gioco di
-          carte multiplayer in tempo reale che può essere giocato
-          direttamente sul browser.`,
-
-          `Gemacht mit Angular und Firebase als Datenbank. Es ist ein
-          Echtzeit-Multiplayer-Kartenspiel, das direkt auf dem Browser
-          abgespielt werden kann.`,
           language
         )}
       </Paragraph>

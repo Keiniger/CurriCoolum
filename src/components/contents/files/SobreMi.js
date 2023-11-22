@@ -17,6 +17,17 @@ const profile = {
   borderRadius: "50%",
 };
 
+function calculateAge() {
+  var birthDate = new Date(1999, 5, 27); // Note: JavaScript counts months from 0 to 11. June is 5.
+  var currentDate = new Date();
+  var age = currentDate.getFullYear() - birthDate.getFullYear();
+  var m = currentDate.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && currentDate.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+}
+
 const Link = ({ href, text }) => (
   <a
     style={{ textDecoration: "none", display: "flex", alignContent: "center" }}
@@ -91,38 +102,28 @@ export default function SobreMi() {
         </div>
         <p style={{ textAlign: "justify", width: "70&", maxWidth: "675px" }}>
           {translations(
-            `I'm a 23 year old Full Stack developer. I love learning new technologies 
+            `I'm a ${calculateAge()} year old Full Stack developer. I love learning new technologies 
             and problem solving. I'm interested in natural language processing, 
-            blockchain technologies, functional programming and machine learning. 
-            Currently, I'm in the fourth year of a five year program at Universidad 
-            Tecnológica Nacional, and my major is Computer Science.
-            `,
+            blockchain technologies, functional programming and machine learning.`,
 
-            `Tengo 23 años y soy desarrollador Full Stack. Amo aprender sobre 
+            `Tengo ${calculateAge()} años y soy desarrollador Full Stack. Amo aprender sobre 
           nuevas tecnologías y resolver problemas. Estoy interesado en el 
           procesamiento del lenguaje natural, las tecnologías blockchain, programación 
           funcional y machine learning.`,
 
-            `Ho 23 anni e sono uno sviluppatore fullstack. Amo imparare nuove 
+            `Ho ${calculateAge()} anni e sono uno sviluppatore fullstack. Amo imparare nuove 
           tecnologie e risolvere problemi. Sono interessato all'elaborazione 
           del linguaggio naturale, le tecnologie blockchain, programazione 
           funzionale e machine learning.`,
 
-            `Ich bin ein 23-jähriger Full Stack Entwickler. Ich liebe es, neue 
+            `Ich bin ein ${calculateAge()}-jähriger Full Stack Entwickler. Ich liebe es, neue 
           Technologien zu lernen und Probleme zu lösen. Ich interessiere mich 
           für Computerlinguistik, Blockchain-Technologien, funktionale 
           Programmierung und maschinelles Lernen.`,
             language
           )}
-          <br />
-          {translations(
-            `Currently, I'm in the fourth year of a five year program at Universidad Tecnológica Nacional, and my major is Computer Science.`,
-            `Actualmente estoy cursando 4to año de la carrera de Ingeniería en Sistemas en la UTN`,
-            `Attualmente, sto nel quarto anno di università alla Universidad Tecnológica Nacional, facendo la carriera Ingegneria dell'informazione.`,
-            `Derzeit bin ich in meinem vierten Jahr an der Universidad Tecnológica Nacional und mein Bürgermeister ist Informatik.`,
-            language
-          )}
         </p>
+        <br />
       </div>
     </>
   );
